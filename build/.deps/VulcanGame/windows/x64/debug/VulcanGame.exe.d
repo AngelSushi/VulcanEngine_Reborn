@@ -1,0 +1,44 @@
+{
+    files = {
+        [[build\.objs\VulcanGame\windows\x64\debug\Game\src\main.cpp.obj]],
+        [[build\windows\x64\debug\VMath.lib]],
+        [[build\windows\x64\debug\VCore.lib]],
+        [[build\windows\x64\debug\VUI.lib]]
+    },
+    values = {
+        [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\link.exe]],
+        {
+            "-nologo",
+            "-dynamicbase",
+            "-nxcompat",
+            "-machine:x64",
+            [[-libpath:C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\lib]],
+            [[-libpath:build\windows\x64\debug]],
+            [[-libpath:C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\lib]],
+            [[-libpath:C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]],
+            [[-libpath:C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\lib]],
+            "-debug",
+            [[-pdb:build\windows\x64\debug\VulcanGame.pdb]],
+            "VulcanEngine.lib",
+            "VUI.lib",
+            "VCore.lib",
+            "SDL2_image-static.lib",
+            "VMath.lib",
+            "imgui.lib",
+            "SDL2-static.lib",
+            "fmt.lib",
+            "Comdlg32.lib",
+            "imm32.lib",
+            "user32.lib",
+            "gdi32.lib",
+            "winmm.lib",
+            "ole32.lib",
+            "oleaut32.lib",
+            "version.lib",
+            "uuid.lib",
+            "advapi32.lib",
+            "setupapi.lib",
+            "shell32.lib"
+        }
+    }
+}

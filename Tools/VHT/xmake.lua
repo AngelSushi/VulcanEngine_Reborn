@@ -1,0 +1,6 @@
+target("VHT")
+    set_kind("binary")
+    add_files("src/**.cpp")
+    set_languages("cxx20")
+	add_headerfiles("include/**.h")
+	add_includedirs("include/", { public = true })

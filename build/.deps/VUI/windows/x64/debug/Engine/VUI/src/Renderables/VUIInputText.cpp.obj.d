@@ -1,0 +1,567 @@
+{
+    values = {
+        [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
+        {
+            "-nologo",
+            "-Zi",
+            "-FS",
+            [[-Fdbuild\windows\x64\debug\VUI.pdb]],
+            "-W4",
+            "-Od",
+            "-std:c++20",
+            [[-IEngine\VUI\include]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\__VulcanEngine__Rebuild__\Intermediate\Generated\VUI]],
+            [[-IEngine\VCore\include]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\__VulcanEngine__Rebuild__\Intermediate\Generated\VulcanEngine]],
+            [[-IEngine\VMath\include]],
+            [[-IEngine\VulcanEngine\include\Vulcan]],
+            [[-IEngine\VulcanEngine\include]],
+            [[-ITools\VHT\include]],
+            "-DSDL_MAIN_HANDLED",
+            "/EHsc",
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\e\entt\v3.16.0\9da180384ab84972909abd8955478e05\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\n\nlohmann_json\v3.12.0\ab8414047c424750bdc9d7a0ff7afdde\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\imgui]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\backends]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\misc\cpp]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include\SDL2]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]],
+            "/utf-8",
+            "/wd4251"
+        }
+    },
+    depfiles_cl_json = "{\
+    \"Version\": \"1.2\",\
+    \"Data\": {\
+        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\src\\\\renderables\\\\vuiinputtext.cpp\",\
+        \"ProvidedModule\": \"\",\
+        \"Includes\": [\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\binding.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\any\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals_core.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\sal.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\concurrencysal.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vadefs.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xkeycheck.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\initializer_list\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstddef\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\stddef.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xtr1common\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\type_traits\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstdint\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stdint.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\typeinfo\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\exception\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\crtdbg.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_new_debug.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_new.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\crtdefs.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\use_ansi.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstdlib\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\math.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_math.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\stdlib.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_malloc.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_search.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wstdlib.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\limits.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\malloc.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_exception.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\eh.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_terminate.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_typeinfo.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\utility\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\concepts\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\compare\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xmemory\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\limits\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cfloat\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\float.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\climits\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cwchar\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstdio\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\stdio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wstdio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_stdio_config.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\wchar.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_memcpy_s.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\errno.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_string.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wconio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wctype.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wdirect.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_share.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wprocess.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wstring.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wtime.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\sys\\\\stat.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\sys\\\\types.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\intrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\intrin0.inl.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\setjmp.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\immintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\wmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\nmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\smmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\tmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\pmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\emmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\mmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\zmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ammintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\intrin0.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\new\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xatomic.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xutility\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_iter_core.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstring\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\string.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_memory.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\tuple\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\functional\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\unordered_map\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xhash\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cmath\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\list\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xpolymorphic_allocator.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vector\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_bit_utils.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_sanitizer_annotate_container.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xbit_ops.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xnode_handle.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\memory\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\iosfwd\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\atomic\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xatomic_wait.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xthreads.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xtimec.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ctime\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\time.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\string\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xstring\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cctype\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\ctype.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stdexcept\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\consolecommandsystem.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\set\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xtree\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\layout.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vmath\\\\include\\\\vector2.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\complex\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\sstream\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\istream\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ostream\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ios\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocnum\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\iterator\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\streambuf\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xiosbase\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\share.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\system_error\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_system_error_abi.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cerrno\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xcall_once.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xerrc.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocale\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xfacet\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocinfo\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_xlocinfo_types.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\clocale\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\locale.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ymath.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\i\\\\imgui\\\\v1.90.9-docking\\\\eae6bdb6bc93450993e95e3af97e52ba\\\\include\\\\imgui.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\i\\\\imgui\\\\v1.90.9-docking\\\\eae6bdb6bc93450993e95e3af97e52ba\\\\include\\\\imconfig.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stdarg.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\assert.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vmath\\\\include\\\\vmath.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\json.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\algorithm\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\adl_serializer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\abi_macros.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\conversions\\\\from_json.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\array\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\forward_list\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\map\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\valarray\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\exceptions.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\value_t.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\macro_scope.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\detected.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\void_t.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\thirdparty\\\\hedley\\\\hedley.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\version\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cassert\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\assert.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\string_escape.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\input\\\\position_t.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\cpp_future.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\type_traits.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\iterators\\\\iterator_traits.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\call_std\\\\begin.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\call_std\\\\end.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\json_fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\string_concat.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\identity_tag.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\std_fs.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\filesystem\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\chrono\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_chrono.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ratio\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xfilesystem_abi.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_tzdb.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\optional\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xsmf_control.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xloctime\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\format\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_format_ucd_tables.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_print.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\bit\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\charconv\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xcharconv.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xcharconv_ryu.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xcharconv_ryu_tables.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xcharconv_tables.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\locale\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocbuf\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocmes\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocmon\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\iomanip\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\conversions\\\\to_json.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\iterators\\\\iteration_proxy.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ranges\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_int128.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\span\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\string_view\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\string_utils.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\byte_container_with_subtype.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\hash.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\input\\\\binary_reader.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\input\\\\input_adapters.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\numeric\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\input\\\\json_sax.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\input\\\\lexer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\meta\\\\is_sax.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\input\\\\parser.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\iterators\\\\internal_iterator.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\iterators\\\\primitive_iterator.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\iterators\\\\iter_impl.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\iterators\\\\json_reverse_iterator.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\json_custom_base_class.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\json_pointer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\json_ref.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\output\\\\binary_writer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\output\\\\output_adapters.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\output\\\\serializer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\conversions\\\\to_chars.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\ordered_map.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\detail\\\\macro_unscope.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\n\\\\nlohmann_json\\\\v3.12.0\\\\ab8414047c424750bdc9d7a0ff7afdde\\\\include\\\\nlohmann\\\\thirdparty\\\\hedley\\\\hedley_undef.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\vuihelper.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\color.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\format.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\base.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\vuielement.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\logsystem.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\mutex\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\thread\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\process.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_startup.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\math.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_startup.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stop_token\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\vtime.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vmath\\\\include\\\\vector3.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vmacros.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vobject.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\reflectionbase.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\objectmanager.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vobjectcontext.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\unordered_set\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\core.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\tvector.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vclass.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vscriptstruct.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vfield.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\variant\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\property\\\\vproperty.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\core.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vfieldregistry.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\typeindex\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\vfunction.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\complex.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ccomplex\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\vfunctionbase.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\functionutils.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\types\\\\vcolor.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\export.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\types\\\\vtype.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\iregistry.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\core.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vulcanengine\\\\logcategory.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\venum.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\iregistry.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\actions\\\\iengineaction.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\providers\\\\itreeiconprovider.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vtexture.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_main.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_stdinc.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_config.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_platform.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\shared\\\\winapifamily.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\shared\\\\winpackagefamily.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_assert.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_atomic.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_audio.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_error.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_endian.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_mutex.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_thread.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_rwops.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_clipboard.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_cpuinfo.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_events.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_video.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_pixels.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_rect.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_surface.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_blendmode.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_keyboard.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_keycode.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_scancode.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_mouse.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_joystick.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_guid.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_gamecontroller.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_sensor.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_quit.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_gesture.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_touch.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_filesystem.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_haptic.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_hidapi.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_hints.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_loadso.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_log.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_messagebox.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_metal.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_power.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_render.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_shape.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_system.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_timer.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_version.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_locale.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl_misc.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\themeasset.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\types\\\\vfont.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\types\\\\assets\\\\vasset.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\random\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vsurface.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vulcanengine\\\\vasset.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vui\\\\themeasset.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\types\\\\assets\\\\scene.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\entity.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entt.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\config\\\\config.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\config\\\\version.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\config\\\\macro.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cassert\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\assert.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\container\\\\dense_map.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\bit.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\compressed_pair.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\type_traits.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\iterator.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\memory.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\container\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\container\\\\dense_set.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\container\\\\table.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\algorithm.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\utility.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\any.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\type_info.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\hashed_string.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\enum.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\family.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\ident.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\monostate.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\ranges.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\core\\\\tuple.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\component.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\entity.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\group.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\handle.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\helper.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\storage.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\sparse_set.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\view.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\mixin.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\signal\\\\sigh.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\signal\\\\delegate.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\signal\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\organizer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\graph\\\\adjacency_matrix.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\graph\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\graph\\\\flow.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\ranges.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\registry.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\runtime_view.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\entity\\\\snapshot.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\graph\\\\dot.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\locator\\\\locator.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\adl_pointer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\container.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\deque\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\context.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\meta.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\node.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\type_traits.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\range.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\factory.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\policy.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\resolve.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\utility.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\pointer.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\meta\\\\template.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\poly\\\\poly.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\poly\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\process\\\\process.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\process\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\process\\\\scheduler.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\resource\\\\cache.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\resource\\\\fwd.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\resource\\\\loader.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\resource\\\\resource.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\signal\\\\dispatcher.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\e\\\\entt\\\\v3.16.0\\\\9da180384ab84972909abd8955478e05\\\\include\\\\entt\\\\signal\\\\emitter.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vulcanengine\\\\include\\\\vulcan\\\\components\\\\vcomponent.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vulcanengine\\\\vcomponent.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vrenderer.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vwindow.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vulcanengine\\\\entity.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vulcanengine\\\\scene.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\objectregistry.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\core.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\renderables\\\\vuiinputtext.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\renderables\\\\vuirenderable.h\"\
+        ],\
+        \"ImportedModules\": [],\
+        \"ImportedHeaderUnits\": []\
+    }\
+}",
+    files = {
+        [[Engine\VUI\src\Renderables\VUIInputText.cpp]]
+    }
+}

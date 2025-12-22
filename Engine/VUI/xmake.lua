@@ -1,0 +1,10 @@
+target("VUI")
+    set_kind("static")
+    add_headerfiles("include/**.h")
+    add_files("src/**.cpp")
+	add_packages("fmt")
+	add_packages("nlohmann_json","imgui","fmt","entt") -- absolument pas opti d'ajouter entt mais va savoir pq j'ai un crash avec
+	add_deps("VMath","VCore")
+	add_includedirs("include", { public = true })
+	add_files("$(projectdir)/Intermediate/Generated/VUI/**.gen.cpp")
+	add_includedirs("$(projectdir)/Intermediate/Generated/VUI", { public = true })

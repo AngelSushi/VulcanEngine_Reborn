@@ -1,0 +1,44 @@
+{
+    files = {
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\ConsoleCommandSystem.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\EditorContext.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Entries\ComboEntry.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Layout.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIButton.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUICheckbox.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUICombo.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIFactory.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIFlagCheckbox.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIGrid.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIHeader.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIInputText.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUILogger.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUISeparator.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUIText.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUITextureButton.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\Renderables\VUITree.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\ThemeAsset.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\ThemeHandler.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\UIUtils.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\VUIHelper.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Engine\VUI\src\VUIWindow.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\ComboBoolEntry.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\ComboEntry.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\EditorContext.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\Entry.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\HeaderEntry.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\ImportData.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\SpriteImportData.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\ThemeAsset.gen.cpp.obj]],
+        [[build\.objs\VUI\windows\x64\debug\Intermediate\Generated\VUI\TreeEntry.gen.cpp.obj]],
+        [[build\windows\x64\debug\VMath.lib]],
+        [[build\windows\x64\debug\VCore.lib]]
+    },
+    values = {
+        [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\link.exe]],
+        {
+            "-nologo",
+            "-machine:x64"
+        }
+    }
+}

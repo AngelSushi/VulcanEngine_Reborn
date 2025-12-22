@@ -1,0 +1,6 @@
+target("VulcanGame")
+	set_kind("binary")
+	add_files("src/**.cpp")
+	--add_files("$(projectdir)/Engine/VulcanEngine/src/Vulcan/Guizmos/**.cpp")
+	add_deps("VulcanEngine")
+	add_packages("nlohmann_json")

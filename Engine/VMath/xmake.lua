@@ -1,0 +1,6 @@
+target("VMath")
+    set_kind("static")
+    add_headerfiles("include/**.h")
+    add_files("src/**.cpp")
+	add_includedirs("include", { public = true })
+	add_packages("imgui","fmt","nlohmann_json")
