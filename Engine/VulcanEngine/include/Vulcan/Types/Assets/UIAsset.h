@@ -4,6 +4,7 @@
 #include <VUIWindow.h>
 
 #include <LogSystem.h>
+#include <Types/Assets/VAsset.h>
 
 #include <Renderables/VUIRenderable.h>
 

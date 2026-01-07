@@ -9,7 +9,7 @@ namespace VulcanCore  {
     class VFunctionBase : public VField {
 
     public:
-        VFunctionBase(const std::string& FuncName, std::vector<std::string> PropAttrs = {}, MetaMap PropDatas = {}) : VField(std::move(FuncName), std::move(PropAttrs), std::move(PropDatas)) {}
+        VFunctionBase(const VField* InOwner,const char* FuncName) : VField(InOwner,std::move(FuncName)) {}
 
         EFunctionFlags GetFlags() const { return Flags; }
         bool HasFlag(EFunctionFlags b) const { return VulcanCore::HasFlag(Flags,b);}

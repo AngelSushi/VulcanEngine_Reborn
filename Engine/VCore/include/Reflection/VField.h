@@ -5,18 +5,18 @@
 
 #include "Enums.h"
 #include "CoreAPI/Types.h"
+#include "CoreAPI/Objects/Names.h"
 
 namespace VulcanCore {
     class VField;
     
     class VFieldClass {
     public:
-        // InName should be const, but not possible with unordered_map key
-        VFieldClass(char* InName, uint64 InId,uint64 CastFlags, VFieldClass* InSupperClass, VField* (*InConstructFn)(VField* InOwner,const char* InName));
+        VFieldClass(Name InName, uint64 InId,uint64 CastFlags, VFieldClass* InSupperClass, VField* (*InConstructFn)(const VField* InOwner,Name InName));
         VField* ConstructDefault();
 
         
-        static std::unordered_map<char*,VFieldClass*>& GetNameToFieldMap();
+        static std::unordered_map<Name,VFieldClass*>& GetNameToFieldMap();
 
         uint64 GetId() const {
             return Id;
@@ -30,7 +30,7 @@ namespace VulcanCore {
             return InClass->GetId() ? (CastFlags & InClass->GetCastFlags()) != 0 : IsChildOfInternal(InClass);
         }
         
-        VField* Construct(VField* InOwner,const char* InName) const {
+        VField* Construct(const VField* InOwner,Name InName) const {
             return ConstructFn(InOwner,InName);
         }
 
@@ -61,13 +61,13 @@ namespace VulcanCore {
             return false;
         }
 
-        std::string Name;
+        Name FName;
         uint64 Id = 0;
         uint64 CastFlags = 0;
         // Class Flags for future ?
 
         VFieldClass* SuperClass = nullptr;
-        VField* (*ConstructFn)(VField* InOwner,const char* InName) = nullptr;
+        VField* (*ConstructFn)(const VField* InOwner,Name InName) = nullptr;
         
         VField* Default = nullptr;
     };
@@ -79,7 +79,7 @@ namespace VulcanCore {
         typedef VField Super;
 
         VField(VFieldClass* InClass);
-        VField(VField* InOwner, const char* InName);
+        VField(const VField* InOwner, Name InFName);
         
         virtual ~VField() = default;
 
@@ -104,8 +104,8 @@ namespace VulcanCore {
             return GetClass()->GetCastFlags();
         }
 
-        static VField* Construct(const VField* InOwner,const char* InName);
-        static VField* Construct(const char* InTypeName, const VField* InOwner,const char* InName);
+        static VField* Construct(const VField* InOwner,Name InName);
+        static VField* Construct(Name InTypeName, const VField* InOwner,Name InName);
         
         bool IsA(const VFieldClass* InClass) const {
             return GetClass()->IsChildOf(InClass);
@@ -121,13 +121,16 @@ namespace VulcanCore {
         }
         
 
-        const std::string& GetName() const { return Name; }
+        const Name& GetName() const { return FName; }
 
+        static VFieldClass* StaticClass() {
+            return nullptr;
+        }
         
     private:
-        std::string Name;
+        Name FName;
         VFieldClass* Class;
-        VField* Owner;
+        const VField* Owner;
 
         VField* Next; // Next field in linked list
 

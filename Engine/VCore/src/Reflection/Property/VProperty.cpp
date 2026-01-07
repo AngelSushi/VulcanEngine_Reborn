@@ -5,8 +5,7 @@ namespace VulcanCore {
 
     IMPLEMENT_FIELD(VProperty)
 
-
-    VProperty::VProperty(VField* InOwner, const char* InName)
+    VProperty::VProperty(const VField* InOwner,Name InName)
         : Super(InOwner,InName),
         ElementCount(1),
         TypeSize(0),
@@ -14,7 +13,7 @@ namespace VulcanCore {
         Offset(0) {
     }
 
-    VProperty::VProperty(VField* InOwner, VCG::PropertyParamsWithOffset Prop, EPropertyFlags InPropertyFlags)
+    VProperty::VProperty(const VField* InOwner,const VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
         : Super(InOwner,Prop.Name),
         ElementCount(1),
         TypeSize(0),
@@ -22,7 +21,7 @@ namespace VulcanCore {
         Offset(Prop.Offset) {
     }
 
-    VProperty::VProperty(VField* InOwner, VCG::PropertyParamsWithoutOffset Prop, EPropertyFlags InPropertyFlags) 
+    VProperty::VProperty(const VField* InOwner,const VCG::PropertyParamsWithoutOffset& Prop, EPropertyFlags InPropertyFlags) 
         : Super(InOwner,Prop.Name),
         ElementCount(1),
         TypeSize(0),

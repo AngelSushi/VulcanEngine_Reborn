@@ -1,0 +1,179 @@
+{
+    find_program_fetch_package_system = {
+        cmake = [[C:\Program Files\CMake\bin\cmake]]
+    },
+    find_program_fetch_package_xmake = {
+        cmake = false
+    },
+    find_programver_fetch_package_system = {
+        ["C:\\Program Files\\CMake\\bin\\cmake"] = "3.30.4"
+    },
+    find_program = {
+        ["7z"] = [[C:\Program Files\xmake\winenv\bin\7z]],
+        zig = false,
+        gzip = false,
+        unzip = false,
+        ping = "ping",
+        git = "git",
+        ["cl.exe"] = [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
+        ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe"] = [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]]
+    },
+    find_program_msvc_arch_x64_plat_windows_checktoolcc = {
+        ["cl.exe"] = [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]]
+    },
+    find_program_msvc_arch_x64_plat_windows_checktoolcxx = {
+        ["cl.exe"] = [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]]
+    },
+    find_programver = {
+        ["C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe"] = false
+    },
+    ["lib.detect.has_flags"] = {
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx_cxflags_-nologo_/wd4251"] = true,
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx_cxflags_-nologo_cl_external_includedir"] = true,
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx_cxflags_-nologo_-FS -Fd"] = true,
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx__-nologo_-Od"] = true,
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx_cxflags_-nologo_cl_sourceDependencies"] = true,
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx_cxxflags_-nologo_/utf-8"] = true,
+        ["windows_x64_C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\HostX64\\x64\\cl.exe__cxx_cxflags_-nologo_-std:c++20"] = true
+    },
+    find_program_msvc_arch_x64_plat_windows_checktoolsh = {
+        ["link.exe"] = [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\link.exe]]
+    },
+    find_program_msvc_arch_x64_plat_windows_checktoolld = {
+        ["link.exe"] = [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\link.exe]]
+    },
+    find_package_windows_x64_fetch_package_xmake = {
+        ["xmake::imgui_eae6bdb6bc93450993e95e3af97e52ba_debug_v1.90.9-docking_external"] = {
+            sysincludedirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\imgui]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\backends]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\misc\cpp]]
+            },
+            linkdirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\lib]]
+            },
+            links = {
+                "imgui"
+            },
+            syslinks = "imm32",
+            libfiles = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\lib\imgui.lib]]
+            },
+            license = "MIT",
+            static = true,
+            version = "v1.90.9-docking"
+        },
+        ["xmake::libsdl2_ecf25b10e4094973bb87ce6e284d25de_release_2.32.2_external"] = {
+            sysincludedirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]]
+            },
+            libfiles = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2-static.lib]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2main.lib]]
+            },
+            defines = "SDL_MAIN_HANDLED",
+            syslinks = {
+                "user32",
+                "gdi32",
+                "winmm",
+                "imm32",
+                "ole32",
+                "oleaut32",
+                "version",
+                "uuid",
+                "advapi32",
+                "setupapi",
+                "shell32"
+            },
+            version = "2.32.2",
+            linkdirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]]
+            },
+            links = {
+                "SDL2-static"
+            },
+            license = "zlib",
+            components = {
+                lib = {
+                    syslinks = {
+                        "user32",
+                        "gdi32",
+                        "winmm",
+                        "imm32",
+                        "ole32",
+                        "oleaut32",
+                        "version",
+                        "uuid",
+                        "advapi32",
+                        "setupapi",
+                        "shell32"
+                    },
+                    links = "SDL2-static"
+                },
+                __base = {
+                    sysincludedirs = {
+                        [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+                        [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]]
+                    },
+                    defines = "SDL_MAIN_HANDLED",
+                    linkdirs = {
+                        [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]]
+                    }
+                }
+            },
+            static = true
+        },
+        ["xmake::fmt_8c4c20b71e584e239f907a11eb29da75_release_12.1.0_external"] = {
+            sysincludedirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\include]]
+            },
+            linkdirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\lib]]
+            },
+            links = {
+                "fmt"
+            },
+            cxxflags = "/utf-8",
+            libfiles = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\lib\fmt.lib]]
+            },
+            license = "MIT",
+            static = true,
+            version = "12.1.0"
+        },
+        ["xmake::entt_9da180384ab84972909abd8955478e05_release_v3.16.0_external"] = {
+            sysincludedirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\e\entt\v3.16.0\9da180384ab84972909abd8955478e05\include]]
+            },
+            license = "MIT",
+            version = "v3.16.0"
+        },
+        ["xmake::nlohmann_json_ab8414047c424750bdc9d7a0ff7afdde_release_v3.12.0_external"] = {
+            sysincludedirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\n\nlohmann_json\v3.12.0\ab8414047c424750bdc9d7a0ff7afdde\include]]
+            },
+            license = "MIT",
+            version = "v3.12.0"
+        },
+        ["xmake::libsdl2_image_e767ba8771b94388985a9c8b33da63f1_release_2.8.8_external"] = {
+            sysincludedirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include\SDL2]]
+            },
+            linkdirs = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\lib]]
+            },
+            links = {
+                "SDL2_image-static"
+            },
+            libfiles = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\lib\SDL2_image-static.lib]]
+            },
+            license = "zlib",
+            static = true,
+            version = "2.8.8"
+        }
+    }
+}

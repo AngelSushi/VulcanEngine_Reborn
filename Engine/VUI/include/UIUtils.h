@@ -3,6 +3,7 @@
 #include <Types/Assets/UIAsset.h>
 
 #include "Entries/TreeEntry.h"
+#include "Reflection/Property/VArrayProperty.h"
 
 
 namespace UIDragDrop {
@@ -23,7 +24,7 @@ namespace UIPopup {
 }
 
 namespace UIProperty {
-    void DrawClassProperty(VulcanCore::ReflectionBase* ClassBase,VulcanCore::VPropertyBase* Property,bool& OutChanged);
-    void DrawStructProperty(void* Instance,VulcanCore::VPropertyBase* Property,bool& OutChanged);
-    void DrawArrayProperty(void* Instance,VulcanCore::ArrayProperty* Property,int& SelectedIndex,bool& OutChanged);
+    void DrawClassProperty(VulcanCore::ReflectionBase* ClassBase,VulcanCore::VProperty* Property,bool& OutChanged);
+    void DrawStructProperty(void* Instance,VulcanCore::VProperty* Property,bool& OutChanged);
+    void DrawArrayProperty(void* Instance,VulcanCore::VArrayProperty* Property,int& SelectedIndex,bool& OutChanged);
 }

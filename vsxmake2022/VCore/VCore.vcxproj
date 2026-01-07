@@ -148,7 +148,7 @@ xmake version 2.8.6+HEAD.211710b67
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VMacros.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VObject.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VObjectContext.h" />
-    <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VScruct.h" />
+    <ClInclude Include="..\..\Engine\VCore\include\Reflection\VStruct.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\TVector.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\VCast.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\VTime.h" />

@@ -2,8 +2,8 @@
 #include <Reflection/VField.h>
 
 namespace VulcanCore {
-    VFieldClass::VFieldClass(char* InName, uint64 InId, uint64 InCastFlags, VFieldClass* InSupperClass,VField*(* InConstructFn)(VField* InOwner,const char* InName))
-        : Name(InName),
+    VFieldClass::VFieldClass(Name InName, uint64 InId, uint64 InCastFlags, VFieldClass* InSupperClass,VField*(* InConstructFn)(const VField* InOwner,Name InName))
+        : FName(InName),
         Id(InId),
         CastFlags(InCastFlags),
         SuperClass(InSupperClass),
@@ -13,11 +13,11 @@ namespace VulcanCore {
     }
 
     VField* VFieldClass::ConstructDefault() {
-        
+        return nullptr;
     }
 
-    std::unordered_map<char*, VFieldClass*>& VFieldClass::GetNameToFieldMap() {
-        static std::unordered_map<char*,VFieldClass*> NameToFieldMap;
+    std::unordered_map<Name, VFieldClass*>& VFieldClass::GetNameToFieldMap() {
+        static std::unordered_map<Name,VFieldClass*> NameToFieldMap;
         return NameToFieldMap;
     }
 
@@ -27,20 +27,20 @@ namespace VulcanCore {
         Next(nullptr) {
     }
 
-    VField::VField(VField* InOwner, const char* InName) 
+    VField::VField(const VField* InOwner,Name InFName) 
         : Owner(InOwner),
-        Name(InName),
+        FName(InFName),
         Class(nullptr),
         Next(nullptr) {
 
     }
 
-    VField* VField::Construct(const VField* InOwner, const char* InName) {
+    VField* VField::Construct(const VField* InOwner,Name InName) {
         return nullptr;
     }
 
-    VField* VField::Construct(const char* InTypeName, const VField* InOwner, const char* InName) {
-        auto it = VFieldClass::GetNameToFieldMap().find((char*)InTypeName);
+    VField* VField::Construct(Name InTypeName, const VField* InOwner,Name InName) {
+        auto it = VFieldClass::GetNameToFieldMap().find(InTypeName);
         Expects(it != VFieldClass::GetNameToFieldMap().end());
 
         VField* Instance = (it->second)->Construct(InOwner,InName);

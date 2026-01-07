@@ -1,13 +1,13 @@
 #pragma once
 
-#include <Reflection/VScruct.h>
+#include <Reflection/VStruct.h>
 #include <Reflection/Function/VFunction.h>
 
 namespace VulcanCore {
-    class VClass : public VScruct { // For all class that are "lifeable" objects
+    class VClass : public VStruct { // For all class that are "lifeable" objects
     
     public:
-        VClass(const std::string& ClassName,const std::string& full_name, size_t ClassSize) : VScruct(std::move(ClassName),std::move(full_name), ClassSize) {}
+       // VClass(const std::string& ClassName,const std::string& full_name, size_t ClassSize) : VScruct(std::move(ClassName),std::move(full_name), ClassSize) {}
         
         void AddFunction(std::unique_ptr<VFunctionBase> Fn) {
             Functions.push_back(std::move(Fn));
@@ -15,7 +15,7 @@ namespace VulcanCore {
 
         const std::vector<std::unique_ptr<VFunctionBase>>& GetFunctions() const { return Functions; }
         
-        template<typename T>
+        /*template<typename T>
         bool IsA() const {
             const VClass* current = this;
 
@@ -28,14 +28,16 @@ namespace VulcanCore {
             }
 
             return false;
-        }
+        }*/
+        
 
-        VFunctionBase* find_function(const std::string_view& function_name) {
-            auto it = std::find_if(Functions.begin(), Functions.end(),[&function_name](const std::unique_ptr<VFunctionBase>& func) {
+        VFunctionBase* FindFunction(const std::string_view& function_name) {
+            /*auto it = std::find_if(Functions.begin(), Functions.end(),[&function_name](const std::unique_ptr<VFunctionBase>& func) {
                 return func->GetName() == function_name;
             });
 
-            return it != Functions.end() ? it->get() : nullptr;
+            return it != Functions.end() ? it->get() : nullptr;*/
+            return nullptr;
         }
         
         VClass* Parent = nullptr; // Dangerous

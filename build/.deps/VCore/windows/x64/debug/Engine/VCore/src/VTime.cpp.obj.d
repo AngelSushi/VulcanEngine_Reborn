@@ -2,7 +2,7 @@
     depfiles_cl_json = "{\
     \"Version\": \"1.2\",\
     \"Data\": {\
-        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\src\\\\vtime.cpp\",\
+        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\src\\\\vtime.cpp\",\
         \"ProvidedModule\": \"\",\
         \"Includes\": [\
             \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\sdl.h\",\
@@ -173,7 +173,7 @@
             \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
             \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\begin_code.h\",\
             \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\ecf25b10e4094973bb87ce6e284d25de\\\\include\\\\sdl2\\\\close_code.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\vtime.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\vtime.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\chrono\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals_core.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xkeycheck.h\",\
@@ -301,9 +301,6 @@
         \"ImportedHeaderUnits\": []\
     }\
 }",
-    files = {
-        [[Engine\VCore\src\VTime.cpp]]
-    },
     values = {
         [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
         {
@@ -315,10 +312,11 @@
             "-Od",
             "-std:c++20",
             [[-IEngine\VCore\include]],
-            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\__VulcanEngine__Rebuild__\Intermediate\Generated\VulcanEngine]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\VulcanEngine_Reborn\VulcanEngine_Reborn\Intermediate\Generated\VulcanEngine]],
             [[-IEngine\VMath\include]],
             [[-IEngine\VulcanEngine\include\Vulcan]],
             [[-IEngine\VulcanEngine\include]],
+            [[-IThirdParty\gsl\include]],
             [[-ITools\VHT\include]],
             "-DSDL_MAIN_HANDLED",
             "/EHsc",
@@ -345,5 +343,8 @@
             "/utf-8",
             "/wd4251"
         }
+    },
+    files = {
+        [[Engine\VCore\src\VTime.cpp]]
     }
 }

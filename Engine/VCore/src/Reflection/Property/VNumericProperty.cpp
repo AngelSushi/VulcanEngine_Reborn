@@ -15,11 +15,11 @@ namespace VulcanCore {
     IMPLEMENT_FIELD(VDoubleProperty)
 
     
-    VNumericProperty::VNumericProperty(VField* InOwner, const char* InName)
+    VNumericProperty::VNumericProperty(const VField* InOwner,Name InName)
         : VProperty(InOwner, InName) {
     }
 
-    VNumericProperty::VNumericProperty(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
+    VNumericProperty::VNumericProperty(const VField* InOwner,const VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
         : VProperty(InOwner, Prop, InPropertyFlags) {
     }
 
@@ -55,87 +55,87 @@ namespace VulcanCore {
         Expects(0);
     }
 
-    VInt8Property::VInt8Property(VField* InOwner, const char* InName) 
+    VInt8Property::VInt8Property(const VField* InOwner,Name InName) 
      : TNumericProperty<int8>(InOwner, InName) {
     }
 
-    VInt8Property::VInt8Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<int8>(InOwner, Prop, InPropertyFlags) {
+    VInt8Property::VInt8Property(const VField* InOwner,const VCG::Int8PropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<int8>(InOwner, (const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VInt16Property::VInt16Property(VField* InOwner, const char* InName)
+    VInt16Property::VInt16Property(const VField* InOwner,Name InName)
         : TNumericProperty<int16>(InOwner, InName) {
     }
 
-    VInt16Property::VInt16Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<int16>(InOwner, Prop, InPropertyFlags) {
+    VInt16Property::VInt16Property(const VField* InOwner,const VCG::Int16PropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<int16>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VIntProperty::VIntProperty(VField* InOwner, const char* InName)
+    VIntProperty::VIntProperty(const VField* InOwner,Name InName)
         : TNumericProperty<int32>(InOwner, InName) {
     }
 
-    VIntProperty::VIntProperty(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<int32>(InOwner, Prop, InPropertyFlags) {
+    VIntProperty::VIntProperty(const VField* InOwner,const VCG::IntPropertyParams& Prop,EPropertyFlags InPropertyFlags)
+        : TNumericProperty<int32>(InOwner, (const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VInt64Property::VInt64Property(VField* InOwner, const char* InName)
+    VInt64Property::VInt64Property(const VField* InOwner,Name InName)
         : TNumericProperty<int64>(InOwner, InName) {
         
     }
 
-    VInt64Property::VInt64Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<int64>(InOwner, Prop, InPropertyFlags) {
+    VInt64Property::VInt64Property(const VField* InOwner,const VCG::Int64PropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<int64>(InOwner, (const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VUInt8Property::VUInt8Property(VField* InOwner, const char* InName) 
+    VUInt8Property::VUInt8Property(const VField* InOwner,Name InName) 
      : TNumericProperty<uint8>(InOwner, InName) {
     }
 
-    VUInt8Property::VUInt8Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<uint8>(InOwner, Prop, InPropertyFlags) {
+    VUInt8Property::VUInt8Property(const VField* InOwner,const VCG::UInt8PropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<uint8>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VUInt16Property::VUInt16Property(VField* InOwner, const char* InName)
+    VUInt16Property::VUInt16Property(const VField* InOwner,Name InName)
         : TNumericProperty<uint16>(InOwner, InName) {
     }
 
-    VUInt16Property::VUInt16Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<uint16>(InOwner, Prop, InPropertyFlags) {
+    VUInt16Property::VUInt16Property(const VField* InOwner,const VCG::UInt16PropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<uint16>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VUIntProperty::VUIntProperty(VField* InOwner, const char* InName)
+    VUIntProperty::VUIntProperty(const VField* InOwner,Name InName)
         : TNumericProperty<uint32>(InOwner, InName) {
     }
 
-    VUIntProperty::VUIntProperty(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<uint32>(InOwner, Prop, InPropertyFlags) {
+    VUIntProperty::VUIntProperty(const VField* InOwner,const VCG::UIntPropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<uint32>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VUInt64Property::VUInt64Property(VField* InOwner, const char* InName)
+    VUInt64Property::VUInt64Property(const VField* InOwner,Name InName)
         : TNumericProperty<uint64>(InOwner, InName) {
         
     }
 
-    VUInt64Property::VUInt64Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<uint64>(InOwner, Prop, InPropertyFlags) {
+    VUInt64Property::VUInt64Property(const VField* InOwner,const VCG::UInt64PropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<uint64>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VFloatProperty::VFloatProperty(VField* InOwner, const char* InName)
+    VFloatProperty::VFloatProperty(const VField* InOwner,Name InName)
         : TNumericProperty<float>(InOwner, InName) {
     }
 
-    VFloatProperty::VFloatProperty(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<float>(InOwner, Prop, InPropertyFlags) {
+    VFloatProperty::VFloatProperty(const VField* InOwner,const VCG::FloatPropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<float>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
     }
 
-    VDoubleProperty::VDoubleProperty(VField* InOwner, const char* InName)
+    VDoubleProperty::VDoubleProperty(const VField* InOwner, Name InName)
         : TNumericProperty<double>(InOwner, InName) {
         
     }
 
-    VDoubleProperty::VDoubleProperty(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags)
-        : TNumericProperty<double>(InOwner, Prop, InPropertyFlags) {
+    VDoubleProperty::VDoubleProperty(const VField* InOwner,const VCG::DoublePropertyParams& Prop, EPropertyFlags InPropertyFlags)
+        : TNumericProperty<double>(InOwner,(const VCG::PropertyParamsWithOffset&) Prop, InPropertyFlags) {
         
     }
 

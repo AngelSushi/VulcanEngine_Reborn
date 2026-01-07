@@ -38,7 +38,7 @@ T##_AutoRegister() { \
 #endif
 
 // We used double macro, cause  #x doenst allow macro expansion (it will be TClass name)
-#define PREPROCESSOR_TO_STRING_INNER #x
+#define PREPROCESSOR_TO_STRING_INNER(x) #x
 #define PREPROCESSOR_TO_STRING(x) PREPROCESSOR_TO_STRING_INNER(x)
 
 #include <CoreAPI/Memory.h>
@@ -48,10 +48,11 @@ private: \
     TClass& operator=(const TClass&); \
 public: \
     using Super = TSuperClass; \
+    using ThisClass = TClass;\
     TClass(VFieldClass* InClass) : Super(InClass) { \
     } \
     static VFieldClass* StaticClass(); \
-    static VField* Construct(VField* InOwner,const char* InName); \
+    static VField* Construct(const VField* InOwner,Name InName); \
     inline static constexpr uint64 StaticClassCastFlagsPrivate() { \
         return uint64(TStaticFlags); \
     } \
@@ -62,23 +63,22 @@ public: \
         return InMem; \
     } \
     inline void* operator new(const size_t InSize) { \
-        TClass* Mem = (TClass*)Memory::Alloc(InSize); \
+        TClass* Mem = (TClass*)VMemory::Alloc(InSize); \
         new (Mem) TClass(TClass::StaticClass()); \
         return Mem; \
     } \
     inline void operator delete(void* InMem) { \
-        Memory::Free(InMem); \
+        VMemory::Free(InMem); \
     } \
     virtual size_t GetFieldSize() const override { \
         return sizeof(TClass); \
     }
 
 #define IMPLEMENT_FIELD(TClass) \
-VField* TClass::Construct(VField* InOwner,const char* InName) { \
-    VField* Instance = new TClass(InOwner,InName); \
-    return Instance; \
+VField* TClass::Construct(const VField* InOwner,Name InName) { \
+    return new TClass(InOwner,InName); \
 } \
 VFieldClass* TClass::StaticClass() { \
     static VFieldClass StaticFieldClass(PREPROCESSOR_TO_STRING(TClass), TClass::StaticClassCastFlagsPrivate(), TClass::StaticClassCastFlags(),TClass::Super::StaticClass(),&TClass::Construct); \
     return &StaticFieldClass; \
-} 
+}

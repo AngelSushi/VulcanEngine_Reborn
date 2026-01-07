@@ -1,26 +1,28 @@
 #pragma once
-#include <CoreAPI/precomp.h>
 
+#include <CoreAPI/Globals.h>
 #include <Reflection/VField.h>
 
 #include <Enums.h>
 #include <gsl/gsl>
 
-#include "CoreAPI/Globals.h"
 #include "Reflection/VMacros.h"
+
+
 namespace VulcanCore {
     class ReflectionBase;
     
     class VProperty : public VField {
 
+    public:
         DECLARE_FIELD(VProperty,VField,CastClassFlags_VProperty)
-
+        
         // To create static class (and not instance)
-        VProperty(VField* InOwner, const char* InName);
+        VProperty(const VField* InOwner,Name InName);
 
         // To  create instances 
-        VProperty(VField* InOwner,VCG::PropertyParamsWithOffset Prop, EPropertyFlags InPropertyFlags);
-        VProperty(VField* InOwner,VCG::PropertyParamsWithoutOffset Prop, EPropertyFlags InPropertyFlags);
+        VProperty(const VField* InOwner,const VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags = PropertyFlags_None);
+        VProperty(const VField* InOwner,const VCG::PropertyParamsWithoutOffset& Prop, EPropertyFlags InPropertyFlags = PropertyFlags_None);
         
         virtual ~VProperty() = default;
 

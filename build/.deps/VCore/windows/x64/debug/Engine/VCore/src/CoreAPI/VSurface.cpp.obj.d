@@ -2,10 +2,10 @@
     depfiles_cl_json = "{\
     \"Version\": \"1.2\",\
     \"Data\": {\
-        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\src\\\\coreapi\\\\vsurface.cpp\",\
+        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\src\\\\coreapi\\\\vsurface.cpp\",\
         \"ProvidedModule\": \"\",\
         \"Includes\": [\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vsurface.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vsurface.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\memory\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals_core.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime.h\",\
@@ -270,9 +270,6 @@
         \"ImportedHeaderUnits\": []\
     }\
 }",
-    files = {
-        [[Engine\VCore\src\CoreAPI\VSurface.cpp]]
-    },
     values = {
         [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
         {
@@ -284,7 +281,7 @@
             "-Od",
             "-std:c++20",
             [[-IEngine\VCore\include]],
-            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\__VulcanEngine__Rebuild__\Intermediate\Generated\VulcanEngine]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\VulcanEngine_Reborn\VulcanEngine_Reborn\Intermediate\Generated\VulcanEngine]],
             [[-IEngine\VMath\include]],
             [[-IEngine\VulcanEngine\include\Vulcan]],
             [[-IEngine\VulcanEngine\include]],
@@ -315,5 +312,8 @@
             "/utf-8",
             "/wd4251"
         }
+    },
+    files = {
+        [[Engine\VCore\src\CoreAPI\VSurface.cpp]]
     }
 }

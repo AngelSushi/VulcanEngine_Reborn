@@ -1,4 +1,5 @@
 #pragma once
+#include "Enums.h"
 #include "Reflection/VClass.h"
 
 
@@ -63,7 +64,7 @@ namespace VCG {
     struct ClassParams {
         VulcanCore::VClass* (*ClassRegisterFunc)();
         const char* ClassName;
-        PropertyBaseParams* PropertyParams;
+        const PropertyBaseParams* const* PropertiesArray; // Array of pointers to properties
         FunctionLinkInfo* FunctionLinkInfo;
         uint32 NumFunctions;
         uint32 NumProperties;

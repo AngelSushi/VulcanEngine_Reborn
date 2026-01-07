@@ -12,7 +12,7 @@ static std::string MakePath(const TypeInfoBase& baseInfo, const std::string& bas
 void CodeGenHeader::GenerateClass(const ClassInfo& classInfo, std::vector<EnumInfo> enums,const std::string& outputPath) {
     std::ostringstream buffer;
 
-    buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n\n";
+   /* buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n\n";
     buffer << "#pragma once\n";
     buffer << "#include <typeindex>\n";
     buffer << "#include <Reflection/VClass.h>\n";
@@ -36,13 +36,13 @@ void CodeGenHeader::GenerateClass(const ClassInfo& classInfo, std::vector<EnumIn
     buffer << "public: \\\n";
     buffer << "    static ::VulcanCore::VClass& StaticClass(); \\\n";
     buffer << "    virtual ::VulcanCore::VClass& GetClass() const override;\n";
-    
+    */
     FileUtils::WriteFile(MakePath(classInfo, outputPath), buffer.str());
 }
 
 void CodeGenHeader::GenerateStruct(const StructInfo& structInfo, std::vector<EnumInfo> enums,const std::string& outputPath) {
     std::ostringstream buffer;
-
+/*
     buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n\n";
     buffer << "#pragma once\n";
     buffer << "#include <typeindex>\n";
@@ -77,7 +77,7 @@ void CodeGenHeader::GenerateStruct(const StructInfo& structInfo, std::vector<Enu
     buffer << "#define VSTRUCT_BODY() \\\n";
     buffer << "public: \\\n";
     buffer << "    static ::VulcanCore::VScriptStruct& StaticStruct(); \\\n";
-    
+    */
     FileUtils::WriteFile(MakePath(structInfo, outputPath), buffer.str());
 }
 

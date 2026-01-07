@@ -4,7 +4,6 @@
 #include <random>
 #include "Reflection/VMacros.h"
 #include "Reflection/VObject.h"
-#include "CoreAPI/VSurface.h"
 #include <VAsset.vht.h>
 
 namespace VulcanEngine {

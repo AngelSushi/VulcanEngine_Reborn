@@ -4,6 +4,7 @@
 #include "VCast.h"
 #include "VUIHelper.h"
 #include "World.h"
+#include "Reflection/Property/VArrayProperty.h"
 #include "Systems/EditorSystem.h"
 
 void UIDragDrop::MakeSource(const VUI::VUIElement& Element, const void* InData, size_t InLength,VUI::TreeEntry* InEntry) {
@@ -67,13 +68,13 @@ void UIPopup::ContextMenu(const std::string& Id, std::function<void()> InCallbac
     }
 }
 
-void UIProperty::DrawClassProperty(VulcanCore::ReflectionBase* ClassBase,VulcanCore::VPropertyBase* Property,bool& OutChanged) {
+void UIProperty::DrawClassProperty(VulcanCore::ReflectionBase* ClassBase,VulcanCore::VProperty* Property,bool& OutChanged) {
     if (!Property) {
         VLOG_WARN(EditorUI, "UIProperty::DrawProperty The property you are trying to draw is null");
         return;
     }
 
-    std::string bypassMeta{};
+    /*std::string bypassMeta{};
     std::string metaType = std::get<std::string>(Property->FindMeta("type"));
 
     if (!metaType.empty()) {
@@ -200,16 +201,16 @@ void UIProperty::DrawClassProperty(VulcanCore::ReflectionBase* ClassBase,VulcanC
         }
     }
     
-    ImGui::SetWindowFontScale(1.0f);
+    ImGui::SetWindowFontScale(1.0f);*/
 }
 
-void UIProperty::DrawStructProperty(void* Instance, VulcanCore::VPropertyBase* Property, bool& OutChanged) {
+void UIProperty::DrawStructProperty(void* Instance, VulcanCore::VProperty* Property, bool& OutChanged) {
     if (!Property) {
         VLOG_WARN(EditorUI, "UIProperty::DrawProperty The property you are trying to draw is null");
         return;
     }
     
-    std::string label = "##" + Property->GetName() + "##obj_" + std::to_string(reinterpret_cast<uintptr_t>(Instance)) + "_prop_" + std::to_string(reinterpret_cast<uintptr_t>(Property));
+  /*  std::string label = "##" + Property->GetName() + "##obj_" + std::to_string(reinterpret_cast<uintptr_t>(Instance)) + "_prop_" + std::to_string(reinterpret_cast<uintptr_t>(Property));
     
     ImGui::SetWindowFontScale(0.95f);
     ImGui::SetNextItemWidth(250.0f);
@@ -316,10 +317,10 @@ void UIProperty::DrawStructProperty(void* Instance, VulcanCore::VPropertyBase* P
         }
     }
     
-    ImGui::SetWindowFontScale(1.0f);
+    ImGui::SetWindowFontScale(1.0f);*/
 }
 
-void UIProperty::DrawArrayProperty(void* Instance, VulcanCore::ArrayProperty* ArrayProp,int& SelectedIndex, bool& OutChanged) {
+void UIProperty::DrawArrayProperty(void* Instance, VulcanCore::VArrayProperty* ArrayProp,int& SelectedIndex, bool& OutChanged) {
     if (!ArrayProp) {
         VLOG_WARN(EditorUI, "UIProperty::DrawArrayProperty The property you are trying to draw is not an array");
         return;

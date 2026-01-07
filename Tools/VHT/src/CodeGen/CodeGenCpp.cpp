@@ -14,7 +14,7 @@ static std::string MakePath(const TypeInfoBase& base_info, const std::string& ba
 void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo> enums,const std::string& output_path) {
     std::ostringstream buffer;
 
-    buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
+    /*buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
     
     buffer << "#include <CoreAPI/precomp.h>\n\n";
     
@@ -175,14 +175,14 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
     
         buffer <<"}; \n\n";
     }
-    
+    */
     FileUtils::WriteFile(MakePath(class_info,output_path), buffer.str());
 }
 
 void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumInfo> enums,const std::string& output_path) {
     std::ostringstream buffer;
     
-    buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
+   /* buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
 
     buffer << "#include <precomp.h>\n\n";
 
@@ -299,7 +299,7 @@ void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumI
          }
         buffer <<"}; \n\n";
     }
-    
+    */
     FileUtils::WriteFile(MakePath(struct_info,output_path), buffer.str());
 }
 

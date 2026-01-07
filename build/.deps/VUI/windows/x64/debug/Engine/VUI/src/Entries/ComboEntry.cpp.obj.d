@@ -10,12 +10,13 @@
             "-Od",
             "-std:c++20",
             [[-IEngine\VUI\include]],
-            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\__VulcanEngine__Rebuild__\Intermediate\Generated\VUI]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\VulcanEngine_Reborn\VulcanEngine_Reborn\Intermediate\Generated\VUI]],
             [[-IEngine\VCore\include]],
-            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\__VulcanEngine__Rebuild__\Intermediate\Generated\VulcanEngine]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\VulcanEngine_Reborn\VulcanEngine_Reborn\Intermediate\Generated\VulcanEngine]],
             [[-IEngine\VMath\include]],
             [[-IEngine\VulcanEngine\include\Vulcan]],
             [[-IEngine\VulcanEngine\include]],
+            [[-IThirdParty\gsl\include]],
             [[-ITools\VHT\include]],
             "-DSDL_MAIN_HANDLED",
             "/EHsc",
@@ -48,10 +49,10 @@
     depfiles_cl_json = "{\
     \"Version\": \"1.2\",\
     \"Data\": {\
-        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\src\\\\entries\\\\comboentry.cpp\",\
+        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vui\\\\src\\\\entries\\\\comboentry.cpp\",\
         \"ProvidedModule\": \"\",\
         \"Includes\": [\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\entries\\\\comboentry.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vui\\\\include\\\\entries\\\\comboentry.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\string\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals_core.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime.h\",\
@@ -142,12 +143,13 @@
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xpolymorphic_allocator.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cctype\",\
             \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\ctype.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\entries\\\\entry.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vobject.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\reflectionbase.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vmacros.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\objectmanager.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vobjectcontext.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vui\\\\include\\\\entries\\\\entry.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vobject.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\reflectionbase.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vmacros.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\memory.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\objectmanager.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vobjectcontext.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\functional\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\typeinfo\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_typeinfo.h\",\
@@ -177,7 +179,7 @@
             \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\time.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\bit\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\string_view\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\tvector.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\tvector.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\chrono\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_chrono.hpp\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ratio\",\
@@ -216,27 +218,45 @@
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocmes\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xlocmon\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\iomanip\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vclass.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vscriptstruct.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vfield.h\",\
-            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\variant\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\property\\\\vproperty.h\",\
-            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\any\",\
-            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\core.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vfieldregistry.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vclass.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vstruct.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\vfield.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\enums.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\types.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\objects\\\\names.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\templates\\\\aligntemplates.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\templates\\\\integraltemplates.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\templates\\\\pointertemplates.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\assert\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\reflectioncore.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\typeindex\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\vfunction.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\vfunction.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\any\",\
             \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\complex.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ccomplex\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\complex\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ymath.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\vfunctionbase.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\functionutils.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vui\\\\entry.vht.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vcore\\\\include\\\\reflection\\\\venum.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vui\\\\comboentry.vht.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\engine\\\\vui\\\\include\\\\entries\\\\comboboolentry.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\intermediate\\\\generated\\\\vui\\\\comboboolentry.vht.h\"\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\vfunctionbase.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\function\\\\functionutils.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\intermediate\\\\generated\\\\vui\\\\entry.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\reflection\\\\property\\\\vproperty.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\globals.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\gsl\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\algorithm\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\span\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\byte\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\util\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\array\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\version\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\span\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\span_ext\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\algorithm\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\pointers\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\zstring\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\thirdparty\\\\gsl\\\\include\\\\gsl\\\\narrow\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\intermediate\\\\generated\\\\vui\\\\comboentry.vht.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vui\\\\include\\\\entries\\\\comboboolentry.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\intermediate\\\\generated\\\\vui\\\\comboboolentry.vht.h\"\
         ],\
         \"ImportedModules\": [],\
         \"ImportedHeaderUnits\": []\

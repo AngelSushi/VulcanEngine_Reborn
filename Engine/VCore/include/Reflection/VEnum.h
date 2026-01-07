@@ -1,5 +1,6 @@
 #pragma once
-#include <memory>
+
+#include <CoreAPI/precomp.h>
 #include <stdexcept>
 #include <string>
 #include <typeindex>
@@ -18,19 +19,19 @@ namespace VulcanCore {
     
     class VEnum : public VField {
     public:
-        VEnum(const std::string& EnumName) : VField(EnumName) {}
+        //VEnum(const std::string& EnumName) : VField(EnumName) {}
 
-        void AddEntry(const std::string& EntryName,int64_t Value);
+        void AddEntry(const std::string& EntryName,int64 Value);
         const EnumEntry* FindByName(const std::string& EntryName) const;
-        const EnumEntry* FindByValue(int64_t Value) const;
-        const std::string ToString(int64_t Value) const;
+        const EnumEntry* FindByValue(int64 Value) const;
+        const std::string ToString(int64 Value) const;
         
         const std::vector<EnumEntry>& GetEntries() const { return Entries; }
         
     private:
         std::vector<EnumEntry> Entries;
-        std::unordered_map<std::string,int64_t> NameToIndex;
-        std::unordered_map<int64_t,int64_t> ValueToIndex;
+        std::unordered_map<std::string,int64> NameToIndex;
+        std::unordered_map<int64,int64> ValueToIndex;
         
     };
     

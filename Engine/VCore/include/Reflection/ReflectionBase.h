@@ -9,7 +9,7 @@ namespace VulcanCore {
         virtual ~ReflectionBase() = default;
         virtual VClass& GetClass() const = 0;
 
-        static VClass& StaticClass();
+       // static VClass& StaticClass();
     };
 }
 

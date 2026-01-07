@@ -1,0 +1,317 @@
+{
+    files = {
+        [[Engine\VCore\src\CoreAPI\VSurface.cpp]]
+    },
+    depfiles_cl_json = "{\
+    \"Version\": \"1.2\",\
+    \"Data\": {\
+        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\src\\\\coreapi\\\\vsurface.cpp\",\
+        \"ProvidedModule\": \"\",\
+        \"Includes\": [\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\engine\\\\vcore\\\\include\\\\coreapi\\\\vsurface.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\memory\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals_core.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\sal.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\concurrencysal.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vadefs.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xkeycheck.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\exception\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\crtdbg.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_new_debug.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_new.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\crtdefs.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\use_ansi.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstdlib\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\math.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_math.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\stdlib.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_malloc.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_search.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\stddef.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wstdlib.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\limits.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\type_traits\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstddef\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xtr1common\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstdint\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stdint.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\malloc.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_exception.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\eh.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_terminate.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\iosfwd\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstdio\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\stdio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wstdio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_stdio_config.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cstring\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\string.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_memory.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_memcpy_s.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\errno.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_string.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wstring.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cwchar\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\wchar.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wconio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wctype.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wdirect.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wio.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_share.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wprocess.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_wtime.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\sys\\\\stat.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\sys\\\\types.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\intrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\intrin0.inl.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\setjmp.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\immintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\wmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\nmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\smmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\tmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\pmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\emmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\mmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\zmmintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ammintrin.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\typeinfo\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_typeinfo.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xmemory\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\limits\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cfloat\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\float.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\climits\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\intrin0.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\new\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xatomic.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xutility\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_iter_core.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\utility\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\initializer_list\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\concepts\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\compare\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\tuple\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\atomic\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xatomic_wait.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xthreads.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xtimec.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\ctime\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\time.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\string\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xstring\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_sanitizer_annotate_container.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xpolymorphic_allocator.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cctype\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\ctype.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vector\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_bit_utils.hpp\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_main.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_stdinc.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_config.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_platform.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\shared\\\\winapifamily.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\shared\\\\winpackagefamily.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stdarg.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_assert.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_atomic.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_audio.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_error.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_endian.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_mutex.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_thread.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\process.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\corecrt_startup.h\",\
+            \"c:\\\\program files (x86)\\\\windows kits\\\\10\\\\include\\\\10.0.26100.0\\\\ucrt\\\\math.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime_startup.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_rwops.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_clipboard.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_cpuinfo.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_events.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_video.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_pixels.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_rect.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_surface.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_blendmode.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_keyboard.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_keycode.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_scancode.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_mouse.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_joystick.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_guid.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_gamecontroller.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_sensor.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_quit.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_gesture.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_touch.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_filesystem.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_haptic.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_hidapi.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_hints.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_loadso.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_log.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_messagebox.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_metal.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_power.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_render.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_shape.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_system.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_timer.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_version.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_locale.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\sdl_misc.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2_image\\\\2.8.8\\\\e767ba8771b94388985a9c8b33da63f1\\\\include\\\\sdl2\\\\sdl_image.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\begin_code.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\l\\\\libsdl2\\\\2.32.2\\\\8ffa3727140046dfab7a36619efcd6a6\\\\include\\\\sdl2\\\\close_code.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\stdexcept\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\color.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\format.h\",\
+            \"c:\\\\users\\\\amaur\\\\appdata\\\\local\\\\.xmake\\\\packages\\\\f\\\\fmt\\\\12.1.0\\\\8c4c20b71e584e239f907a11eb29da75\\\\include\\\\fmt\\\\base.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cmath\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\system_error\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\__msvc_system_error_abi.hpp\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\cerrno\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xcall_once.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xerrc.h\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\bit\",\
+            \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\string_view\"\
+        ],\
+        \"ImportedModules\": [],\
+        \"ImportedHeaderUnits\": []\
+    }\
+}",
+    values = {
+        [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
+        {
+            "-nologo",
+            "-W4",
+            "-O2",
+            "-fp:fast",
+            "-std:c++20",
+            [[-IEngine\VCore\include]],
+            [[-IC:\Users\amaur\OneDrive\Bureau\Travail\CPP\VulcanEngine_Reborn\VulcanEngine_Reborn\Intermediate\Generated\VulcanEngine]],
+            [[-IEngine\VMath\include]],
+            [[-IEngine\VulcanEngine\include\Vulcan]],
+            [[-IEngine\VulcanEngine\include]],
+            [[-IThirdParty\gsl\include]],
+            [[-ITools\VHT\include]],
+            "/EHsc",
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\n\nlohmann_json\v3.12.0\ab8414047c424750bdc9d7a0ff7afdde\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\4c996e9a89c94ceeb292d61346df83df\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\4c996e9a89c94ceeb292d61346df83df\include\imgui]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\4c996e9a89c94ceeb292d61346df83df\include\backends]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\4c996e9a89c94ceeb292d61346df83df\include\misc\cpp]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include\SDL2]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\8ffa3727140046dfab7a36619efcd6a6\include]],
+            "-external:W0",
+            [[-external:IC:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\8ffa3727140046dfab7a36619efcd6a6\include\SDL2]],
+            "/utf-8",
+            "/wd4251",
+            "-DNDEBUG"
+        }
+    }
+}

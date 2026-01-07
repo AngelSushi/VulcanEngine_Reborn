@@ -7,8 +7,6 @@
 
 
 namespace VulcanCore {
-
-    using Hash = uint32;
     
     // Stock all the static instances of VField (e.g., VScriptStruct, VProperty, ...)
     class ReflectionCore {
@@ -19,22 +17,17 @@ namespace VulcanCore {
             return instance;
         }
 
-        void RegisterType(Hash hash,VField* Field) {
+        void RegisterType(Name FName,VField* Field) {
             ByName[Field->GetName()] = Field;
         }
 
-        VField* Find(Hash hash) {
-            auto it = ByType.find(hash);
-            return it != ByType.end() ? it->second : nullptr;
-        }
-
-        VField* Find(const std::string& FieldName) {
-            auto it = ByName.find(FieldName);
+        VField* Find(Name FName) {
+            auto it = ByName.find(FName);
             return it != ByName.end() ? it->second : nullptr;
         }
 
     private:
-        std::unordered_map<std::string,VField*> ByName;
+        std::unordered_map<Name,VField*> ByName;
     };
 
 }

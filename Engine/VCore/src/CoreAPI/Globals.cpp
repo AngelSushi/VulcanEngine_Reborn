@@ -12,62 +12,62 @@ namespace VCG {
         return NewProp;
     }
     
-    void ConstructProperty(VulcanCore::VField* Out,PropertyBaseParams& Params) {
+    void ConstructProperty(VulcanCore::VField* Out,const PropertyBaseParams* Params) {
         using namespace VulcanCore;
         
         VProperty* NewProp = nullptr;
         
-        switch (Params.PropertyType) {
+        switch (Params->PropertyType) {
             case PropertyTypeFlags_None:    
                 return;
 
             case PropertyTypeFlags_Int8: 
-                NewProp = NewProperty<VInt8Property,Int8PropertyParams>(Out,Params);
+                NewProp = NewProperty<VInt8Property,Int8PropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_Int16:
-                NewProp = NewProperty<VInt16Property,Int16PropertyParams>(Out,Params);
+                NewProp = NewProperty<VInt16Property,Int16PropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_Int:
-                NewProp = NewProperty<VIntProperty,IntPropertyParams>(Out,Params);
+                NewProp = NewProperty<VIntProperty,IntPropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_Int64:
-                NewProp = NewProperty<VInt64Property,Int64PropertyParams>(Out,Params);
+                NewProp = NewProperty<VInt64Property,Int64PropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_Float:
-                NewProp = NewProperty<VFloatProperty,FloatPropertyParams>(Out,Params);
+                NewProp = NewProperty<VFloatProperty,FloatPropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_Double:
-                NewProp = NewProperty<VDoubleProperty,DoublePropertyParams>(Out,Params);
+                NewProp = NewProperty<VDoubleProperty,DoublePropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_UInt8:
-                NewProp = NewProperty<VUInt8Property,UInt8PropertyParams>(Out,Params);
+                NewProp = NewProperty<VUInt8Property,UInt8PropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_UInt16:
-                NewProp = NewProperty<VUInt16Property,UInt16PropertyParams>(Out,Params);
+                NewProp = NewProperty<VUInt16Property,UInt16PropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_UInt:
-                NewProp = NewProperty<VUIntProperty,UIntPropertyParams>(Out,Params);
+                NewProp = NewProperty<VUIntProperty,UIntPropertyParams>(Out,*Params);
                 break;
 
             case PropertyTypeFlags_UInt64:
-                NewProp = NewProperty<VUInt64Property,UInt64PropertyParams>(Out,Params);
+                NewProp = NewProperty<VUInt64Property,UInt64PropertyParams>(Out,*Params);
                 break;
         }
 
-        NewProp->SetElementCount(Params.ElementCount);
+        NewProp->SetElementCount(Params->ElementCount);
     }
     
-    void ConstructProperties(VulcanCore::VField* Out,PropertyBaseParams* PropertyParams, int32 PropertiesSize) {
-        for (size_t index = 0; index < PropertiesSize; ++index) {
-            ConstructProperty(Out,PropertyParams[index]);
+    void ConstructProperties(VulcanCore::VField* Out,const PropertyBaseParams* const*  PropertiesArray, int32 PropertiesSize) {
+        for (size_t index = 0; index < PropertiesSize;index++) {
+            ConstructProperty(Out,PropertiesArray[index]);
         }    
     }
     
@@ -75,6 +75,6 @@ namespace VCG {
 
         OutClass = Params.ClassRegisterFunc();
 
-        ConstructProperties(OutClass,Params.PropertyParams,Params.NumProperties);
+        ConstructProperties(OutClass,Params.PropertiesArray,Params.NumProperties);
     }
 }

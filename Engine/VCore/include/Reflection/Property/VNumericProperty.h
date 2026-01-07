@@ -1,12 +1,9 @@
 #pragma once
 #include <Reflection/VField.h>
 #include <any>
-#include <functional>
-#include <string>
 #include <typeinfo>
-#include <fmt/core.h>
 
-#include "VProperty.h"
+#include <Reflection/Property/VProperty.h>
 
 namespace VulcanCore {
     
@@ -14,8 +11,8 @@ namespace VulcanCore {
 
         DECLARE_FIELD(VNumericProperty,VProperty,CastClassFlags_VNumericProperty)
 
-        VNumericProperty(VField* InOwner, const char* InName);
-        VNumericProperty(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VNumericProperty(const VField* InOwner, Name InName);
+        VNumericProperty(const VField* InOwner,const VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
 
         
         virtual bool IsInteger() const;
@@ -61,26 +58,44 @@ namespace VulcanCore {
         }
 
         static FORCEINLINE void SetPropertyValue(void* propertyPtr, const Type& value) {
-            GetPropertyValuePtr(propertyPtr) = value;
+          //  GetPropertyValuePtr(propertyPtr) = value;
         }
         
     };
     
 
-    template<typename Type>
-    class TNumericProperty : public VNumericProperty {
+    template<typename Type,typename PropertyBaseClass>
+    class TProperty : public PropertyBaseClass {
     public:
+        TProperty(VFieldClass* InClass) :  PropertyBaseClass(InClass) {
+            
+        }
 
-        TNumericProperty(VFieldClass* InClass) : VNumericProperty(InClass) {
+        TProperty(const VField* InOwner, Name InName) : PropertyBaseClass(InOwner, InName) {
             
         }
         
-        TNumericProperty(VField* InOwner, const char* InName) : VNumericProperty(InOwner,InName) {
+        TProperty(const VField* InOwner,const VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None)
+            : PropertyBaseClass(InOwner,Prop,InPropertyFlags) {
+            
+        }
+    };
+    
+    template<typename Type>
+    class TNumericProperty : public TProperty<Type,VNumericProperty> {
+    public:
+        typedef TProperty<Type,VNumericProperty> Super;
+        
+        TNumericProperty(VFieldClass* InClass) : Super(InClass) {
+            
+        }
+        
+        TNumericProperty(const VField* InOwner,Name InName) : Super(InOwner,InName) {
             
         }
 
-        TNumericProperty(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags)
-            : VNumericProperty(InOwner,Prop.Name) {
+        TNumericProperty(const VField* InOwner,const VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None)
+            : Super(InOwner,Prop,InPropertyFlags) {
             
         }
         
@@ -127,8 +142,8 @@ namespace VulcanCore {
 
         DECLARE_FIELD(VInt8Property,TNumericProperty<int8>, CastClassFlags_VInt8Property)
 
-        VInt8Property(VField* InOwner, const char* InName);
-        VInt8Property(VField* InOwner,VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags);
+        VInt8Property(const VField* InOwner, Name InName);
+        VInt8Property(const VField* InOwner,const VCG::Int8PropertyParams& Prop, EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
 
     
@@ -136,8 +151,8 @@ namespace VulcanCore {
 
         DECLARE_FIELD(VInt16Property,TNumericProperty<int16>, CastClassFlags_VInt16Property)
 
-        VInt16Property(VField* InOwner, const char* InName);
-        VInt16Property(VField* InOwner,VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags);
+        VInt16Property(const VField* InOwner, Name InName);
+        VInt16Property(const VField* InOwner,const VCG::Int16PropertyParams& Prop, EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
 
     
@@ -145,16 +160,16 @@ namespace VulcanCore {
         
         DECLARE_FIELD(VIntProperty,TNumericProperty<int32>, CastClassFlags_VIntProperty)
 
-        VIntProperty(VField* InOwner, const char* InName);
-        VIntProperty(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags);
+        VIntProperty(const VField* InOwner, Name InName);
+        VIntProperty(const VField* InOwner,const VCG::IntPropertyParams& Prop, EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
     
     class VInt64Property : public TNumericProperty<int64> {
 
         DECLARE_FIELD(VInt64Property,TNumericProperty<int64>, CastClassFlags_VInt64Property)
 
-        VInt64Property(VField* InOwner, const char* InName);
-        VInt64Property(VField* InOwner, VCG::PropertyParamsWithOffset& Prop, EPropertyFlags InPropertyFlags);
+        VInt64Property(const VField* InOwner, Name InName);
+        VInt64Property(const VField* InOwner,const VCG::Int64PropertyParams& Prop, EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
 
     
@@ -162,48 +177,48 @@ namespace VulcanCore {
 
         DECLARE_FIELD(VUInt8Property,TNumericProperty<uint8>, CastClassFlags_VUInt8Property)
 
-        VUInt8Property(VField* InOwner, const char* InName);
-        VUInt8Property(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VUInt8Property(const VField* InOwner,Name InName);
+        VUInt8Property(const VField* InOwner,const VCG::UInt8PropertyParams& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
     
     class VUInt16Property : public TNumericProperty<uint16> {
 
         DECLARE_FIELD(VUInt16Property,TNumericProperty<uint16>,CastClassFlags_VUInt16Property)
 
-        VUInt16Property(VField* InOwner, const char* InName);
-        VUInt16Property(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VUInt16Property(const VField* InOwner,Name InName);
+        VUInt16Property(const VField* InOwner,const VCG::UInt16PropertyParams& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
     
     class VUIntProperty : public TNumericProperty<uint32> {
 
         DECLARE_FIELD(VUIntProperty,TNumericProperty<uint32>, CastClassFlags_VUIntProperty)
 
-        VUIntProperty(VField* InOwner, const char* InName);
-        VUIntProperty(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VUIntProperty(const VField* InOwner, Name InName);
+        VUIntProperty(const VField* InOwner,const VCG::UIntPropertyParams& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
     
     class VUInt64Property : public TNumericProperty<uint64> {
 
         DECLARE_FIELD(VUInt64Property,TNumericProperty<uint64>, CastClassFlags_VUInt64Property)
 
-        VUInt64Property(VField* InOwner, const char* InName);
-        VUInt64Property(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VUInt64Property(const VField* InOwner, Name InName);
+        VUInt64Property(const VField* InOwner,const VCG::UInt64PropertyParams& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
 
     class VFloatProperty : public TNumericProperty<float> {
 
         DECLARE_FIELD(VFloatProperty,TNumericProperty<float>, CastClassFlags_VFloatProperty)
 
-        VFloatProperty(VField* InOwner, const char* InName);
-        VFloatProperty(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VFloatProperty(const VField* InOwner, Name InName);
+        VFloatProperty(const VField* InOwner,const VCG::FloatPropertyParams& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
     
     class VDoubleProperty : public TNumericProperty<double> {
 
         DECLARE_FIELD(VDoubleProperty,TNumericProperty<double>, CastClassFlags_VDoubleProperty)
 
-        VDoubleProperty(VField* InOwner, const char* InName);
-        VDoubleProperty(VField* InOwner,VCG::PropertyParamsWithOffset& Prop,EPropertyFlags InPropertyFlags);
+        VDoubleProperty(const VField* InOwner,Name InName);
+        VDoubleProperty(const VField* InOwner,const VCG::DoublePropertyParams& Prop,EPropertyFlags InPropertyFlags = PropertyFlags_None);
     };
     
 }

@@ -1,0 +1,222 @@
+{
+    entt = {
+        version = "v3.16.0",
+        installdir = [[C:\Users\amaur\AppData\Local\.xmake\packages\e\entt\v3.16.0\9da180384ab84972909abd8955478e05]],
+        __requirestr = "entt",
+        envs = {
+            PATH = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\e\entt\v3.16.0\9da180384ab84972909abd8955478e05\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\c\cmake\4.0.3\5249d11949644178abe2f58a6ffb0624\bin]]
+            }
+        },
+        __enabled = true,
+        sysincludedirs = [[C:\Users\amaur\AppData\Local\.xmake\packages\e\entt\v3.16.0\9da180384ab84972909abd8955478e05\include]],
+        license = "MIT"
+    },
+    libsdl2 = {
+        license = "zlib",
+        installdir = [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de]],
+        __requirestr = "libsdl2",
+        static = true,
+        links = "SDL2-static",
+        linkdirs = [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]],
+        sysincludedirs = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]]
+        },
+        __components_deps = { },
+        version = "2.32.2",
+        defines = "SDL_MAIN_HANDLED",
+        libfiles = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2-static.lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2main.lib]]
+        },
+        syslinks = {
+            "user32",
+            "gdi32",
+            "winmm",
+            "imm32",
+            "ole32",
+            "oleaut32",
+            "version",
+            "uuid",
+            "advapi32",
+            "setupapi",
+            "shell32"
+        },
+        envs = {
+            PATH = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\c\cmake\4.0.3\5249d11949644178abe2f58a6ffb0624\bin]]
+            }
+        },
+        __enabled = true,
+        __components_orderlist = "lib",
+        components = {
+            lib = {
+                links = "SDL2-static",
+                syslinks = {
+                    "user32",
+                    "gdi32",
+                    "winmm",
+                    "imm32",
+                    "ole32",
+                    "oleaut32",
+                    "version",
+                    "uuid",
+                    "advapi32",
+                    "setupapi",
+                    "shell32"
+                }
+            },
+            __base = {
+                linkdirs = {
+                    [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]]
+                },
+                sysincludedirs = {
+                    [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+                    [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]]
+                },
+                defines = "SDL_MAIN_HANDLED"
+            }
+        }
+    },
+    libsdl2_image = {
+        license = "zlib",
+        installdir = [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1]],
+        static = true,
+        linkdirs = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]]
+        },
+        sysincludedirs = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\include\SDL2]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]]
+        },
+        version = "2.8.8",
+        links = {
+            "SDL2_image-static",
+            "SDL2-static"
+        },
+        __requirestr = "libsdl2_image",
+        defines = "SDL_MAIN_HANDLED",
+        envs = {
+            PATH = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\c\cmake\4.0.3\5249d11949644178abe2f58a6ffb0624\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\bin]]
+            }
+        },
+        __enabled = true,
+        libfiles = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2_image\2.8.8\e767ba8771b94388985a9c8b33da63f1\lib\SDL2_image-static.lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2-static.lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2main.lib]]
+        },
+        syslinks = {
+            "user32",
+            "gdi32",
+            "winmm",
+            "imm32",
+            "ole32",
+            "oleaut32",
+            "version",
+            "uuid",
+            "advapi32",
+            "setupapi",
+            "shell32"
+        }
+    },
+    nlohmann_json = {
+        version = "v3.12.0",
+        installdir = [[C:\Users\amaur\AppData\Local\.xmake\packages\n\nlohmann_json\v3.12.0\ab8414047c424750bdc9d7a0ff7afdde]],
+        __requirestr = "nlohmann_json",
+        envs = {
+            PATH = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\n\nlohmann_json\v3.12.0\ab8414047c424750bdc9d7a0ff7afdde\bin]]
+            }
+        },
+        __enabled = true,
+        sysincludedirs = [[C:\Users\amaur\AppData\Local\.xmake\packages\n\nlohmann_json\v3.12.0\ab8414047c424750bdc9d7a0ff7afdde\include]],
+        license = "MIT"
+    },
+    fmt = {
+        license = "MIT",
+        installdir = [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75]],
+        static = true,
+        linkdirs = [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\lib]],
+        sysincludedirs = [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\include]],
+        version = "12.1.0",
+        cxxflags = "/utf-8",
+        __requirestr = "fmt",
+        envs = {
+            PATH = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\c\cmake\4.0.3\5249d11949644178abe2f58a6ffb0624\bin]]
+            }
+        },
+        __enabled = true,
+        links = "fmt",
+        libfiles = [[C:\Users\amaur\AppData\Local\.xmake\packages\f\fmt\12.1.0\8c4c20b71e584e239f907a11eb29da75\lib\fmt.lib]]
+    },
+    imgui = {
+        syslinks = {
+            "imm32",
+            "user32",
+            "gdi32",
+            "winmm",
+            "ole32",
+            "oleaut32",
+            "version",
+            "uuid",
+            "advapi32",
+            "setupapi",
+            "shell32"
+        },
+        __requireconfs = {
+            configs = {
+                debug = true,
+                with_symbols = true,
+                sdl2_renderer = true,
+                sdl2 = true
+            }
+        },
+        static = true,
+        linkdirs = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib]]
+        },
+        links = {
+            "imgui",
+            "SDL2-static"
+        },
+        __requirestr = "imgui v1.90.9-docking",
+        version = "v1.90.9-docking",
+        installdir = [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba]],
+        defines = "SDL_MAIN_HANDLED",
+        libfiles = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\lib\imgui.lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2-static.lib]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\lib\SDL2main.lib]]
+        },
+        envs = {
+            PATH = {
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\c\cmake\4.0.3\5249d11949644178abe2f58a6ffb0624\bin]],
+                [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\bin]]
+            }
+        },
+        __enabled = true,
+        license = "MIT",
+        sysincludedirs = {
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\imgui]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\backends]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\i\imgui\v1.90.9-docking\eae6bdb6bc93450993e95e3af97e52ba\include\misc\cpp]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include]],
+            [[C:\Users\amaur\AppData\Local\.xmake\packages\l\libsdl2\2.32.2\ecf25b10e4094973bb87ce6e284d25de\include\SDL2]]
+        }
+    }
+}

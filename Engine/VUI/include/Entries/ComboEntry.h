@@ -18,7 +18,7 @@ namespace VUI {
         std::string EntryName;
 
         VFUNCTION()
-        std::string ResolvePropertyWidgetType(ReflectionBase* Obj, VulcanCore::VPropertyBase* Prop, const std::vector<std::string>& Types);
+        std::string ResolvePropertyWidgetType(ReflectionBase* Obj, VulcanCore::VProperty* Prop, const std::vector<std::string>& Types);
 
     protected:
         ComboEntry(std::string InName) : EntryName(std::move(InName)) {}

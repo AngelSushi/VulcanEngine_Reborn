@@ -11,6 +11,7 @@
 #include <functional>
 
 #include <fmt/core.h>
+#include <gsl/assert>
 
 #include <CoreAPI/Types.h>
 
@@ -20,6 +21,6 @@
 #include <Reflection/Function/VFunction.h>
 #include <Reflection/Function/VStaticFunction.h>
 #include <Reflection/VClass.h>
-#include <Reflection/VScruct.h>
+#include <Reflection/VStruct.h>
 
 #include <TVector.h>

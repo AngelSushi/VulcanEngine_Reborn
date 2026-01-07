@@ -1,0 +1,15 @@
+{
+    mtimes = {
+        ["Engine\\VMath\\xmake.lua"] = 1764254747,
+        ["Engine\\VUI\\xmake.lua"] = 1765058874,
+        ["xmake.lua"] = 1765376153,
+        ["Engine\\VCore\\xmake.lua"] = 1765376101,
+        ["Game\\xmake.lua"] = 1764975083,
+        ["Engine\\VulcanEngine\\xmake.lua"] = 1765058551,
+        ["Tools\\VHT\\xmake.lua"] = 1764975120
+    },
+    recheck = false,
+    options = {
+        mode = "debug"
+    }
+}

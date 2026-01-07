@@ -2,33 +2,14 @@
     files = {
         [[Tools\VHT\src\CodeGen\CodeGenHeader.cpp]]
     },
-    values = {
-        [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
-        {
-            "-nologo",
-            "-Zi",
-            "-FS",
-            [[-Fdbuild\windows\x64\debug\compile.VHT.pdb]],
-            "-W4",
-            "-Od",
-            "-std:c++20",
-            [[-IEngine\VulcanEngine\include\Vulcan]],
-            [[-IEngine\VulcanEngine\include]],
-            [[-IThirdParty\gsl\include]],
-            [[-ITools\VHT\include]],
-            "/EHsc",
-            "/utf-8",
-            "/wd4251"
-        }
-    },
     depfiles_cl_json = "{\
     \"Version\": \"1.2\",\
     \"Data\": {\
-        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\tools\\\\vht\\\\src\\\\codegen\\\\codegenheader.cpp\",\
+        \"Source\": \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\tools\\\\vht\\\\src\\\\codegen\\\\codegenheader.cpp\",\
         \"ProvidedModule\": \"\",\
         \"Includes\": [\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\tools\\\\vht\\\\include\\\\codegen\\\\codegenheader.h\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\tools\\\\vht\\\\include\\\\model.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\tools\\\\vht\\\\include\\\\codegen\\\\codegenheader.h\",\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\tools\\\\vht\\\\include\\\\model.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\filesystem\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\yvals_core.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\vcruntime.h\",\
@@ -184,10 +165,29 @@
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\list\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\xnode_handle.h\",\
             \"c:\\\\program files\\\\microsoft visual studio\\\\2022\\\\community\\\\vc\\\\tools\\\\msvc\\\\14.38.33130\\\\include\\\\variant\",\
-            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\__vulcanengine__rebuild__\\\\tools\\\\vht\\\\include\\\\fileutils.h\"\
+            \"c:\\\\users\\\\amaur\\\\onedrive\\\\bureau\\\\travail\\\\cpp\\\\vulcanengine_reborn\\\\vulcanengine_reborn\\\\tools\\\\vht\\\\include\\\\fileutils.h\"\
         ],\
         \"ImportedModules\": [],\
         \"ImportedHeaderUnits\": []\
     }\
-}"
+}",
+    values = {
+        [[C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.38.33130\bin\HostX64\x64\cl.exe]],
+        {
+            "-nologo",
+            "-Zi",
+            "-FS",
+            [[-Fdbuild\windows\x64\debug\compile.VHT.pdb]],
+            "-W4",
+            "-Od",
+            "-std:c++20",
+            [[-IEngine\VulcanEngine\include\Vulcan]],
+            [[-IEngine\VulcanEngine\include]],
+            [[-IThirdParty\gsl\include]],
+            [[-ITools\VHT\include]],
+            "/EHsc",
+            "/utf-8",
+            "/wd4251"
+        }
+    }
 }
