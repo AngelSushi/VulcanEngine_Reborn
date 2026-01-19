@@ -26,6 +26,8 @@ namespace VulcanEngine {
         auto lastTime = SDL_GetPerformanceCounter();
 
         for (unsigned int frame = 0; !window.IsClosed(); frame++) {
+            window.PollEvents(&editorSystem.GetGUIRenderer());
+            
             if (frame == 0) {
                 StartEngineEvent.Trigger();
 
@@ -48,13 +50,12 @@ namespace VulcanEngine {
             }
 
             FrameEndEvent.Trigger(true);
-            
         }
 
-        for (auto& system : systems) {
+/*        for (auto& system : systems) {
             system->Shutdown();
         }
-        
+*/        
     
         return RunResult::Success;
     }

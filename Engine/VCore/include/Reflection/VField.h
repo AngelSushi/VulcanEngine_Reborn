@@ -112,12 +112,13 @@ namespace VulcanCore {
         }
 
         template<typename T>
-        bool IsA() const {
-            if constexpr (T::StaticClassCastFlagsInternal() != 0) {
+        bool IsA() const { // A PATCH 
+            return false;
+            /*if constexpr (T::StaticClassCastFlagsInternal() != 0) {
                 return (GetCastFlags() & T::StaticClassCastFlagsInternal()) != 0;
             } else {
                 return GetClass()->IsChildOf(T::StaticClass());
-            }
+            }*/
         }
         
 

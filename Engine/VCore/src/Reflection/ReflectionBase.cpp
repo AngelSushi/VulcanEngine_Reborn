@@ -7,4 +7,8 @@ namespace VulcanCore {
         static VClass cls("ReflectionBase", "VulcanCore::ReflectionBase", sizeof(ReflectionBase));
         return cls;
     }*/
+    
+   VClass& ReflectionBase::GetClass() const {
+       Expects(0);
+   }
 }

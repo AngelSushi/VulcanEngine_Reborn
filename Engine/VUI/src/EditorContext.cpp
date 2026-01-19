@@ -114,11 +114,11 @@ namespace VUI {
                     if (auto* comp = static_cast<VulcanEngine::VComponent*>(const_cast<void*>(storage.value(Ent->GetNative())))) {
                         HeaderEntry Entry{};
                 
-                        Entry.HeaderName = comp->GetClass().GetName();
+                        /*Entry.HeaderName = comp->GetClass().GetName();
 
                         for (auto& prop : comp->GetClass().GetProperties()) {
                             Entry.Properties[prop.get()] = comp;
-                        }
+                        }*/
 
                         HeadersEntry.push_back(std::move(Entry));
                     }

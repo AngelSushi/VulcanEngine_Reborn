@@ -36,8 +36,8 @@ namespace VulcanEngine{
            return t.GetName() == themeName;
         });
         
-        Window.Theme = *theme; // Not sure if this is safe and no changes possible in runtime for themes
-        Window.Theme.Init();
+      //  Window.Theme = *theme; // Not sure if this is safe and no changes possible in runtime for themes
+      //  Window.Theme.Init();
         
         for (auto& elementDesc : Description["elements"]) {
             VUI::VUIElement Element = {
@@ -103,7 +103,7 @@ namespace VulcanEngine{
     }
 
     void UIAsset::DrawUI(ImGuiWindowFlags InWindowFlags) {
-        Window.Theme.Render(InWindowFlags);
+        //Window.Theme.Render(InWindowFlags);
 
         auto fontScale = VUI::VUIHelper::json_or<float>(Window.properties, "fontScale", 1.f);
         
@@ -139,7 +139,7 @@ namespace VulcanEngine{
 
         ImGui::End();
         
-        Window.Theme.PostRender();
+        //Window.Theme.PostRender();
     }
 
     std::pair<float, float> UIAsset::GetPosition(const ImVec2& DisplaySize) const {

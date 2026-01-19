@@ -10,7 +10,7 @@
 
 namespace VulcanCore {
 
-    class VArrayProperty : public VPropertyBase {
+    class VArrayProperty : public VProperty {
         
     };
     

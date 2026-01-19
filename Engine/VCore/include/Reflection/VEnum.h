@@ -35,7 +35,7 @@ namespace VulcanCore {
         
     };
     
-    template<typename E>
+    /*template<typename E>
     VEnum& StaticEnum() {
         static_assert(std::is_enum_v<E>,"StaticEnum<E> : E must be an enum type");
         VEnum* enumPtr = ReflectionCore::Instance().Find(typeid(E));
@@ -46,9 +46,11 @@ namespace VulcanCore {
 
         return *enumPtr;
     }
-
+*/
+    
     template<typename E>
     std::string EnumToString(E value) {
-        return StaticEnum<E>().ToString(static_cast<int64_t>(value));
+        return "";
+       // return StaticEnum<E>().ToString(static_cast<int64_t>(value));
     }
 }

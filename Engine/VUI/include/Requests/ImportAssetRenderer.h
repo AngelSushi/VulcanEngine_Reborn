@@ -34,7 +34,7 @@ namespace VUI {
                         ImGui::SameLine();
 
                         // Why static struct et pas GetStruct comme GetClass() ? 
-                        auto propBase = data.StaticStruct().find_property(option);
+                        /*auto propBase = data.StaticStruct().Find(option);
                         bool changed = false;
 
                         if (auto* propArray = dynamic_cast<VulcanCore::ArrayProperty*>(propBase)) {
@@ -44,7 +44,7 @@ namespace VUI {
                         else {
                             UIProperty::DrawStructProperty(&data,data.StaticStruct().find_property(option),changed);
                         }
-                            
+                          */  
                     }
 
                     ImGui::Spacing();
@@ -62,7 +62,7 @@ namespace VUI {
         };
 
         void BuildPropertyCategories(const ImportData& data) {
-            for (auto& prop : data.StaticStruct().GetProperties()) {
+            /*for (auto& prop : data.StaticStruct().GetProperties()) {
                 std::string category = std::get<std::string>(prop->FindMeta("Category")); // Check if std::get doees not crash if not std::string
                 
                 auto it = std::find_if(Entries.begin(), Entries.end(), [&](const ImportEntry& InEntry) {
@@ -78,11 +78,11 @@ namespace VUI {
                     entry.Options.push_back(prop->GetName());
                     Entries.push_back(std::move(entry));
                 }
-            }
+            }*/
         }
         
         std::vector<ImportEntry> Entries;
-        std::unordered_map<VulcanCore::VPropertyBase*, int> CombosSelection;
+        //std::unordered_map<VulcanCore::VPropertyBase*, int> CombosSelection;
         
     };
 }

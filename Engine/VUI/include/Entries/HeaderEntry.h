@@ -20,6 +20,6 @@ namespace VUI {
         std::string HeaderName;
 
         VPROPERTY()
-        std::map<VulcanCore::VPropertyBase*,ReflectionBase*> Properties;
+        std::map<VulcanCore::VProperty*,ReflectionBase*> Properties;
     };
 }

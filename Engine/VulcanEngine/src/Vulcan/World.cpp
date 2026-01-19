@@ -7,6 +7,7 @@
 #include "EditorContext.h"
 #include "TVector.h"
 #include "Components/ComponentRegistry.h"
+#include "CoreAPI/VCore.h"
 
 namespace fs = std::filesystem;
 
@@ -47,6 +48,12 @@ namespace VulcanEngine {
 
 	void World::BuildTree() {
 		RootTree = {};
+
+		if (!CurrentScene)
+		{
+			VULCAN_LOG_ERROR("World::BuildTree - No current scene loaded!");
+			return;
+		}
 		
 		RootTree.EntryName = CurrentScene->GetName();
 		RootTree.Payload = &CurrentScene;
