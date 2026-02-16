@@ -14,13 +14,13 @@ static std::string MakePath(const TypeInfoBase& base_info, const std::string& ba
 void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo> enums,const std::string& output_path) {
     std::ostringstream buffer;
 
-    /*buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
+    buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
     
     buffer << "#include <CoreAPI/precomp.h>\n\n";
     
     buffer << "#include \""  << class_info.GetRelativePath() << "\"\n";
     buffer << "#include \"" << class_info.Name << ".vht.h\"\n\n";
-    buffer << "#include <Reflection/VFieldRegistry.h>\n";
+    buffer << "#include <Reflection/ReflectionCore.h>\n";
     buffer << "#include <Reflection/Function/VStaticFunction.h>\n";
     buffer << "#include <unordered_map>\n";
     buffer << "#include <variant>\n\n";
@@ -50,7 +50,7 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
     }
     
     buffer << "\n    static VClass* Construct() { \n";
-    buffer << "        auto* c = new VClass(\"" << class_info.Name << "\", \"" << class_info.GetFullName() << "\",sizeof(" << class_info.GetFullName() << "));\n";
+    /*buffer << "        auto* c = new VClass(\"" << class_info.Name << "\", \"" << class_info.GetFullName() << "\",sizeof(" << class_info.GetFullName() << "));\n";
     
     if (!class_info.ParentName.empty()) {
         buffer << "        c->Parent = &" << class_info.ParentName << "::StaticClass(); \n";
@@ -64,8 +64,8 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
         buffer << "        RegisterFunctions(*c); \n";
     }
 
-    buffer << "        VFieldRegistry::Instance().RegisterType(typeid(" << class_info.GetFullName() << "), c); \n";
-    buffer << "        return c; \n";
+    buffer << "        ReflectionCore::Instance().RegisterType(c); \n";*/
+    buffer << "        return nullptr; \n";
     buffer << "    } \n";
     buffer << "}; \n\n";
 
@@ -143,7 +143,7 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
                 }
             }
 
-            buffer << "    c.AddProperty(std::make_unique<VProperty<" << class_info.GetFullName() << "," << prop.Type << ">>(\"" << prop.Name << "\", &" << class_info.GetFullName() << "::" << prop.Name <<  ", attrs_" << prop.Name << ", meta_" << prop.Name << ")); \n\n";
+            //buffer << "    c.AddProperty(std::make_unique<VProperty<" << class_info.GetFullName() << "," << prop.Type << ">>(\"" << prop.Name << "\", &" << class_info.GetFullName() << "::" << prop.Name <<  ", attrs_" << prop.Name << ", meta_" << prop.Name << ")); \n\n";
         }
         buffer <<"}; \n\n";
     }
@@ -175,16 +175,16 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
     
         buffer <<"}; \n\n";
     }
-    */
+    
     FileUtils::WriteFile(MakePath(class_info,output_path), buffer.str());
 }
 
 void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumInfo> enums,const std::string& output_path) {
     std::ostringstream buffer;
     
-   /* buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
+    buffer << "//AUTO GENERATED. EDIT AT YOUR OWN RISK.\n";
 
-    buffer << "#include <precomp.h>\n\n";
+    buffer << "#include <CoreAPI/precomp.h>\n\n";
 
     buffer << "#include \""  << struct_info.GetRelativePath() << "\"\n";
     buffer << "#include \"" << struct_info.Name << ".vht.h\"\n\n";
@@ -211,7 +211,7 @@ void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumI
     }
     
     buffer << "\n    static VScriptStruct* Construct() { \n";
-    buffer << "        auto* s = new VScriptStruct(\"" << struct_info.Name << "\", \"" << struct_info.GetFullName() << "\", sizeof(" << struct_info.GetFullName() << "));\n";
+ /*   buffer << "        auto* s = new VScriptStruct(\"" << struct_info.Name << "\", \"" << struct_info.GetFullName() << "\", sizeof(" << struct_info.GetFullName() << "));\n";
 
     if (!struct_info.ParentName.empty()) {
         buffer << "        s->Parent = &" << struct_info.ParentName << "::StaticStruct(); \n";
@@ -221,8 +221,8 @@ void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumI
         buffer << "        RegisterProperties(*s); \n";
     }
 
-    buffer << "        VFieldRegistry::Instance().RegisterType(typeid(" << struct_info.GetFullName() << "), s); \n";
-    buffer << "        return s; \n";
+    buffer << "        VFieldRegistry::Instance().RegisterType(typeid(" << struct_info.GetFullName() << "), s); \n";*/
+    buffer << "        return nullptr; \n";
     buffer << "    } \n";
     buffer << "}; \n\n";
 
@@ -295,18 +295,18 @@ void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumI
                 }
             }
 
-           buffer << "    s.AddProperty(std::make_unique<VProperty<" << struct_info.GetFullName() << "," << prop.Type << ">>(\"" << prop.Name << "\", &" << struct_info.GetFullName() << "::" << prop.Name <<  ", attrs_" << prop.Name << ", meta_" << prop.Name << ")); \n\n";
+           //buffer << "    s.AddProperty(std::make_unique<VProperty<" << struct_info.GetFullName() << "," << prop.Type << ">>(\"" << prop.Name << "\", &" << struct_info.GetFullName() << "::" << prop.Name <<  ", attrs_" << prop.Name << ", meta_" << prop.Name << ")); \n\n";
          }
         buffer <<"}; \n\n";
     }
-    */
+    
     FileUtils::WriteFile(MakePath(struct_info,output_path), buffer.str());
 }
 
 void CodeGenCpp::GenerateEnumPart(const EnumInfo& enum_info, std::ostringstream& out) {
     out << "// Begin Enum " << enum_info.Name << "\n";
     
-    out << "struct VC_Construct_VEnum_" << enum_info.Name << "_Statics { \n";
+   /* out << "struct VC_Construct_VEnum_" << enum_info.Name << "_Statics { \n";
     out << "    static VEnum* Construct() { \n";
     out << "        auto* e = new VEnum(\"" << enum_info.Name << "\"); \n";
 
@@ -335,7 +335,8 @@ void CodeGenCpp::GenerateEnumPart(const EnumInfo& enum_info, std::ostringstream&
     out << "}; \n\n";
 
     out << "static VC_CompiledInDeferEnum_" << enum_info.Name << " VC_CompiledInDeferEnum_" << enum_info.Name << "_Obj; \n\n";
-        
+    */    
     out << "// End Enum " << enum_info.Name << "\n\n";
+    
 }
 

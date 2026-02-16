@@ -52,7 +52,7 @@ namespace VUI {
                     auto cursorPos = ImGui::GetCursorPos();
 
                     ImGui::SetCursorPos({cursorPos.x + gridLayout.margin[3],cursorPos.y + gridLayout.margin[0]});
-                    ImGui::TextColored(textCol,"%s", propValue->GetName().c_str());
+                    ImGui::TextColored(textCol,"%s", propValue->GetName().ToString());
 
                     ImGui::SetCursorPos({ ImGui::GetCursorPos().x + 150.0f,cursorPos.y + gridLayout.margin[0]});
                     UIProperty::DrawClassProperty(obj, propValue, changed);

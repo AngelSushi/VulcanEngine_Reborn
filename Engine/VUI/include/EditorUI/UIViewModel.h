@@ -3,12 +3,11 @@
 
 #include <EditorUI/UIValue.h>
 
-// Maybe error with tthis include, circular dependency ? 
-#include <Systems/EditorSystem.h>
+#include "Systems/EditorSystem.h"
 
 
-// Struct used to read data from ui to engine 
-struct UIContextValue {
+// Struct used to read data from engine to ui
+struct UIViewModel {
     
     UIValue Get(const std::string& InKey) const {
         if (Has(InKey)) {

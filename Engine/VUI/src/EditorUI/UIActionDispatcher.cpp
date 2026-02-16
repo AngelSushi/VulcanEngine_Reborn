@@ -1,7 +1,5 @@
 #include <EditorUI/UIActionDispatcher.h>
 
-
-// ATTENTION !
 #include "LogSystem.h"
 #include "Systems/EditorSystem.h"
 
@@ -11,7 +9,7 @@ void UIActionDispatcher::Register(const std::string& InActionName, Handler InHan
         return;
     }
     
-    Handlers[InActionName] = std::move(InHandler);
+    Handlers[InActionName] = InHandler;
 }
 
 void UIActionDispatcher::Unregister(const std::string& InActionName) {

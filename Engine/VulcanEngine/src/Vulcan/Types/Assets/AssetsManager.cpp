@@ -82,7 +82,7 @@ namespace VulcanEngine {
 	}
 
 	void AssetsManager::OnQuit() {
-		for (auto& obj : VulcanCore::ObjectManager::Instance().GetAssetContext().GetObjects()) {
+		/*for (auto& obj : VulcanCore::ObjectManager::Instance().GetAssetContext().GetObjects()) {
 			auto asset = VulcanCore::Cast<VAsset>(obj);
 			if (asset) {
 				auto& type = typeid(*asset);
@@ -92,7 +92,7 @@ namespace VulcanEngine {
 					it->second->Save(asset->GetFilePath(), *asset);
 				}	
 			}
-		}
+		}*/
 	}
 
 	void AssetsManager::OnFrameBegin() {
@@ -136,7 +136,7 @@ namespace VulcanEngine {
 					continue;
 				}
 				
-				auto obj = VulcanCore::ObjectManager::Instance().GetAssetContext().FindIf([&](VObject* o) {
+				/*auto obj = VulcanCore::ObjectManager::Instance().GetAssetContext().FindIf([&](VObject* o) {
 					auto asset = VulcanCore::Cast<VAsset>(o);
 					if (asset) {
 						return asset->GetFilePath() == pathStr;
@@ -148,7 +148,7 @@ namespace VulcanEngine {
 				fileNode.EntryName = entry.path().filename().string();
 				fileNode.Payload = AssetInfo {pathStr, obj ? typeid(*obj) : typeid(void), obj ? VulcanCore::Cast<VAsset>(obj) : nullptr};
 				node.Children.push_back(std::move(fileNode));
-			}
+			*/}
 		}
 
 		return node;

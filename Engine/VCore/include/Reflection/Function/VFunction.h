@@ -14,7 +14,7 @@ namespace VulcanCore  {
     public:
         using MethodType = R(C::*)(Args...);
 
-        VFunction(const std::string& funcName, MethodType funcMethod) : VFunctionBase(std::move(funcName)), Method(funcMethod) {
+        VFunction(const char* funcName, MethodType funcMethod) : VFunctionBase(nullptr,std::move(funcName)), Method(funcMethod) {
             this->Flags |= EFunctionFlags::EFunctionFlags_Member | (IsConstMemberFunction<MethodType>::value ? EFunctionFlags::EFunctionFlags_Const : EFunctionFlags::EFunctionFlags_None);
             BuildParams();
             BuildReturnType();

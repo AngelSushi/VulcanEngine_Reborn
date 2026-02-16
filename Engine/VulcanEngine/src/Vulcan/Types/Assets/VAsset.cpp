@@ -1,5 +1,6 @@
 #include <Types/Assets/VAsset.h>
 
+#include "CoreAPI/VSurface.h"
 #include "Types/VFont.h"
 #include "Types/Assets/Scene.h"
 

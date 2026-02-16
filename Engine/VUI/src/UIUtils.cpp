@@ -326,7 +326,7 @@ void UIProperty::DrawArrayProperty(void* Instance, VulcanCore::VArrayProperty* A
         return;
     }
 
-    std::string label = "##" + ArrayProp->GetName() + "##obj_" + std::to_string(reinterpret_cast<uintptr_t>(Instance)) + "_prop_" + std::to_string(reinterpret_cast<uintptr_t>(ArrayProp));
+   /* std::string label = "##" + ArrayProp->GetName() + "##obj_" + std::to_string(reinterpret_cast<uintptr_t>(Instance)) + "_prop_" + std::to_string(reinterpret_cast<uintptr_t>(ArrayProp));
 
     size_t arraySize = ArrayProp->size(Instance);
     if (arraySize == 0) {
@@ -362,6 +362,6 @@ void UIProperty::DrawArrayProperty(void* Instance, VulcanCore::VArrayProperty* A
                 ImGui::SetItemDefaultFocus();
         }
         ImGui::EndCombo();
-    }
+    }*/
     
 }

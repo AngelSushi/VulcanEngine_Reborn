@@ -1,5 +1,10 @@
 #pragma once
 
+#ifndef VULCAN_LOG_ERROR
+#define VULCAN_LOG_ERROR(...)\
+fmt::print(fmt::fg(fmt::color::red), __VA_ARGS__);
+#endif
+
 
 #define VCLASS(...)
 #define VSTRUCT(...)

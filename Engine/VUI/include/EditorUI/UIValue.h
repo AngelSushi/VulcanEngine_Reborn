@@ -1,27 +1,26 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
+using namespace std;
 // Represent a value in the UI system, which can be a string, number, boolean, or color.
 // Must be replace by property system later.
 
 // std::get can failed in specific sdk's (maybe sdk like console?) so we may implements our own system after. 
 
-using UIData = std::variant<std::string, double, bool,int>;
+using UIData = variant<std::string, double, bool,int>;
 
 struct UIValue {
     UIData Value;
 
-    UIValue() {}
-    
     template<typename T>
-    UIValue(T&& InValue) : Value(std::forward<T>(InValue)) {}
+    UIValue(T&& InValue) : Value(forward<T>(InValue)) {}
 
-   /* bool IsNull() { ADD monostate to variant if need IsNull
+    bool IsNull() {
         return holds_alternative<monostate>(Value);
-    }*/ 
+    }
     
     template<typename T>
-    bool Is() {
-        return std::holds_alternative<T>(Value);
+    bool GetValue() {
+        return holds_alternative<T>(Value);
     }
 };

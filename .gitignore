@@ -1,2 +1,8 @@
-/.xmake
+/build
+/build
 /Intermediate
+/vsxmake2022
+/.xmake
+/build/.deps
+/vsxmake2022
+/build

@@ -33,11 +33,11 @@ namespace VUI {
             if (!hasPreview) {
                 if (Selected.first < objects.size()) {
                     auto* obj = objects[Selected.first].get();
-                    auto* prop = obj->GetClass().find_property(Selected.second);
+                    //auto* prop = obj->GetClass().find_property(Selected.second);
 
-                    if (obj && prop) {
+                    /*if (obj && prop) {
                         preview = *prop->GetTypedPtr<std::string>(obj);
-                    }
+                    }*/
                 }
             }
             else if (hasPreview) {
@@ -48,7 +48,7 @@ namespace VUI {
             if (ImGui::BeginCombo(comboLabel.c_str(), preview.c_str())) {
                 for (size_t i = 0; i < objects.size(); ++i) {
                     auto obj = objects[i].get();
-                    for (auto& prop : obj->GetClass().GetProperties()) {
+                /*    for (auto& prop : obj->GetClass().GetProperties()) {
                         bool changed = false;
                         UIProperty::DrawClassProperty(obj, prop.get(), changed);
                         ImGui::SameLine();
@@ -68,7 +68,7 @@ namespace VUI {
                                 } 
                             }
                         }
-                    }
+                    } */
                     ImGui::NewLine();
                 }
 
@@ -82,7 +82,7 @@ namespace VUI {
         OutPreview.clear();
 
         for (auto& obj : Objects) {
-            if (obj->GetClass().IsA<ComboBoolEntry>()) {
+            /*if (obj->GetClass().IsA<ComboBoolEntry>()) {
                 if (ComboBoolEntry* entry = VulcanCore::Cast<ComboBoolEntry>(obj.get())) {
                     if (entry->IsEnabled) {
                         OutPreview += entry->EntryName + " - ";
@@ -91,7 +91,7 @@ namespace VUI {
             }
             else {
                 VLOG_WARN(EditorUI, "VUICombo::BuildPreview: Entry type must be ComboBoolEntry to build preview.");
-            }
+            }*/
         }
     }
 }
