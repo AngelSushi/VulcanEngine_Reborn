@@ -8,6 +8,11 @@
 
 #include <Renderables/VUIRenderable.h>
 
+#include <EditorUI/UIWidget.h>
+#include <EditorUI/UIBuilder.h>
+
+#include <EditorUI/UIWidgetCache.h>
+
 
 DECLARE_LOG_CATEGORY(UI);
 namespace VulcanEngine {
@@ -15,24 +20,26 @@ namespace VulcanEngine {
     class UIAsset : public VAsset {
         
     public:
-
+        UIAsset();
+        
         static UIAsset* FromJson(const std::string& InJson);
         std::string ToJson() const override;
 
-        void ConstructJSON(const std::string_view& InPath) override;
+        void ConstructJson(const std::string_view& InPath) override;
         void Show();
         void Hide();
 
-        const VUI::VUIWindow& GetWindow() const { return Window; }
 
+        const UIWidget* Root() const { return OutRoot.get(); }
+
+        void Build(const UIRegistry& InRegistry,const UIBuilder& InBuilder);
     private:
-        void BuildWindowFlags(ImGuiWindowFlags& OutFlags) const;
-        void ApplyWindowLayout() const;
-        void DrawUI(ImGuiWindowFlags InWindowFlags);
-        
-        std::pair<float,float> GetPosition(const ImVec2& DisplaySize) const;
-        std::pair<float,float> GetSize(const ImVec2& DisplaySize) const;
-        VUI::VUIWindow Window{};
-        std::vector<std::unique_ptr<VUI::VUIRenderable>> Renderables{};
+
+        void BuildFromNode(const UINode& RootNode);
+        std::unique_ptr<UIWidget> OutRoot;
+        UINode OutNode;
+
+        UIWidgetCache PrevCache;
+        UIWidgetCache Cache;
     };
 }

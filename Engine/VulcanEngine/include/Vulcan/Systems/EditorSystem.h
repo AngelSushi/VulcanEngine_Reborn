@@ -9,10 +9,17 @@
 #include <Types/Assets/UIAsset.h>
 
 #include "TVector.h"
+#include "EditorUI/UIRegistry.h"
 
 DECLARE_LOG_CATEGORY(EditorUI);
 
 namespace VulcanEngine {
+
+    struct EditorRuntimeUI {
+        UIRegistry& Registry;
+        UIBuilder Builder;
+    };
+    
     class VULCAN_ENGINE_API EditorSystem : public VSystem {
     public:
         
@@ -38,5 +45,7 @@ namespace VulcanEngine {
         TVector<UIAsset*> EditorAssets;
         TVector<UIAsset*> Themes;
         std::unique_ptr<ImGuiRenderer> GUIRenderer;
-    };
+
+        EditorRuntimeUI Globals = {};
+    }; 
 }

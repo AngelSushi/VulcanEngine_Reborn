@@ -32,7 +32,7 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
     // ================================================================
 
     for (auto& e : enums) {
-        GenerateEnumPart(e,buffer);
+        //GenerateEnumPart(e,buffer);
     }
     
     // ================================================================
@@ -196,7 +196,7 @@ void CodeGenCpp::GenerateStruct(const StructInfo& struct_info, std::vector<EnumI
     // ================================================================
 
     for (auto& e : enums) {
-        GenerateEnumPart(e,buffer);
+        //GenerateEnumPart(e,buffer);
     }
     
     

@@ -26,6 +26,10 @@ namespace VulcanCore {
          * Don't redefine constructor in derived classes
          */
         VObject() = default;
+
+        // Replace by .vth.h
+        template<typename T, typename... Args>
+        friend T* NewObject(Args&&... args);
         
         void* operator new(std::size_t Size) {
             return ::operator new(Size);

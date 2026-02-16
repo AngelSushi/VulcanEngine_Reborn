@@ -20,7 +20,7 @@ namespace VulcanEngine {
 		return scene;
 	}
 
-	void Scene::ConstructJSON(const std::string_view& InPath) {
+	void Scene::ConstructJson(const std::string_view& InPath) {
 		fs::path Path{ InPath };
 		AssetName = Path.stem().string();
 		FilePath = std::move(Path.string()); // Reconstruct so we have to redo the replace

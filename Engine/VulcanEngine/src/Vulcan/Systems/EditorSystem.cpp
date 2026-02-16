@@ -33,7 +33,8 @@ namespace VulcanEngine{
     }
 
     void EditorSystem::InitSystem() {
-            
+        Globals.Registry = UIRegistry::Create();
+        Globals.Builder = UIBuilder(Globals.Registry);
     }
 
     void EditorSystem::StartSystem() {
@@ -63,6 +64,10 @@ namespace VulcanEngine{
         renderer.RegisterRenderer(VUI::UIRequestType::ImportAsset, std::make_unique<VUI::ImportAssetRenderer>());
         
         RedirectLogSystem();
+
+        for (auto& asset : EditorAssets) {
+            asset->Build(Globals.Registry, Globals.Builder);
+        }
     }
     
     void EditorSystem::OnPreFrame() {

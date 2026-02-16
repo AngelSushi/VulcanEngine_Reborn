@@ -11,7 +11,7 @@ namespace VulcanEngine {
         std::string json((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 
         auto scene = Scene::FromJson(json);
-        scene->ConstructJSON(InPath);
+        scene->ConstructJson(InPath);
         
         return scene;
     }

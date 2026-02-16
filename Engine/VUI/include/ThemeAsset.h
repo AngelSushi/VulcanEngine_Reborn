@@ -22,7 +22,7 @@ namespace VUI {
         ThemeAsset& operator=(const ThemeAsset&) = default;
 
         
-        void ConstructJSON(const std::string_view& InAssetName) override;
+        void ConstructJson(const std::string_view& InAssetName) override;
 
         static ThemeAsset* FromJson(const std::string& InJson);
         std::string ToJson() const override;

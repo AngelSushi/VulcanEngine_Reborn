@@ -11,7 +11,7 @@ namespace VUI {
         std::string json((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 
         auto asset = ThemeAsset::FromJson(json);
-        asset->ConstructJSON(InPath);
+        asset->ConstructJson(InPath);
         
         return asset;
     }
