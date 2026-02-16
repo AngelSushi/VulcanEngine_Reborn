@@ -1,5 +1,7 @@
 #include <EditorUI/UIWidgetCache.h>
 
+#include "EditorUI/UIWidget.h"
+
 void UIWidgetCache::Put(std::unique_ptr<UIWidget> InWidget) {
 }
 
