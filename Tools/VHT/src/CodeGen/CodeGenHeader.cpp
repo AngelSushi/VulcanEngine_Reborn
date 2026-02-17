@@ -17,7 +17,7 @@ void CodeGenHeader::GenerateClass(const ClassInfo& classInfo, std::vector<EnumIn
     buffer << "#include <typeindex>\n";
     buffer << "#include <Reflection/VClass.h>\n";
     buffer << "#include <Reflection/VEnum.h>\n\n";
-
+    
     for (auto& e : enums) {
        // GenerateEnumPart(e,buffer);
     }

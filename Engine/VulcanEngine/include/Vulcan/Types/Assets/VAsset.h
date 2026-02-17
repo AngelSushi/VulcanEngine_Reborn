@@ -35,7 +35,7 @@ namespace VulcanEngine {
 
 		static std::vector<std::string> GetAvailableExtensions();
 		
-		virtual void ConstructJSON(const std::string_view& InPath) {}
+		virtual void ConstructJson(const std::string_view& InPath) {}
 		virtual void ConstructBinary(const std::vector<uint8_t>& Buffer) {}
 		
 		virtual std::string ToJson() const { return "";}

@@ -27,7 +27,7 @@ namespace VulcanEngine {
 		
 
 		static Scene* FromJson(const std::string& InJson);
-		void ConstructJSON(const std::string_view& InPath) override;
+		void ConstructJson(const std::string_view& InPath) override;
 		std::string ToJson() const override;
 
 		static std::vector<std::string> GetAvailableExtensions() {

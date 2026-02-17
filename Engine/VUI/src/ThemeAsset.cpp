@@ -10,7 +10,7 @@
 #include "Reflection/ObjectManager.h"
 
 namespace VUI {
-    void ThemeAsset::ConstructJSON(const std::string_view& InPath) {
+    void ThemeAsset::ConstructJson(const std::string_view& InPath) {
         // Load fonts
 
         std::filesystem::path Path{ InPath };

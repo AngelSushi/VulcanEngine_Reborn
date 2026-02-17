@@ -1,6 +1,8 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
+#include "UIWidget.h"
+
 class UIWidgetCache {
 
 public:

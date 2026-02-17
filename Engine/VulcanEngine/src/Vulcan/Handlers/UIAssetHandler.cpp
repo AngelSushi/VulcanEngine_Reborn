@@ -14,7 +14,7 @@ namespace VulcanEngine {
 
         auto asset = UIAsset::FromJson(json);
         
-        asset->ConstructJSON(InPath);
+        asset->ConstructJson(InPath);
         return asset;
     }
 
