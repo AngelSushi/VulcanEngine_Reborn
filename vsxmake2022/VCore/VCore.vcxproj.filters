@@ -200,7 +200,7 @@ xmake version 2.8.6+HEAD.211710b67
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VObjectContext.h">
       <Filter>include\Reflection</Filter>
     </ClInclude>
-    <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VScruct.h">
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\Reflection\VStruct.h">
       <Filter>include\Reflection</Filter>
     </ClInclude>
     <ClInclude Include="$(XmakeProjectDir)\Engine\VCore\include\TVector.h">

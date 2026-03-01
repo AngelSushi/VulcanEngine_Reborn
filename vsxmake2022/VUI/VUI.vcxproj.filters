@@ -27,6 +27,9 @@ xmake version 2.8.6+HEAD.211710b67
     <Filter Include="include">
       <UniqueIdentifier>{04CCF0D3-2EF0-416E-960B-AE7879D46B6B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\EditorUI">
+      <UniqueIdentifier>{407B0DA5-B64A-479E-A840-6221E51CAECA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="include\Entries">
       <UniqueIdentifier>{CFB6AA0C-35BF-42F3-BEFE-602E9AC0452A}</UniqueIdentifier>
     </Filter>
@@ -44,6 +47,9 @@ xmake version 2.8.6+HEAD.211710b67
     </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{491FBF00-292E-479F-8C8F-7A2AC045023A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EditorUI">
+      <UniqueIdentifier>{923E0623-32D5-4301-BC36-83F99A9F2C78}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Entries">
       <UniqueIdentifier>{AAF23AE1-2A08-47D7-9CCD-51A1855D4B07}</UniqueIdentifier>
@@ -79,6 +85,39 @@ xmake version 2.8.6+HEAD.211710b67
     </ClInclude>
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorContext.h">
       <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIActionDispatcher.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIBuilder.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIContextValue.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UINode.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIPropSchema.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIRegistry.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIRenderContext.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIValue.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIViewModel.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIWidget.h">
+      <Filter>include\EditorUI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIWidgetCache.h">
+      <Filter>include\EditorUI</Filter>
     </ClInclude>
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\Entries\ComboBoolEntry.h">
       <Filter>include\Entries</Filter>
@@ -195,6 +234,24 @@ xmake version 2.8.6+HEAD.211710b67
     </ClCompile>
     <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorContext.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIActionDispatcher.cpp">
+      <Filter>src\EditorUI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIBuilder.cpp">
+      <Filter>src\EditorUI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIPropSchema.cpp">
+      <Filter>src\EditorUI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIRegistry.cpp">
+      <Filter>src\EditorUI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIWidget.cpp">
+      <Filter>src\EditorUI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIWidgetCache.cpp">
+      <Filter>src\EditorUI</Filter>
     </ClCompile>
     <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\Entries\ComboEntry.cpp">
       <Filter>src\Entries</Filter>

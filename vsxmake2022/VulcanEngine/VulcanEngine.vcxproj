@@ -89,14 +89,14 @@ xmake version 2.8.6+HEAD.211710b67
 
   <PropertyGroup Label="XmakePath" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <XmakeBuilDir>$(XmakeProjectDir)\build</XmakeBuilDir>
-    <XmakeConfigDir>$(XmakeProjectDir)\.</XmakeConfigDir>
+    <XmakeConfigDir></XmakeConfigDir>
     <XmakeConfigFileDir></XmakeConfigFileDir>
     <XmakeTargetDir></XmakeTargetDir>
     <XmakeRunDir>$(XmakeProjectDir)\.</XmakeRunDir>
   </PropertyGroup>
   <PropertyGroup Label="XmakePath" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <XmakeBuilDir>$(XmakeProjectDir)\build</XmakeBuilDir>
-    <XmakeConfigDir>$(XmakeProjectDir)\.</XmakeConfigDir>
+    <XmakeConfigDir></XmakeConfigDir>
     <XmakeConfigFileDir></XmakeConfigFileDir>
     <XmakeTargetDir></XmakeTargetDir>
     <XmakeRunDir>$(XmakeProjectDir)\.</XmakeRunDir>

@@ -89,14 +89,14 @@ xmake version 2.8.6+HEAD.211710b67
 
   <PropertyGroup Label="XmakePath" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
     <XmakeBuilDir>$(XmakeProjectDir)\build</XmakeBuilDir>
-    <XmakeConfigDir>$(XmakeProjectDir)\.</XmakeConfigDir>
+    <XmakeConfigDir></XmakeConfigDir>
     <XmakeConfigFileDir></XmakeConfigFileDir>
     <XmakeTargetDir></XmakeTargetDir>
     <XmakeRunDir>$(XmakeProjectDir)\.</XmakeRunDir>
   </PropertyGroup>
   <PropertyGroup Label="XmakePath" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
     <XmakeBuilDir>$(XmakeProjectDir)\build</XmakeBuilDir>
-    <XmakeConfigDir>$(XmakeProjectDir)\.</XmakeConfigDir>
+    <XmakeConfigDir></XmakeConfigDir>
     <XmakeConfigFileDir></XmakeConfigFileDir>
     <XmakeTargetDir></XmakeTargetDir>
     <XmakeRunDir>$(XmakeProjectDir)\.</XmakeRunDir>
@@ -107,6 +107,17 @@ xmake version 2.8.6+HEAD.211710b67
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\Binding.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\ConsoleCommandSystem.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorContext.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIActionDispatcher.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIBuilder.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIContextValue.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UINode.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIPropSchema.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIRegistry.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIRenderContext.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIValue.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIViewModel.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIWidget.h" />
+    <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\EditorUI\UIWidgetCache.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\Entries\ComboBoolEntry.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\Entries\ComboEntry.h" />
     <ClInclude Include="$(XmakeProjectDir)\Engine\VUI\include\Entries\Entry.h" />
@@ -151,6 +162,24 @@ xmake version 2.8.6+HEAD.211710b67
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorContext.cpp">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIActionDispatcher.cpp">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIBuilder.cpp">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIPropSchema.cpp">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIRegistry.cpp">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIWidget.cpp">
+      <CompileAs>CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\EditorUI\UIWidgetCache.cpp">
       <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <ClCompile Include="$(XmakeProjectDir)\Engine\VUI\src\Entries\ComboEntry.cpp">
