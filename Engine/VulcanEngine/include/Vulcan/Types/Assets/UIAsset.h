@@ -32,7 +32,7 @@ namespace VulcanEngine {
 
         const UIWidget* Root() const { return OutRoot.get(); }
 
-        void Build(const UIRegistry& InRegistry,const UIBuilder& InBuilder);
+       // void Build(const UIRegistry& InRegistry,const UIBuilder& InBuilder);
     private:
 
         void BuildFromNode(const UINode& RootNode);
