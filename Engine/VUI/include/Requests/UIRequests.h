@@ -4,7 +4,6 @@
 #include <string>
 #include <vector>
 
-#include "VUIElement.h"
 #include "ThemeAsset.h"
 #include "UIRequest.h"
 #include "Vector2.h"

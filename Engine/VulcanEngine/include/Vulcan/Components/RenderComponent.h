@@ -2,8 +2,6 @@
 #include <Components/VComponent.h>
 
 #include <Export.h>
-#include <Types/Assets/SpriteAsset.h>
-#include <Types/Button.h>
 
 namespace VulcanEngine {
 	class Renderable;

@@ -4,7 +4,6 @@
 
 #include <ThemeAsset.h>
 #include <Systems/VSystem.h>
-#include <ImGuiRenderer.h>
 #include <LogSystem.h>
 
 #include <EditorUI/UIBuilder.h>
@@ -45,15 +44,12 @@ namespace VulcanEngine {
         void OnPreFrame() override;
         void OnPostFrame() override;
 
-        ImGuiRenderer& GetGUIRenderer() const { return *GUIRenderer; }
-
     private:
 
         UIRenderContext MakeRenderContext();
         
         std::vector<std::unique_ptr<UIWidget>> EditorAssets;
         //TVector<UIAsset*> Themes;
-        std::unique_ptr<ImGuiRenderer> GUIRenderer;
 
         EditorUIGlobals Globals;
     }; 

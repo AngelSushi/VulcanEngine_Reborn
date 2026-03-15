@@ -1,13 +1,9 @@
-﻿#include <imgui.h>
+﻿
 #include <Types/Assets/UIAsset.h>
 
 #include <SDL_stdinc.h>
 #include <fmt/color.h>
-
-#include "Layout.h"
 #include "LogSystem.h"
-#include "VUIHelper.h"
-#include "Renderables/VUIFactory.h"
 #include <IRegistry.h>
 
 #include "Reflection/ObjectManager.h"
@@ -72,12 +68,7 @@ namespace VulcanEngine {
     }
     */
     void UIAsset::Show() {
-        if (!ImGui::GetCurrentContext()) {
-            fmt::print(fg(fmt::color::red), "ImGui context is not initialized. Cannot render UIAsset.\n");
-            return;
-        }
         
-        ImGuiWindowFlags windowFlags = 0;
         
       /*  BuildWindowFlags(windowFlags);
         ApplyWindowLayout();

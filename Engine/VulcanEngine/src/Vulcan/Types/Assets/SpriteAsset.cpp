@@ -5,9 +5,6 @@
 
 #include <fmt/core.h>
 
-#include <imgui.h>
-
-#include <VDrawHelper.h>
 #include <CoreAPI/VCore.h>
 #include <ResourceManager.h>
 

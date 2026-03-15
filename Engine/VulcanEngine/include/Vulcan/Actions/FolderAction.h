@@ -1,5 +1,4 @@
 #pragma once
-#include <imgui_internal.h>
 #include <Export.h>
 #include <vector>
 #include <Entity.h>

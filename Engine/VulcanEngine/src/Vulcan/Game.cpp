@@ -26,7 +26,7 @@ namespace VulcanEngine {
         auto lastTime = SDL_GetPerformanceCounter();
 
         for (unsigned int frame = 0; !window.IsClosed(); frame++) {
-            window.PollEvents(&editorSystem.GetGUIRenderer());
+            window.PollEvents();
             
             if (frame == 0) {
                 StartEngineEvent.Trigger();
@@ -40,8 +40,6 @@ namespace VulcanEngine {
             auto delta = (float)(now - lastTime) / SDL_GetPerformanceFrequency();
 
             lastTime = now;
-            
-            window.PollEvents(&editorSystem.GetGUIRenderer());
 
             FrameBeginEvent.Trigger();
 

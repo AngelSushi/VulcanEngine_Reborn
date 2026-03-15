@@ -4,7 +4,7 @@ target("VCore")
     add_files("src/**.cpp")
 	add_includedirs("include", { public = true }) 
 	add_includedirs("$(projectdir)/Intermediate/Generated/VulcanEngine", { public = true })
-	add_packages("fmt","nlohmann_json","imgui","libsdl2","libsdl2_image", { public = true})
+	add_packages("fmt","nlohmann_json","libsdl2","libsdl2_image", { public = true})
 	add_deps("VMath","VHT")
 	
 	before_build(function (target)

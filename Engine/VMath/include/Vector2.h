@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include <complex>
-#include <imgui.h>
 
 #include "VMath.h"
 #include <nlohmann/json.hpp>
@@ -130,12 +129,7 @@ namespace VMath {
         bool operator ==(const Vector2& vec) const {
             return x == vec.x && y == vec.y;
         }
-
-        operator ImVec2() const { 
-            return ImVec2{static_cast<float>(x),static_cast<float>(y) };
-        }
         
-
        /* T operator *(T a, T b) {
             return { a.x * b.x, a.y * b.y };
         }

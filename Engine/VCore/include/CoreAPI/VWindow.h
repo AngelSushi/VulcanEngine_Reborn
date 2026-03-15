@@ -34,7 +34,7 @@ namespace VulcanEngine {
 
 		virtual void Start();
 		virtual void Update(float DeltaTime);
-		void PollEvents(ImGuiRenderer* GUIRenderer = nullptr);
+		void PollEvents();
 		
 		std::string GetTitle() const;
 

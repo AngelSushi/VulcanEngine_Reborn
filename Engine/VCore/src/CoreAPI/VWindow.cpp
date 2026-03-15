@@ -5,7 +5,6 @@
 #include <fmt/core.h>
 
 #include "Game.h"
-#include "ImGuiRenderer.h"
 
 
 namespace VulcanEngine {
@@ -40,11 +39,9 @@ namespace VulcanEngine {
 		}
 	}
 
-	void VWindow::PollEvents(ImGuiRenderer* GUIRenderer) {
+	void VWindow::PollEvents() {
 		SDL_Event event;
 		while (VulcanCore::VCore::PollEvent(event)) {
-			GUIRenderer->ProcessEvent(event);
-			
 			switch (event.type) {
 				case SDL_QUIT:
 					Game::GetQuitEngineEvent().Trigger();

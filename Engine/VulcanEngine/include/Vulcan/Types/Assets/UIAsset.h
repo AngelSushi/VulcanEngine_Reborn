@@ -1,12 +1,9 @@
 ﻿#pragma once
 #include <nlohmann/json.hpp>
 
-#include <VUIWindow.h>
 
 #include <LogSystem.h>
 #include <Types/Assets/VAsset.h>
-
-#include <Renderables/VUIRenderable.h>
 
 #include <EditorUI/UIWidget.h>
 #include <EditorUI/UIBuilder.h>

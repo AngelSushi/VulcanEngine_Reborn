@@ -1,12 +1,7 @@
 ﻿#pragma once
-#include <optional>
-#include <string>
-#include <vector>
 
-#include "VUIElement.h"
-#include "ThemeAsset.h"
+#include <CoreAPI/precomp.h>
 #include "UIRequest.h"
-#include "Vector2.h"
 
 namespace VUI {
     

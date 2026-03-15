@@ -1,6 +1,4 @@
 #include <Components/NameComponent.h>
-#include <imgui.h>
-#include <VDrawHelper.h>
 #include <fmt/core.h>
 
 #include <Types/Assets/AssetsManager.h>

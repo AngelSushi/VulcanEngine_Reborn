@@ -1,4 +1,4 @@
-﻿#include <imgui_internal.h>
+﻿
 #include <Systems/EditorSystem.h>
 
 #include "ThemeAsset.h"
@@ -8,7 +8,6 @@
 #include <IRegistry.h>
 #include <LogRedirectBuffer.h>
 
-#include "Renderables/VUIFactory.h"
 #include <Systems/RenderSystem.h>
 #include <Types/Assets/AssetsManager.h>
 
@@ -16,21 +15,12 @@
 #include "World.h"
 #include "EditorUI/UIRenderContext.h"
 #include "IO/FileManager.h"
-#include "Requests/ImportAssetRenderer.h"
 
 DEFINE_LOG_CATEGORY(EditorUI);
 
 
 namespace VulcanEngine {
     EditorSystem::EditorSystem() {
-        auto& window = VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
-        auto& renderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine");
-
-        GUIRenderer = ImGuiRenderer::Create({
-            .Window = window,
-            .Renderer = renderer
-        });
-
         Game::GetFrameBeginEvent().Register(this,&EditorSystem::OnPreFrame,MEDIUM);
         Game::GetFrameEndEvent().Register(this,&EditorSystem::OnPostFrame,MEDIUM);
     }
@@ -68,7 +58,7 @@ namespace VulcanEngine {
     }
     
     void EditorSystem::OnPreFrame() {
-        GUIRenderer->NewFrame();
+        
     }
 
     void EditorSystem::Iterate(float DeltaTime) {
@@ -81,7 +71,7 @@ namespace VulcanEngine {
     }
     
     void EditorSystem::OnPostFrame() {
-        GUIRenderer->Render();
+        
     }
 
     UIRenderContext EditorSystem::MakeRenderContext() {

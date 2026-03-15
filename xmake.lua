@@ -1,7 +1,6 @@
 add_rules("mode.debug", "mode.release")
 add_rules("plugin.vsxmake.autoupdate")
 
-add_requires("imgui v1.90.9-docking", { configs = { sdl2 = true, sdl2_renderer = true,debug = is_mode("debug"), with_symbols = true}})
 
 add_requires("fmt","libsdl2","libsdl2_image","entt","nlohmann_json")
 add_requireconfs("libsdl2", "**.libsdl2", { configs = { sdlmain = not is_mode("debug") }})

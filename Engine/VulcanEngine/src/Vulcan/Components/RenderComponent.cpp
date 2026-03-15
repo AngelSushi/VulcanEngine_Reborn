@@ -1,5 +1,4 @@
 #include <Components/RenderComponent.h>
-#include <imgui.h>
 #include <fmt/core.h>
 #include <CoreAPI/VCore.h>
 

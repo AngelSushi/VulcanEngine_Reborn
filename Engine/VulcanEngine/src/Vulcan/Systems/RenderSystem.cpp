@@ -4,7 +4,6 @@
 #include <CoreAPI/VRenderer.h>
 #include "CoreAPI/VTexture.h"
 
-#include <imgui.h>
 
 #include <CoreAPI/VCore.h>
 

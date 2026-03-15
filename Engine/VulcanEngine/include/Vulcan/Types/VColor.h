@@ -1,14 +1,13 @@
 #pragma once
 #include <Export.h>
 #include <cstdint>
-#include <imgui.h>
 #include <ostream>
-#include <Types/VType.h>
+#include <string>
 
 
 namespace VulcanEngine {
 
-	class VULCAN_ENGINE_API VColor : public VType {
+	class VULCAN_ENGINE_API VColor {
 		friend class JsonSerializer;
 
 	public:
@@ -16,10 +15,6 @@ namespace VulcanEngine {
 		VColor();
 		VColor(float Red, float Green, float Blue, float Alpha = 1.0f);
 		VColor(std::string_view InHex);
-
-		operator ImVec4() const { 
-			return ImVec4{_R, _G, _B, _A };
-		}
 
 		VColor Lighten(float Amount) const;
 		VColor Darken(float Amount) const;
@@ -35,14 +30,10 @@ namespace VulcanEngine {
 		float A() const { return _A; }
 
 		std::string ToString() { return "[R: " + std::to_string(_R) + " G: " + std::to_string(_G) + " B: " + std::to_string(_B) + " A: " + std::to_string(_A); }
-		
-		// VType Functions
-		int DrawInspector(std::string Label, VType& Value) override;
-
+	
 	private:
 
-		void ShowColorPicker(std::string Label, VType& Value); // Possible to do with new window
-
+	
 		float _OpenColorPicker;
 		float _R, _G, _B, _A;
 

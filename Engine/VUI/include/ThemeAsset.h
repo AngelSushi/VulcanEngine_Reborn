@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include <imgui.h>
 #include <string>
 #include <variant>
 
@@ -28,13 +27,11 @@ namespace VUI {
         std::string ToJson() const override;
 
         void Init();
-        void Render(ImGuiWindowFlags& OutFlags);
+        void Render();
         void PostRender();
 
         
     private:
-        std::vector<std::pair<ImGuiCol,ImVec4>> Colors{};
-        std::vector<std::pair<ImGuiStyleVar,std::variant<float,ImVec2>>> StyleVars{};
 
         VulcanEngine::VFont TitleFont{};
         VulcanEngine::VFont BodyFont{};
