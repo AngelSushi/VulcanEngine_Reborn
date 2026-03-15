@@ -17,6 +17,7 @@ set_warnings("allextra")
 add_includedirs("Engine/VulcanEngine/include/Vulcan", { public = true})
 add_includedirs("Engine/VulcanEngine/include", { public = true})
 add_includedirs("ThirdParty/gsl/include", { public = true })
+add_includedirs("ThirdParty/clay/include", { public = true })
 
 add_headerfiles("Engine/VCore/include/precomp.h", {prefixheader = "precomp.h"})
 
