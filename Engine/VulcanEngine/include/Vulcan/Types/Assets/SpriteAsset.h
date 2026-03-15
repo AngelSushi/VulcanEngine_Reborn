@@ -9,7 +9,7 @@
 #include <Vector2.h>
 #include "CoreAPI/VTexture.h"
 
-#include "BinarySerializer.h"
+#include <IO/BinarySerializer.h>
 #include "AssetsManager.h"
 
 #include <SpriteAsset.vht.h>

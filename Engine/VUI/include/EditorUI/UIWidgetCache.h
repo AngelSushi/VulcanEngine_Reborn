@@ -1,7 +1,6 @@
 #pragma once
 #include <CoreAPI/precomp.h>
-
-#include "UIWidget.h"
+#include <EditorUI/UIWidget.h>
 
 class UIWidgetCache {
 

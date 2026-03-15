@@ -2,20 +2,20 @@
 #include <CoreAPI/precomp.h>
 
 #include "UIRegistry.h"
-#include "UIWidget.h"
 #include "UIWidgetCache.h"
+#include <EditorUI/UIWidget.h>
 
 struct UINode;
 
 class UIBuilder {
 
 public:
-    UIBuilder(const UIRegistry& InRegistry) : Registry(InRegistry) {}
-    
+    UIBuilder(UIRegistry& InRegistry);
+    UIBuilder& operator=(const UIBuilder& Builder);
 
-    std::unique_ptr<UIWidget> Build(const UINode& Root,std::unique_ptr<UIWidget> PrevRoot,UIWidgetCache* PrevCache,UIWidgetCache* NextCache);
+    std::unique_ptr<UIWidget> Build(const UINode& Root,UIWidgetCache* PrevCache,UIWidgetCache* NextCache);
 private:
-    std::unique_ptr<UIWidget> Build_Internal(const UINode& Root,std::unique_ptr<UIWidget>& PrevRoot,UIWidgetCache* PrevCache,UIWidgetCache* NextCache);
+    std::unique_ptr<UIWidget> Build_Internal(const UINode& Root,UIWidgetCache* PrevCache,UIWidgetCache* NextCache);
 
-    const UIRegistry& Registry;
+    UIRegistry& Registry;
 };

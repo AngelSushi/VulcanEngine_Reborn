@@ -20,7 +20,6 @@
 #include "Types/Assets/SpriteAsset.h"
 #include <Windows.h>
 
-using namespace std;
 
 namespace fs = std::filesystem;
 

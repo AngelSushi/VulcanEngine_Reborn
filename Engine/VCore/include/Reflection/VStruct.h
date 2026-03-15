@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 #include <string>
 #include <Reflection/VField.h>
 
@@ -45,8 +46,7 @@ namespace VulcanCore {
         VScriptStruct* structPtr = ReflectionCore::Instance().Find(typeid(T));
 
         if (!structPtr) {
-            //throw std::runtime_error("StaticStruct: Struct not registered");
-            return nullptr;
+            throw std::runtime_error("StaticStruct: Struct not registered");
         }
 
         return *structPtr;

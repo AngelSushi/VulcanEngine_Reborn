@@ -1,10 +1,6 @@
 #pragma once
 #include <CoreAPI/precomp.h>
-
 #include <EditorUI/UIValue.h>
-
-#include "Systems/EditorSystem.h"
-
 
 // Struct used to read data from engine to ui
 struct UIViewModel {
@@ -21,7 +17,7 @@ struct UIViewModel {
     
     void Set(const std::string& InKey, const UIValue& InValue) {
         if (Has(InKey)) {
-            VLOG_WARN(EditorUI,"[EditorUI] The value {} already exist in view model.",InKey);
+            //VLOG_WARN(EditorUI,"[EditorUI] The value {} already exist in view model.",InKey);
             return;
         }
 

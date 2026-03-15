@@ -21,6 +21,10 @@ struct UIRegisteredType
 class UIRegistry {
 
 public:
+    static UIRegistry Create() {
+        return UIRegistry();
+    }
+    
     void Initialize();
 
     void BuildRegistry();

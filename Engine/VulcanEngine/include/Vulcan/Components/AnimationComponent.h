@@ -9,9 +9,6 @@
 
 namespace VulcanEngine {
 
-	class AnimationComponent;
-
-	REGISTER_COMPONENT(AnimationComponent)
 	
 	VCLASS()
 	class VULCAN_ENGINE_API AnimationComponent : public VComponent {

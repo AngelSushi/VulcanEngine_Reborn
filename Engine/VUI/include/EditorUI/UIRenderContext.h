@@ -1,6 +1,9 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
-class UIRenderContext {
-    
+#include "UIViewModel.h"
+
+struct UIRenderContext {
+    UIViewModel GlobalVM;
+    UIViewModel LocalVM;
 };

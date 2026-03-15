@@ -23,10 +23,12 @@ namespace VGame {
 		}
 		
 		void SetupSystems() override {
+			
 			VulcanEngine::RenderSystem::SetConfig({
 				.Title = "VulcanEngine",
 				//.Size = { 2560, 1325}
-				.Size = { 1920, 1080}
+				.Size = { 1920, 1080},
+				.Flags = SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED
 			});
 			
 			AddSystem<VulcanEngine::RenderSystem>();

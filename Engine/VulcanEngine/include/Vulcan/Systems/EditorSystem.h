@@ -6,18 +6,24 @@
 #include <Systems/VSystem.h>
 #include <ImGuiRenderer.h>
 #include <LogSystem.h>
-#include <Types/Assets/UIAsset.h>
 
-#include "TVector.h"
-#include "EditorUI/UIRegistry.h"
+#include <EditorUI/UIBuilder.h>
+#include <EditorUI/UIRegistry.h>
+#include <EditorUI/UIViewModel.h>
+#include <EditorUI/UIWidget.h>
 
 DECLARE_LOG_CATEGORY(EditorUI);
 
 namespace VulcanEngine {
 
-    struct EditorRuntimeUI {
-        UIRegistry& Registry;
-        UIBuilder Builder;
+    struct EditorUIGlobals {
+        UIRegistry Registry = UIRegistry::Create();
+        std::optional<UIBuilder> Builder;
+
+        UIViewModel GlobalVM;
+        
+        UIWidgetCache PrevCache;
+        UIWidgetCache NextCache;
     };
     
     class VULCAN_ENGINE_API EditorSystem : public VSystem {
@@ -29,23 +35,26 @@ namespace VulcanEngine {
         }
 
         EditorSystem();
-        
+
+        virtual void RegisterSystemWidgets();
         // VSystem interface
         void InitSystem() override;
         void StartSystem() override;
         void Iterate(float DeltaTime) override;
 
         void OnPreFrame() override;
-        void SetupDockspace();
         void OnPostFrame() override;
 
         ImGuiRenderer& GetGUIRenderer() const { return *GUIRenderer; }
 
     private:
-        TVector<UIAsset*> EditorAssets;
-        TVector<UIAsset*> Themes;
+
+        UIRenderContext MakeRenderContext();
+        
+        std::vector<std::unique_ptr<UIWidget>> EditorAssets;
+        //TVector<UIAsset*> Themes;
         std::unique_ptr<ImGuiRenderer> GUIRenderer;
 
-        EditorRuntimeUI Globals = {};
+        EditorUIGlobals Globals;
     }; 
 }

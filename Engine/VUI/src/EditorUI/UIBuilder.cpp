@@ -1,15 +1,22 @@
 #include <EditorUI/UIBuilder.h>
 
-std::unique_ptr<UIWidget> UIBuilder::Build(const UINode& Root, std::unique_ptr<UIWidget> PrevRoot, UIWidgetCache* PrevCache,UIWidgetCache* NextCache) {
-    if (!NextCache)
-        NextCache->Clear();
-    
-    return Build_Internal(Root, PrevRoot, PrevCache, NextCache);
+UIBuilder::UIBuilder(UIRegistry& InRegistry) : Registry(InRegistry) {
 }
 
-std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, std::unique_ptr<UIWidget>& PrevRoot, UIWidgetCache* PrevCache,UIWidgetCache* NextCache)
-{
-    // Maybe not worth cause we recreate UIRegisteredType every time, but we can optimize it later if needed.
+UIBuilder& UIBuilder::operator=(const UIBuilder& Builder) {
+    Registry = Builder.Registry;
+    return *this;
+}
+
+
+std::unique_ptr<UIWidget> UIBuilder::Build(const UINode& Root, UIWidgetCache* PrevCache,UIWidgetCache* NextCache) {
+    if (NextCache)
+        NextCache->Clear();
+    
+    return Build_Internal(Root, PrevCache, NextCache);
+}
+
+std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidgetCache* PrevCache,UIWidgetCache* NextCache) {
     UIRegisteredType RegisteredType = Registry.Find(Root.Type);
     if (RegisteredType.IsNull()) 
         return nullptr;
@@ -28,8 +35,24 @@ std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, std::uni
     if (!Widget) Widget = RegisteredType.Create();
     if (!Widget) return nullptr;
 
-    ApplyDefaultSchemas();
+    UINode Local = Root;
+    ApplyDefaultSchemas(Local.Properties,RegisteredType.Schemas);
 
+    Widget->Link(Local);
+    Widget->ApplyProps();
+
+    // Build Childrens
+
+
+
+    
+    if (NextCache) { // ???????????? what are we doing here
+        NextCache->Put(std::move(Widget));
+        return NextCache->Take(Local.Id);
+        
+    }
+
+    return Widget;
     
 }
     

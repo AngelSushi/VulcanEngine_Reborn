@@ -13,7 +13,7 @@
 
 namespace VulcanEngine {
 
-	RenderSystem::RenderSystem(){
+	RenderSystem::RenderSystem() {
 		
 		VWindow& Window = VulcanCore::VCore::GetInstance().CreateWindow({
 			.Title = Config.Title,

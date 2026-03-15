@@ -9,9 +9,13 @@
 #include <typeindex>
 #include <memory>
 #include <functional>
+#include <filesystem>
+#include <fstream>
 
 #include <fmt/core.h>
 #include <gsl/assert>
+
+#include <nlohmann/json.hpp>
 
 #include <CoreAPI/Types.h>
 

@@ -1,24 +1,21 @@
 #pragma once
 #include <CoreAPI/precomp.h>
-
 #include <EditorUI/UINode.h>
-
-class UIRenderContext;
+#include <EditorUI/UIRenderContext.h>
 
 class UIWidget {
-    friend class UIBuilder;
     
 public:
     virtual ~UIWidget() = default; 
 
-    void BuildNode(const UINode& InNode);
+    void Link(const UINode& InNode);
     
-    virtual void ApplyProps() const;
-    virtual void Render(UIRenderContext& InContext) const = 0;
+     void ApplyProps() const;
+     void Render(UIRenderContext& InContext) const;
 
     const std::string& GetID() { return Id; }
     const std::string& GetType() { return Type; }
-    const std::vector<std::unique_ptr<UIWidget>>& GetChildren() { return Children; }
+    const std::vector<std::unique_ptr<UIWidget>>& GetChildren();
 
 private:
     const UINode* Node = nullptr;
@@ -26,4 +23,5 @@ private:
     std::string Type;
 
     std::vector<std::unique_ptr<UIWidget>> Children;
+
 };

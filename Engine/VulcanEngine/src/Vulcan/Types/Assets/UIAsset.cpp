@@ -14,7 +14,13 @@
 
 DEFINE_LOG_CATEGORY(UI);
 
-namespace VulcanEngine{
+namespace VulcanEngine {
+    void UIAsset::ConstructJson(const std::string_view& InPath)
+    {
+     //   VAsset::ConstructJson(InPath);
+    }
+
+    /*
     void UIAsset::ConstructJSON(const std::string_view& InPath) {
         std::filesystem::path Path{ InPath };
         AssetName = Path.stem().string();
@@ -64,7 +70,7 @@ namespace VulcanEngine{
             
         }
     }
-    
+    */
     void UIAsset::Show() {
         if (!ImGui::GetCurrentContext()) {
             fmt::print(fg(fmt::color::red), "ImGui context is not initialized. Cannot render UIAsset.\n");
@@ -73,16 +79,16 @@ namespace VulcanEngine{
         
         ImGuiWindowFlags windowFlags = 0;
         
-        BuildWindowFlags(windowFlags);
+      /*  BuildWindowFlags(windowFlags);
         ApplyWindowLayout();
         DrawUI(windowFlags);
-
+*/
     }
 
     void UIAsset::Hide() {
     }
 
-    void UIAsset::BuildWindowFlags(ImGuiWindowFlags& OutFlags) const {
+   /* void UIAsset::BuildWindowFlags(ImGuiWindowFlags& OutFlags) const {
         OutFlags |= VUI::VUIHelper::json_or<bool>(Window.properties, "no_title_bar", false) ? ImGuiWindowFlags_NoTitleBar : 0;
         OutFlags |= VUI::VUIHelper::json_or<bool>(Window.properties, "no_resize", false) ? ImGuiWindowFlags_NoResize : 0;
         OutFlags |= VUI::VUIHelper::json_or<bool>(Window.properties,"no_move",false) ? ImGuiWindowFlags_NoMove : 0;
@@ -161,11 +167,13 @@ namespace VulcanEngine{
 
         return {width, height};
     }
-
+*/
     UIAsset* UIAsset::FromJson(const std::string& InJson) {
-        auto Asset = VulcanCore::NewObject<UIAsset>();
+       /* auto Asset = VulcanCore::NewObject<UIAsset>();
         Asset->Description = nlohmann::json::parse(InJson);
         return Asset;
+*/
+        return nullptr;
     }
 
     std::string UIAsset::ToJson() const {
