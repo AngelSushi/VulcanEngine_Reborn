@@ -32,6 +32,9 @@ namespace VulcanEngine {
     void EditorSystem::InitSystem() {
         RegisterSystemWidgets();
         Globals.Builder.emplace(Globals.Registry);
+
+        auto& Renderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine");
+        Globals.ClayBackend = new ClayBackend(Renderer.GetRenderer());
     }
     
     void EditorSystem::RegisterSystemWidgets() {
@@ -39,6 +42,11 @@ namespace VulcanEngine {
 
     void EditorSystem::StartSystem() {
         VSystem::StartSystem();
+        
+        auto& window = VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
+        auto size = window.GetSize();
+        
+        Globals.ClayBackend->Initialize(size.first,size.second);
 
         World::GetWorld().LoadScene(std::string("SampleLevel.vscene"));
 
@@ -75,15 +83,29 @@ namespace VulcanEngine {
     void EditorSystem::Iterate(float DeltaTime) {
         VSystem::Iterate(DeltaTime);
 
+        ClayBackend* BackEnd = Globals.ClayBackend;
+
+        auto& window = VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
+        auto size = window.GetSize();
+        
+        BackEnd->BeginFrame(size.first,size.second);
+
         for (auto& Widget : EditorAssets) {
             UIRenderContext Ctx = MakeRenderContext();
             Widget->Render(Ctx);
         }
 
+        Clay_RenderCommandArray Commands = BackEnd->EndFrame();
+
+        BackEnd->GetClayRenderer()->Render(Commands);
     }
     
     void EditorSystem::OnPostFrame() {
         
+    }
+
+    void EditorSystem::Shutdown() {
+        Globals.ClayBackend->Shutdown();
     }
 
     

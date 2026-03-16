@@ -11,6 +11,10 @@
 #include <EditorUI/Core/UIWidget.h>
 #include <EditorUI/Runtime/UIRenderContext.h>
 
+#include <EditorUI/Renderers/UIClaySDLRenderer.h>
+
+#include <EditorUI/Backend/ClayBackend.h>
+
 DECLARE_LOG_CATEGORY(EditorUI);
 
 namespace VulcanEngine {
@@ -23,6 +27,8 @@ namespace VulcanEngine {
         
         UIWidgetCache PrevCache;
         UIWidgetCache NextCache;
+
+        ClayBackend* ClayBackend;
     };
     
     class VULCAN_ENGINE_API EditorSystem : public VSystem {
@@ -40,6 +46,7 @@ namespace VulcanEngine {
         void InitSystem() override;
         void StartSystem() override;
         void Iterate(float DeltaTime) override;
+        void Shutdown() override;
 
         void OnPreFrame() override;
         void OnPostFrame() override;

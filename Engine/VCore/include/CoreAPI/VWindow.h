@@ -40,6 +40,9 @@ namespace VulcanEngine {
 
 		SDL_Window* GetWindow() { return Window; }
 
+		// Find alternative to std::pair
+		std::pair<float,float> GetSize() const;
+
 		VWindow& operator=(const VWindow&) = delete;
 
 		bool IsClosed() const { return Close; }

@@ -5,6 +5,9 @@
 fmt::print(fmt::fg(fmt::color::red), __VA_ARGS__);
 #endif
 
+#define SDL_RENDERER 1
+#define VULKAN_RENDERER 0
+#define OPENGL_RENDERER 0
 
 #define VCLASS(...)
 #define VSTRUCT(...)

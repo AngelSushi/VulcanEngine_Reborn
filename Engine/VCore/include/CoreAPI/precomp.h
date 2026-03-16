@@ -16,7 +16,7 @@
 #include <gsl/assert>
 
 #include <nlohmann/json.hpp>
-
+#include <clay/clay.h>
 #include <CoreAPI/Types.h>
 
 #include <Reflection/ReflectionBase.h>

@@ -55,4 +55,11 @@ namespace VulcanEngine {
 		return SDL_GetWindowTitle(Window);
 	}
 
+	std::pair<float,float> VWindow::GetSize() const {
+		int Width;
+		int Height;
+		
+		SDL_GetWindowSize(Window,&Width,&Height);
+		return {Width,Height};
+	}
 }
