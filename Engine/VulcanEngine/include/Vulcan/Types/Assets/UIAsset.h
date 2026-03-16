@@ -5,10 +5,9 @@
 #include <LogSystem.h>
 #include <Types/Assets/VAsset.h>
 
-#include <EditorUI/UIWidget.h>
-#include <EditorUI/UIBuilder.h>
+#include <EditorUI/Core/UIWidget.h>
 
-#include <EditorUI/UIWidgetCache.h>
+#include <EditorUI/Core/UIWidgetCache.h>
 
 
 DECLARE_LOG_CATEGORY(UI);

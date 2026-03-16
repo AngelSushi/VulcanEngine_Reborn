@@ -1,6 +1,6 @@
 #pragma once
 #include <CoreAPI/precomp.h>
-#include <EditorUI/UIValue.h>
+#include <EditorUI/Core/UIValue.h>
 
 
 // Represents data read in the .json file for a UI node.

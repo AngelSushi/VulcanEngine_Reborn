@@ -1,7 +1,7 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
-#include <EditorUI/UIValue.h>
+#include <EditorUI/Core/UIValue.h>
 
 // Delete by prop system later, this is just a temporary struct to represent the type of a property, we may need to replace it later.
 enum EPropType

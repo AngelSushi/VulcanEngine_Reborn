@@ -1,7 +1,7 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
-#include "UIValue.h"
+#include <EditorUI/Core/UIValue.h>
 
 struct UIActionContext {
     std::string WidgetId;

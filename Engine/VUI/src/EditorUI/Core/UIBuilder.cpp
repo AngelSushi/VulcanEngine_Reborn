@@ -1,4 +1,4 @@
-#include <EditorUI/UIBuilder.h>
+#include <EditorUI/Core/UIBuilder.h>
 
 UIBuilder::UIBuilder(UIRegistry& InRegistry) : Registry(InRegistry) {
 }

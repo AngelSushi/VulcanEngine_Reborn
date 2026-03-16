@@ -1,5 +1,5 @@
-#include <EditorUI/UIPropSchema.h>
-#include <EditorUI/UIValue.h>
+#include <EditorUI/Core/UIPropSchema.h>
+#include <EditorUI/Core/UIValue.h>
 
 #include "LogSystem.h"
 #include "Systems/EditorSystem.h"

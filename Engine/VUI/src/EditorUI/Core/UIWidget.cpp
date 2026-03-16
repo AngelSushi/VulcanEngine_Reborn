@@ -1,4 +1,4 @@
-#include <EditorUI/UIWidget.h>
+#include <EditorUI/Core/UIWidget.h>
 
 void UIWidget::Link(const UINode& InNode) {
     Node = &InNode;

@@ -1,15 +1,15 @@
 ﻿#pragma once
-#include <memory>
-#include <vector>
+#include <CoreAPI/precomp.h>
 
 #include <ThemeAsset.h>
 #include <Systems/VSystem.h>
 #include <LogSystem.h>
 
-#include <EditorUI/UIBuilder.h>
-#include <EditorUI/UIRegistry.h>
-#include <EditorUI/UIViewModel.h>
-#include <EditorUI/UIWidget.h>
+#include <EditorUI/Core/UIBuilder.h>
+#include <EditorUI/Core/UIRegistry.h>
+#include <EditorUI/Runtime/UIViewModel.h>
+#include <EditorUI/Core/UIWidget.h>
+#include <EditorUI/Runtime/UIRenderContext.h>
 
 DECLARE_LOG_CATEGORY(EditorUI);
 

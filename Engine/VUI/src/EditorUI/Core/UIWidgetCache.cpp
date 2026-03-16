@@ -1,6 +1,4 @@
-#include <EditorUI/UIWidgetCache.h>
-
-#include "EditorUI/UIWidget.h"
+#include <EditorUI/Core/UIWidgetCache.h>
 
 void UIWidgetCache::Clear() {
     Cache.clear();

@@ -13,7 +13,11 @@
 
 #include "JsonSerializer.h"
 #include "World.h"
-#include "EditorUI/UIRenderContext.h"
+#include <EditorUI/Runtime/UIRenderContext.h>
+
+#include <EditorUI/Core/UINode.h>
+
+#include <EditorUI/Core/UIWidget.h>
 #include "IO/FileManager.h"
 
 DEFINE_LOG_CATEGORY(EditorUI);
@@ -56,6 +60,13 @@ namespace VulcanEngine {
            }
         }
     }
+
+    UIRenderContext EditorSystem::MakeRenderContext() {
+        UIRenderContext Ctx;
+        Ctx.GlobalVM = Globals.GlobalVM;
+        Ctx.LocalVM = {};
+        return Ctx;
+    }
     
     void EditorSystem::OnPreFrame() {
         
@@ -68,16 +79,12 @@ namespace VulcanEngine {
             UIRenderContext Ctx = MakeRenderContext();
             Widget->Render(Ctx);
         }
+
     }
     
     void EditorSystem::OnPostFrame() {
         
     }
 
-    UIRenderContext EditorSystem::MakeRenderContext() {
-        UIRenderContext Ctx;
-        Ctx.GlobalVM = Globals.GlobalVM;
-        Ctx.LocalVM = {};
-        return Ctx;
-    }
+    
 }

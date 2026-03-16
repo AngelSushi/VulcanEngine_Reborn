@@ -1,4 +1,4 @@
-#include <EditorUI/UIRegistry.h>
+#include <EditorUI/Core/UIRegistry.h>
 
 void UIRegistry::Initialize() {
     // Here we try to find the base class for all UI elements.

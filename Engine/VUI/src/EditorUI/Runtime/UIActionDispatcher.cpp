@@ -1,4 +1,4 @@
-#include <EditorUI/UIActionDispatcher.h>
+#include <EditorUI/Runtime/UIActionDispatcher.h>
 
 #include "LogSystem.h"
 #include "Systems/EditorSystem.h"

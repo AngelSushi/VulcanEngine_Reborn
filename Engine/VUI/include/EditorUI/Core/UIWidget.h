@@ -1,7 +1,7 @@
 #pragma once
 #include <CoreAPI/precomp.h>
-#include <EditorUI/UINode.h>
-#include <EditorUI/UIRenderContext.h>
+#include <EditorUI/Core/UINode.h>
+#include <EditorUI/Runtime/UIRenderContext.h>
 
 class UIWidget {
     

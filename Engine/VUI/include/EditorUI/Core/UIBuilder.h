@@ -3,7 +3,7 @@
 
 #include "UIRegistry.h"
 #include "UIWidgetCache.h"
-#include <EditorUI/UIWidget.h>
+#include <EditorUI/Core/UIWidget.h>
 
 struct UINode;
 
