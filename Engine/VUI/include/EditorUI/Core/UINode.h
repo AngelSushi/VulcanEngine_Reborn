@@ -2,6 +2,10 @@
 #include <CoreAPI/precomp.h>
 #include <EditorUI/Core/UIValue.h>
 
+#include <IO/JSON/JsonSerializer.h>
+
+#include "JsonHelper.h"
+
 
 // Represents data read in the .json file for a UI node.
 struct UINode {
@@ -18,6 +22,10 @@ struct UINode {
     // For style, we can either have a string (for a theme file directly) or a map of style properties.
     //std::variant<std::string,std::unordered_map<std::string,std::string>> Style;
     std::string Style;
+
+    UIValue TryProp(const std::string& Key) {
+        return Properties.contains(Key) ? Properties[Key] : UIValue();
+    }
 };
 
 inline void to_json(nlohmann::json& Object, const UINode& Node) {
@@ -30,7 +38,7 @@ inline void to_json(nlohmann::json& Object, const UINode& Node) {
         {"Style", Node.Style}
     };
 
-   /* nlohmann::json Properties;
+    nlohmann::json Properties;
     for (const auto& [Key, Value] : Node.Properties) {
         if (Value.Is<std::string>()) {
             Properties[Key] = Value.Get<std::string>();
@@ -40,10 +48,15 @@ inline void to_json(nlohmann::json& Object, const UINode& Node) {
             Properties[Key] = Value.Get<bool>();
         } else if (Value.Is<int>()) {
             Properties[Key] = Value.Get<int>();
+        } else if (Value.Is<VMath::Vector2f>()) {
+            Properties[Key] = Value.Get<VMath::Vector2f>();
         }
+        /*else if (Value.Is<ClaySize>()) {
+            Properties[Key] = Value.Get<ClaySize>();
+        }*/
     }
 
-    Object["Properties"] = Properties;*/
+    Object["Properties"] = Properties;
 }
 
 inline void from_json(const nlohmann::json& Object, UINode& Node)
@@ -55,19 +68,30 @@ inline void from_json(const nlohmann::json& Object, UINode& Node)
     Node.Events = Object.at("Events");
     Node.Style = Object.at("Style");
 
-  /*  const auto& Properties = Object.at("Properties");
+    const auto& Properties = Object.at("Properties");
     for (auto it = Properties.begin(); it != Properties.end(); ++it) {
         const std::string& Key = it.key();
-        const auto& Value = it.value();
+        const auto& JsonProperty = it.value();
 
-        if (Value.is_string()) {
-            Node.Properties[Key] = Value.get<std::string>();
-        } else if (Value.is_number_float()) {
-            Node.Properties[Key] = Value.get<float>();
-        } else if (Value.is_boolean()) {
-            Node.Properties[Key] = Value.get<bool>();
-        } else if (Value.is_number_integer()) {
-            Node.Properties[Key] = Value.get<int>();
+        if (JsonProperty.is_string()) {
+            Node.Properties[Key] = JsonProperty.get<std::string>();
+        } else if (JsonProperty.is_number_float()) {
+            Node.Properties[Key] = JsonProperty.get<float>();
+        } else if (JsonProperty.is_boolean()) {
+            Node.Properties[Key] = JsonProperty.get<bool>();
+        } else if (JsonProperty.is_number_integer()) {
+            Node.Properties[Key] = JsonProperty.get<int>();
+        } else if (JsonProperty.is_array()) {
+            // Modify after for a most generic system
+            if (JsonProperty.size() == 2 && JsonProperty[0].is_number() && JsonProperty[1].is_number()) {
+                Node.Properties[Key] = JsonProperty.get<VMath::Vector2f>();
+            }
+        } else if (JsonProperty.is_object()) { 
+            for (auto& Parser : Parsers) {
+                if (Parser(JsonProperty, Node.Properties, Key)) {
+                    break;
+                }
+            }
         }
-    }*/
+    }
 }

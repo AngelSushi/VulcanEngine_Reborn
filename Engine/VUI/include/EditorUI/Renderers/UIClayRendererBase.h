@@ -13,7 +13,7 @@ public:
     
     void Render(const Clay_RenderCommandArray& Commands);
     virtual void DrawCommand(const Clay_RenderCommand& Command) = 0;
-private:
+protected:
     SDL_FRect ToRect(const Clay_BoundingBox& Box) const;
     void SetColor(SDL_Renderer* Renderer, const Clay_Color& Color) const;
 

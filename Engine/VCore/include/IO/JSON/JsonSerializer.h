@@ -33,7 +33,6 @@ namespace VulcanEngine {
 			}
 		}
 	};
-
 	
 	using namespace VMath;
 	template<typename T>
@@ -46,10 +45,6 @@ namespace VulcanEngine {
 	void to_json(nlohmann::json& Json, const Vector2<T>& Vec) {
 		Json["x"] = Vec.X;
 		Json["y"] = Vec.Y;
-	}
-
-	void from_json(const nlohmann::json& Json, VColor Color) {
-	
 	}
 }
 

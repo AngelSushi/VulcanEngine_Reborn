@@ -2,7 +2,6 @@
 #include <Systems/EditorSystem.h>
 
 #include "ThemeAsset.h"
-#include "Requests/UIRequestRenderer.h"
 #include "Requests/UIRequests.h"
 #include <Game.h>
 #include <IRegistry.h>
@@ -11,7 +10,7 @@
 #include <Systems/RenderSystem.h>
 #include <Types/Assets/AssetsManager.h>
 
-#include "JsonSerializer.h"
+#include <IO/JSON/JsonSerializer.h>
 #include "World.h"
 #include <EditorUI/Runtime/UIRenderContext.h>
 
@@ -20,10 +19,23 @@
 #include <EditorUI/Core/UIWidget.h>
 #include "IO/FileManager.h"
 
+#include <clay/clay.h>  
+
+#include <EditorUI/Core/Components/WWidget.h>
+
+#include <EditorUI/Backend/Clay/ClayBackend.h>
+
+#include "EditorUI/Core/Components/Button.h"
+#include "EditorUI/Runtime/WidgetApplication.h"
+
+#include <CoreAPI/VRenderer.h>
+
 DEFINE_LOG_CATEGORY(EditorUI);
 
 
 namespace VulcanEngine {
+    VulcanEngine::EditorUIGlobals VulcanEngine::EditorSystem::Globals{};
+    
     EditorSystem::EditorSystem() {
         Game::GetFrameBeginEvent().Register(this,&EditorSystem::OnPreFrame,MEDIUM);
         Game::GetFrameEndEvent().Register(this,&EditorSystem::OnPostFrame,MEDIUM);
@@ -38,15 +50,34 @@ namespace VulcanEngine {
     }
     
     void EditorSystem::RegisterSystemWidgets() {
+        auto& Registry = Globals.Registry;
+
+        Registry.AddEntry("WWidget", UIRegisteredType{
+            .Schemas = {
+                // Define any schemas for WWidget properties here
+            },
+            .Create = []() -> std::unique_ptr<UIWidget> {
+                return std::make_unique<WWidget>();
+            }
+        });
+
+        Registry.AddEntry("Button", UIRegisteredType{
+            .Schemas = {
+                // Define any schemas for WWidget properties here
+            },
+            .Create = []() -> std::unique_ptr<UIWidget> {
+                return std::make_unique<Button>();
+            }
+        });
     }
 
     void EditorSystem::StartSystem() {
         VSystem::StartSystem();
         
-        auto& window = VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
-        auto size = window.GetSize();
+        Window = &VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
+        Renderer = &VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine");
         
-        Globals.ClayBackend->Initialize(size.first,size.second);
+        Globals.ClayBackend->Initialize(Window->GetSize().first,Window->GetSize().second);
 
         World::GetWorld().LoadScene(std::string("SampleLevel.vscene"));
 
@@ -54,7 +85,7 @@ namespace VulcanEngine {
         std::vector<UINode> NodeAssets;
         JsonSerializer::LoadAll<UINode>(EditorAssetsContent,NodeAssets);
   
-        RedirectLogSystem();
+       // RedirectLogSystem();
 
         for (auto& Node : NodeAssets) {
            if (Globals.Builder.has_value()) {
@@ -67,6 +98,7 @@ namespace VulcanEngine {
                 }
            }
         }
+        
     }
 
     UIRenderContext EditorSystem::MakeRenderContext() {
@@ -83,21 +115,12 @@ namespace VulcanEngine {
     void EditorSystem::Iterate(float DeltaTime) {
         VSystem::Iterate(DeltaTime);
 
-        ClayBackend* BackEnd = Globals.ClayBackend;
-
-        auto& window = VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
-        auto size = window.GetSize();
+        WidgetApplication WApplication;
         
-        BackEnd->BeginFrame(size.first,size.second);
-
-        for (auto& Widget : EditorAssets) {
-            UIRenderContext Ctx = MakeRenderContext();
-            Widget->Render(Ctx);
-        }
-
-        Clay_RenderCommandArray Commands = BackEnd->EndFrame();
-
-        BackEnd->GetClayRenderer()->Render(Commands);
+        WApplication.InitApp(Window,Renderer,EditorAssets);
+        
+        // Maybe useless DeltaTime here 
+        WApplication.Tick(DeltaTime);
     }
     
     void EditorSystem::OnPostFrame() {

@@ -18,6 +18,7 @@ std::unique_ptr<UIWidget> UIBuilder::Build(const UINode& Root, UIWidgetCache* Pr
 
 std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidgetCache* PrevCache,UIWidgetCache* NextCache) {
     UIRegisteredType RegisteredType = Registry.Find(Root.Type);
+    
     if (RegisteredType.IsNull()) 
         return nullptr;
 
@@ -42,7 +43,12 @@ std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidget
     Widget->ApplyProps();
 
     // Build Childrens
-
+    for (const UINode& Child : Local.Children) {
+        std::unique_ptr<UIWidget> ChildWidget = Build_Internal(Child, PrevCache, NextCache);
+        if (ChildWidget) {
+            Widget->AddChild(std::move(ChildWidget));
+        }
+    }
 
 
     

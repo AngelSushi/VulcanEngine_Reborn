@@ -1,50 +1,18 @@
 {
-  "Type": "Window",
+  "Type": "WWidget",
   "Id": "Inspector",
   "Children": [
     {
-      "Type": "Grid",
+      "Type": "Button",
       "Id": "addcomponents",
-      "Children": [
-        {
-          "Type": "Combo",
-          "Id": "componentlist",
-          "Children": [],
-          "Properties": {
-            "fontScale": 0.85,
-            "size": [0.65, 28]
-          },
-          "Bindings": {
-            "value": "Editor::GetAvailableComponents"
-          },
-          "Events": {
-            "Clicked": "Editor::MarkComponentAdd"
-          },
-          "Style": ""
-        },
-        {
-          "Type": "Button",
-          "Id": "Add Component",
-          "Children": [],
-          "Properties": {
-            "color": "#8e680b",
-            "fontScale": 0.85,
-            "size": [130, 30]
-          },
-          "Bindings": {
-            "value": "Editor::AddComponent"
-          },
-          "Events": {},
-          "Style": ""
-        }
-      ],
+      "Children": [],
       "Properties": {
-        "anchor": "TopLeft",
-        "border": false,
-        "childAnchor": "CenterLeft",
-        "margin": [15, 0, 0, 20],
-        "size": [0.95, 45],
-        "spacing": [20, 0]
+        "backgroundColor": "#8e680b",
+        "position": [200, 100],
+        "size": {
+            "x": { "type": "FIXED", "value": 200 },
+            "y": { "type": "FIXED", "value": 200 }
+        }
       },
       "Bindings": {
         "visible": "Editor::HasEntitySelected"
@@ -54,14 +22,12 @@
     }
   ],
   "Properties": {
-    "fontScale": 2,
-    "height": 0.92,
-    "no_resize": true,
-    "no_title_bar": true,
-    "width": 0.3,
-    "x": 0.7,
-    "y": 0.08,
-    "z-index": 1
+    "backgroundColor": "#121212",
+    "position": [0, 0],
+    "size": {
+      "x": { "type": "GROW", "value": 0 },
+      "y": { "type": "FIXED", "value": 300 }
+    }
   },
   "Bindings": {},
   "Events": {},

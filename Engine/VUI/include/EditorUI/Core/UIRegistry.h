@@ -6,15 +6,11 @@
 
 struct UIRegisteredType
 {
-    std::string Name = "EMPTY_STRING"; // make for future custom string class that has EMPTY_STRING has null value
     std::vector<UIPropSchema> Schemas;
     std::function<std::unique_ptr<UIWidget>()> Create;
-
-    UIRegisteredType() = default;
-    UIRegisteredType(std::string InName, std::vector<UIPropSchema> InSchemas, std::function<std::unique_ptr<UIWidget>()> InCreate): Name(std::move(InName)), Schemas(std::move(InSchemas)), Create(std::move(InCreate)) {}
-
+    
     bool IsNull() {
-        return Name == "EMPTY_STRING";
+        return !Create;
     }
 };
 
@@ -24,10 +20,8 @@ public:
     static UIRegistry Create() {
         return UIRegistry();
     }
-    
-    void Initialize();
 
-    void BuildRegistry();
+    void AddEntry(std::string Key,UIRegisteredType Type);
 
     bool Has(const std::string& Key) const;
     UIRegisteredType Find(const std::string& Key) const;

@@ -1,6 +1,7 @@
 ﻿#include <Game.h>
 
 #include <chrono>
+#include <iostream>
 #include <SDL_events.h>
 #include <fmt/color.h>
 
@@ -24,6 +25,10 @@ namespace VulcanEngine {
 
         
         auto lastTime = SDL_GetPerformanceCounter();
+
+        for (const auto& system : systems) {
+            system->InitSystem();
+        }
 
         for (unsigned int frame = 0; !window.IsClosed(); frame++) {
             window.PollEvents();

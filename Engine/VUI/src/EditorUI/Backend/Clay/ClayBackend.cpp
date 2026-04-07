@@ -1,4 +1,8 @@
-#include <EditorUI/Backend/ClayBackend.h>
+#include <EditorUI/Backend/Clay/ClayBackend.h>
+
+#define CLAY_IMPLEMENTATION
+#include <clay/clay.h>
+
 
 ClayBackend::ClayBackend(SDL_Renderer* Renderer) {
     #if SDL_RENDERER
@@ -21,6 +25,7 @@ void ClayBackend::Shutdown() {
 }
 
 void ClayBackend::BeginFrame(float Width, float Height) {
+    Clay_SetLayoutDimensions(Clay_Dimensions { .width = Width, .height = Height });
     Clay_BeginLayout();
 }
 

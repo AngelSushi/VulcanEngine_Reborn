@@ -12,8 +12,11 @@
 #include <EditorUI/Runtime/UIRenderContext.h>
 
 #include <EditorUI/Renderers/UIClaySDLRenderer.h>
+#include <EditorUI/Backend/Clay/ClayBackend.h>
 
-#include <EditorUI/Backend/ClayBackend.h>
+#include "CoreAPI/VCore.h"
+#include "CoreAPI/VWindow.h"
+
 
 DECLARE_LOG_CATEGORY(EditorUI);
 
@@ -51,6 +54,9 @@ namespace VulcanEngine {
         void OnPreFrame() override;
         void OnPostFrame() override;
 
+        static const EditorUIGlobals& GetGlobals() {
+            return Globals;
+        }
     private:
 
         UIRenderContext MakeRenderContext();
@@ -58,6 +64,9 @@ namespace VulcanEngine {
         std::vector<std::unique_ptr<UIWidget>> EditorAssets;
         //TVector<UIAsset*> Themes;
 
-        EditorUIGlobals Globals;
+        VWindow* Window;
+        Graphics::VRenderer* Renderer;
+
+        static EditorUIGlobals Globals;
     }; 
 }

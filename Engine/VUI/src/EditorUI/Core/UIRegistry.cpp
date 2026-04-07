@@ -1,13 +1,8 @@
 #include <EditorUI/Core/UIRegistry.h>
 
-void UIRegistry::Initialize() {
-    // Here we try to find the base class for all UI elements.
-}
 
-void UIRegistry::BuildRegistry() {
-
-    // Here we build the registry of all UI elements.
-    
+void UIRegistry::AddEntry(std::string Key, UIRegisteredType Type) {
+    Types[std::move(Key)] = std::move(Type);
 }
 
 bool UIRegistry::Has(const std::string& Key) const {
