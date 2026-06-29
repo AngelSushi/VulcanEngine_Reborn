@@ -14,7 +14,7 @@ namespace VulcanEngine {
 		VFont(std::string_view InFont);
 		
 		static std::vector<std::string> GetAvailableExtensions() {
-			return { ".ttf", ".otf", ".woff", ".woff2" };
+			return { ".ttf", ".TTF", ".otf", ".woff", ".woff2" };
 		}
 	};
 

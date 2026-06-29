@@ -4,6 +4,7 @@
 #include "Vector2.h"
 #include "EditorUI/Backend/Clay/ClayHelper.h"
 
+
 // Represent a value in the UI system, which can be a string, number, boolean, or color.
 // Must be replace by property system later.
 
@@ -32,9 +33,15 @@ public:
     template<typename T>
     T Get() const {
         if (Is<T>()) {
-            return std::get<T>(Value); 
-        } else {
-            return T();
+            try {
+                T value = std::get<T>(Value);
+                return value;
+            }
+            catch (std::exception& e) {
+                return T();
+            }
         }
+        
+        return T();
     }
 };

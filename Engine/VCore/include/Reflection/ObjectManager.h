@@ -1,4 +1,5 @@
 #pragma once
+#include <CoreAPI/precomp.h>
 #include "VObjectContext.h"
 #include <fmt/core.h>
 
@@ -10,7 +11,7 @@ namespace VulcanCore {
 
     // Stock all the instance of objects in the engine
     
-    class ObjectManager {
+    class VCORE_API ObjectManager {
         
     public:
         static ObjectManager& Instance() {

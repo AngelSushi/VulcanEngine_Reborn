@@ -1,4 +1,4 @@
-#pragma once
+    #pragma once
 #include <CoreAPI/precomp.h>
 
 #include "CoreAPI/VRenderer.h"
@@ -8,25 +8,38 @@
 class WidgetApplication {
 
 public:
-    void InitApp(VulcanEngine::VWindow* InAppWindow, VulcanEngine::Graphics::VRenderer* InAppRenderer,std::vector<std::unique_ptr<UIWidget>>& InAppWidgets);
+
+    static WidgetApplication& Get() {
+        static WidgetApplication instance;
+        return instance;
+    }
+    
+    void InitApp(const VulcanEngine::VWindow* InAppWindow,const VulcanEngine::Graphics::VRenderer* InAppRenderer,std::vector<std::unique_ptr<UIWidget>>& InAppWidgets);
     void Tick(float DeltaTime);
 
-    static bool IsPointInside(VMath::Vector2f Point, VMath::Vector2f RectPos, VMath::Vector2f RectSize);
+    void AddOverlay(const UINode& InNode);
+
 
 private:
     void BeginFrame();
     void BuildUI();
     void EndFrame();
     void ResolveInteraction();
+    bool PerformInteraction(const std::unique_ptr<UIWidget>& Widget,const VMath::Vector2f& MousePos);
     void Draw();
-
     
-    VulcanEngine::VWindow* AppWindow;
-    VulcanEngine::Graphics::VRenderer* AppRenderer;
+    bool TryFocus(UIWidget* InFocusWidget);
+    const VulcanEngine::VWindow* AppWindow;
+    const VulcanEngine::Graphics::VRenderer* AppRenderer;
     ClayBackend* AppBackend;
 
-    // To define what really own UIWidget and how to manage the lifetime of UIWidget, we can either use unique_ptr or shared_ptr.
-    std::vector<std::unique_ptr<UIWidget>>* AppWidgets;
+    // EditorSystem owns the widgets; WidgetApplication only holds a non-owning pointer to the list.
+    std::vector<std::unique_ptr<UIWidget>>* AppWidgets = nullptr;
+
+    // Represents all the UI elements that can't be attached to a widget parent, but can be drawn on top of the UI (e.g popup,notification etc).
+    std::vector<UIWidget*> Overlays;
+    
+    UIWidget* FocusedWidget = nullptr;
 
     Clay_RenderCommandArray Commands;
 };

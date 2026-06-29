@@ -2,29 +2,27 @@
 
 #include <iostream>
 
-#include "Requests/UIRequest.h"
-#include "Requests/UIRequests.h"
 #include <IRegistry.h>
 
 #include <Types/Assets/AssetsManager.h>
 
 #include "Actions/FolderAction.h"
-#include "Requests/ImportRequestDatas/SpriteImportData.h"
 
 namespace VulcanEngine {
 	void AssetsAction::RegisterBindings() {
-		using namespace VUI;
+		/*using namespace VUI;
 		BindingRegistry.Register(Binding::Register("Assets::Delete",this,&AssetsAction::DeleteAsset));
 		BindingRegistry.Register(Binding::Register("Assets::CopyPath",this,&AssetsAction::CopyPath));
 
 		BindingRegistry.Register(Binding::Register("Assets::Import",this,&AssetsAction::ImportAsset));
+*/
 	}
 
 	void AssetsAction::ImportAsset() {
 		auto originPath = fs::current_path();
 		
 		AssetsManager::OpenFile([&originPath](const std::string& InFilePath){
-			auto path = fs::path(InFilePath);
+			/*auto path = fs::path(InFilePath);
 			
 			std::unique_ptr<VUI::SpriteImportData> data = std::make_unique<VUI::SpriteImportData>();
 
@@ -42,7 +40,7 @@ namespace VulcanEngine {
 					.RequestType = VUI::UIRequestType::ImportAsset,
 					.Data = std::move(data)
 				});
-			}
+			}*/
 		});
 	}
 

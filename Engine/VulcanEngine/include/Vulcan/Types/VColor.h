@@ -1,8 +1,5 @@
 #pragma once
-#include <Export.h>
-#include <cstdint>
-#include <ostream>
-#include <string>
+#include <CoreAPI/precomp.h>
 
 
 namespace VulcanEngine {
@@ -24,20 +21,19 @@ namespace VulcanEngine {
 		VColor FromRGBA8(std::uint8_t R, std::uint8_t G, std::uint8_t B, std::uint8_t A = 1.0f);
 
 		// Getters
-		float R() const { return _R; }
-		float G() const { return _G; }
-		float B() const { return _B; }
-		float A() const { return _A; }
+		float R() const { return RValue; }
+		float G() const { return GValue; }
+		float B() const { return BValue; }
+		float A() const { return AValue; }
 
-		std::string ToString() { return "[R: " + std::to_string(_R) + " G: " + std::to_string(_G) + " B: " + std::to_string(_B) + " A: " + std::to_string(_A); }
+		std::string ToString() { return "[R: " + std::to_string(R()) + " G: " + std::to_string(G()) + " B: " + std::to_string(B()) + " A: " + std::to_string(A()); }
 	
 	private:
-
-	
-		float _OpenColorPicker;
-		float _R, _G, _B, _A;
-
-		float _ColorPickerArray[4];
+		
+		float RValue;
+		float GValue;
+		float BValue;
+		float AValue;
 	};
 
 	VULCAN_ENGINE_API std::ostream& operator<<(std::ostream& Stream, const VColor& Color);

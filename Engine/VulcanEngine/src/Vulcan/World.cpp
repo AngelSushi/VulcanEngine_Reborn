@@ -4,7 +4,7 @@
 #include <Types/Assets/AssetsManager.h>
 #include <Types/Assets/Scene.h>
 
-#include "EditorContext.h"
+//#include "EditorContext.h"
 #include "TVector.h"
 #include "Components/ComponentRegistry.h"
 #include "CoreAPI/VCore.h"
@@ -13,7 +13,7 @@ namespace fs = std::filesystem;
 
 namespace VulcanEngine {
 	World::World() {
-		BindingRegistry.Register(VUI::Binding::Register("World::GetEntities",this,&World::GetEntities));
+		//BindingRegistry.Register(VUI::Binding::Register("World::GetEntities",this,&World::GetEntities));
 	}
 
 	void World::LoadScene(const std::string& SceneName) {
@@ -29,9 +29,9 @@ namespace VulcanEngine {
 		AssetsManager::Instance().Load<Scene>(ScenePath.string());
 	}
 
-	VUI::TreeEntry& World::GetEntities() {
+	/*VUI::TreeEntry& World::GetEntities() {
 		return RootTree;
-	}
+	}*/
 
 	TVector<std::string>& World::GetAvailableComponentsFor(Entity* Ent) const {
 		static TVector<std::string> available; // Maybe static + ref
@@ -47,21 +47,21 @@ namespace VulcanEngine {
 	}
 
 	void World::BuildTree() {
-		RootTree = {};
+/*		RootTree = {};
 
 		if (!CurrentScene)
 		{
-			VULCAN_LOG_ERROR("World::BuildTree - No current scene loaded!");
+			VULCAN_LOG_ERROR("World::BuildTree - No current scene loaded!\n");
 			return;
 		}
 		
 		RootTree.EntryName = CurrentScene->GetName();
 		RootTree.Payload = &CurrentScene;
 		RootTree.IsDirectory = true;
-		
+*/		
 
 		for (auto& entity : CurrentScene->GetEntities()) {
-			VUI::TreeEntry childNode{};
+			/*VUI::TreeEntry childNode{};
 			childNode.EntryName = entity->GetName();
 			childNode.Payload = entity;
 			childNode.IsDirectory = false;
@@ -75,7 +75,7 @@ namespace VulcanEngine {
 				}
 			};
 
-			RootTree.Children.push_back(childNode);
+			RootTree.Children.push_back(childNode);*/
 		}
 
 	}

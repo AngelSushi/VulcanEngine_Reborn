@@ -19,7 +19,7 @@ namespace Parser {
 
             auto classes = ClassParser::ParseClasses(content);
             for (auto& c : classes) {
-                c.Namespaces = Utils::DetectNamespaces(content,content.size());
+                //c.Namespaces = Utils::DetectNamespaces(content,content.size());
                 c.RootPath = path;
 
                 PropertyParser::ParseAllProperties(c,content);
@@ -30,7 +30,7 @@ namespace Parser {
 
             auto structs = StructParser::ParseStructs(content);
             for (auto& s : structs) {
-                s.Namespaces = Utils::DetectNamespaces(content,content.size());
+                //s.Namespaces = Utils::DetectNamespaces(content,content.size());
                 s.RootPath  = path;
 
                 PropertyParser::ParseAllProperties(s,content);
@@ -40,7 +40,7 @@ namespace Parser {
 
             auto enums = EnumParser::ParseEnums(content);
             for (auto& e : enums) {
-                e.Namespaces = Utils::DetectNamespaces(content,content.size());
+                //e.Namespaces = Utils::DetectNamespaces(content,content.size());
                 e.RootPath = path;
 
                 Result.Enums.push_back(e);

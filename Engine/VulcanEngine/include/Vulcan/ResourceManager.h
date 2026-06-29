@@ -7,7 +7,6 @@
 
 #include <CoreAPI/VTexture.h>
 
-#include "Entries/TreeEntry.h"
 #include "CoreAPI/VCore.h"
 
 #include <Resources/ResourceManager.vht.h>
@@ -34,7 +33,7 @@ namespace VulcanEngine::Resources {
         ~ResourceManager() = default;
 
         std::shared_ptr<Graphics::VSurface> LoadImage(const std::string& InPath);
-        std::shared_ptr<Graphics::VTexture> GetTexture(const std::string& InPath,Graphics::VRenderer& InRenderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine"));
+        std::shared_ptr<Graphics::VTexture> GetTexture(const std::string& InPath,const Graphics::VRenderer& InRenderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine"));
         const std::shared_ptr<Graphics::VTexture>& GetTextureByName(const std::string& Name);
 
         void Purge();

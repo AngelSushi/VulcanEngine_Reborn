@@ -3,9 +3,10 @@
 #include <SDL2/SDL.h>
 #include <fmt/core.h>
 
-DEFINE_LOG_CATEGORY(CoreAPI);
 namespace VulcanCore {
 
+    DEFINE_LOG_CATEGORY(CoreAPI);
+    
     VCore::VCore(std::uint32_t Flags) {
         if (Instance) {
             throw std::runtime_error("Only one VCore can be initialized");
@@ -72,6 +73,15 @@ namespace VulcanCore {
 
     VulcanEngine::VWindow& VCore::GetWindow(const std::string_view& InWindowName) {
         return *Windows.at(InWindowName.data());
+    }
+
+    VulcanEngine::VWindow& VCore::GetWindowByIndex(int InIndex) {
+        if (InIndex < 0 || InIndex >= Windows.size()) {
+            // Log Error
+            //   return 
+        }
+        
+        return *std::next(Windows.begin(), InIndex)->second;
     }
 
     VulcanEngine::Graphics::VRenderer& VCore::GetRenderer(const std::string_view& InWindowName) {

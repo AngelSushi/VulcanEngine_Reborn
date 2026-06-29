@@ -13,6 +13,7 @@
 
 #include <EditorUI/Renderers/UIClaySDLRenderer.h>
 #include <EditorUI/Backend/Clay/ClayBackend.h>
+#include <EditorUI/Runtime/WidgetApplication.h>
 
 #include "CoreAPI/VCore.h"
 #include "CoreAPI/VWindow.h"
@@ -32,9 +33,11 @@ namespace VulcanEngine {
         UIWidgetCache NextCache;
 
         ClayBackend* ClayBackend;
+
+        WidgetApplication WApplication;
     };
     
-    class VULCAN_ENGINE_API EditorSystem : public VSystem {
+    class VUI_API EditorSystem : public VSystem {
     public:
         
         static EditorSystem& Instance() {
@@ -45,6 +48,7 @@ namespace VulcanEngine {
         EditorSystem();
 
         virtual void RegisterSystemWidgets();
+        virtual void RegisterSystemScreens();
         // VSystem interface
         void InitSystem() override;
         void StartSystem() override;
@@ -57,15 +61,18 @@ namespace VulcanEngine {
         static const EditorUIGlobals& GetGlobals() {
             return Globals;
         }
-    private:
 
+        // Not safe to make it public, use outside of EditorSystem with EventTrigger. 
+        void AddWidget(const UINode& Node);
+        
+    private:
         UIRenderContext MakeRenderContext();
         
         std::vector<std::unique_ptr<UIWidget>> EditorAssets;
         //TVector<UIAsset*> Themes;
 
-        VWindow* Window;
-        Graphics::VRenderer* Renderer;
+        const VWindow* Window;
+        const Graphics::VRenderer* Renderer;
 
         static EditorUIGlobals Globals;
     }; 

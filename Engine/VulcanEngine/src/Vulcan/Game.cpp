@@ -9,7 +9,6 @@
 #include <CoreAPI/VWindow.h>
 
 #include <World.h>
-#include <Systems/EditorSystem.h>
 
 namespace VulcanEngine {
     class UIAsset;
@@ -21,7 +20,6 @@ namespace VulcanEngine {
         SetupSystems();
         
         auto& window = Core->GetWindow("VulcanEngine");
-        auto& editorSystem = EditorSystem::Instance();
 
         
         auto lastTime = SDL_GetPerformanceCounter();
@@ -52,7 +50,7 @@ namespace VulcanEngine {
                 system->Iterate(delta);
             }
 
-            FrameEndEvent.Trigger(true);
+            FrameEndEvent.TriggerReverse();
         }
 
 /*        for (auto& system : systems) {

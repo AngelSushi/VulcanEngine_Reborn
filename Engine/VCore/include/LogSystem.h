@@ -1,4 +1,6 @@
 #pragma once
+#include <CoreAPI/precomp.h>
+
 #include <mutex>
 #include <filesystem>
 #include <string>
@@ -12,10 +14,8 @@
 #include <Types/VColor.h>
 #include <CoreAPI/IRegistry.h>
 
-#include <LogCategory.vht.h>
 
-
-namespace VulcanEngine {
+namespace VulcanCore {
 
 	VENUM()
 	enum class LogLevel {
@@ -26,7 +26,7 @@ namespace VulcanEngine {
 	};
 
 	VCLASS()
-	class LogCategory : public VulcanCore::ReflectionBase {
+	class VCORE_API LogCategory : public VulcanCore::ReflectionBase {
 
 		VCLASS_BODY()
 		
@@ -73,7 +73,7 @@ namespace VulcanEngine {
 	};
 	
 	
-	class VULCAN_ENGINE_API LogSystem {
+	class VCORE_API LogSystem {
 
 	public:
 		static LogSystem& Instance() {
@@ -104,25 +104,25 @@ namespace VulcanEngine {
 
 	
 	//VULCAN_ENGINE_API IRegistry<LogCategory> LogCategoryRegistry;
-	extern IRegistry<LogCategory> LogCategoryRegistry;
+	extern VulcanEngine::IRegistry<LogCategory> LogCategoryRegistry;
 	
 
 	#define VLOG_BASE(cat, lvl, msg, ...) \
-	VulcanEngine::LogSystem::Instance().Log( \
+	VulcanCore::LogSystem::Instance().Log( \
 	fmt::format(msg, ##__VA_ARGS__), lvl, cat, __FILE__, __LINE__)
 
-	#define VLOG_INFO(cat, msg, ...)  VLOG_BASE(cat, VulcanEngine::LogLevel::Info, msg, ##__VA_ARGS__)
-	#define VLOG_WARN(cat, msg, ...)  VLOG_BASE(cat, VulcanEngine::LogLevel::Warning, msg, ##__VA_ARGS__)
-	#define VLOG_ERROR(cat, msg, ...) VLOG_BASE(cat, VulcanEngine::LogLevel::Error, msg, ##__VA_ARGS__)
-	#define VLOG_DEBUG(cat, msg, ...) VLOG_BASE(cat, VulcanEngine::LogLevel::Debug, msg, ##__VA_ARGS__)
+	#define VLOG_INFO(cat, msg, ...)  VLOG_BASE(cat,VulcanCore::LogLevel::Info, msg, ##__VA_ARGS__)
+	#define VLOG_WARN(cat, msg, ...)  VLOG_BASE(cat,VulcanCore::LogLevel::Warning, msg, ##__VA_ARGS__)
+	#define VLOG_ERROR(cat, msg, ...) VLOG_BASE(cat,VulcanCore::LogLevel::Error, msg, ##__VA_ARGS__)
+	#define VLOG_DEBUG(cat, msg, ...) VLOG_BASE(cat,VulcanCore::LogLevel::Debug, msg, ##__VA_ARGS__)
 
 	#define DECLARE_LOG_CATEGORY(name) \
-	extern VulcanEngine::LogCategory& name
+	extern VulcanCore::LogCategory& name
 
 	#define DEFINE_LOG_CATEGORY(name) \
-	VulcanEngine::LogCategory& name = \
-	VulcanEngine::LogCategoryRegistry.Register( \
-	std::make_unique<VulcanEngine::LogCategory>(#name))
+	VulcanCore::LogCategory& name = \
+	VulcanCore::LogCategoryRegistry.Register( \
+	std::make_unique<VulcanCore::LogCategory>(#name))
 		
 	DECLARE_LOG_CATEGORY(Other);
 }

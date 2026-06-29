@@ -12,5 +12,7 @@ namespace Utils {
     std::vector<std::string> DetectNamespaces(const std::string& Content,size_t EndPos);
     std::string ExtractBetween(const std::string& Content,char Start,char End);
 
+    std::string FindBaseModuleRoot(const std::string& Path);
+    
     void Trim(std::string& Str);
 }

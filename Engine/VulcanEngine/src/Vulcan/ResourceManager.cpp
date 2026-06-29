@@ -29,7 +29,7 @@ namespace VulcanEngine::Resources {
         return surface;
     }
 
-     std::shared_ptr<Graphics::VTexture> ResourceManager::GetTexture(const std::string& FilePath, Graphics::VRenderer& Renderer) {
+     std::shared_ptr<Graphics::VTexture> ResourceManager::GetTexture(const std::string& FilePath,const Graphics::VRenderer& Renderer) {
         auto it = TextureCache.find(FilePath);
         if (it != TextureCache.end()) {
             return it->second;

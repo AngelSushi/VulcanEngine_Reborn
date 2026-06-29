@@ -1,0 +1,20 @@
+{
+  "Type": "WWidget",
+  "Id": "file-menu",
+  "WindowIndex": 0,
+  "Children": [
+  ],
+  "Properties": {
+    "backgroundColor": "#17171a",
+    "hoverColor": "#1E1E1E",
+    "focusable": false,
+    "position": [0, 21],
+    "size": {
+      "x": { "type": "FIXED", "value": 100 },
+      "y": { "type": "FIXED", "value": 200 }
+    }
+  },
+  "Bindings": {},
+  "Events": {},
+  "Style": ""
+}

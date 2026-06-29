@@ -6,8 +6,8 @@
 
 #include <filesystem>
 
-#include "ThemeAsset.h"
-#include "Themehandler.h"
+//#include "ThemeAsset.h"
+//#include "Themehandler.h"
 #include <Game.h>
 #include <IRegistry.h>
 #include <Handlers/SceneHandler.h>
@@ -28,11 +28,11 @@ namespace VulcanEngine {
 	AssetsManager::AssetsManager() {
 		RegisterHandler<SpriteAsset>(std::make_unique<SpriteAssetHandler>());
 		RegisterHandler<UIAsset>(std::make_unique<UIAssetHandler>());
-		RegisterHandler<VUI::ThemeAsset>(std::make_unique<VUI::ThemeHandler>());
+		//RegisterHandler<VUI::ThemeAsset>(std::make_unique<VUI::ThemeHandler>());
 		RegisterHandler<Scene>(std::make_unique<SceneHandler>());
 
 
-		BindingRegistry.Register(VUI::Binding::Register("AssetsManager::GetAssetsTree",this,&AssetsManager::GetAssetsTree));
+		//BindingRegistry.Register(VUI::Binding::Register("AssetsManager::GetAssetsTree",this,&AssetsManager::GetAssetsTree));
 
 		Game::GetFrameBeginEvent().Register(this,&AssetsManager::OnFrameBegin,LOW);
 		Game::GetStartEngineEvent().Register(this,&AssetsManager::OnStart,LOW);
@@ -103,12 +103,12 @@ namespace VulcanEngine {
 	
 
 	void AssetsManager::ConstructAssetTree() {
-		RootTree = BuildTree("assets/");
-		OrderTree(RootTree);
-		SetTreeParent(RootTree, nullptr);
+		//RootTree = BuildTree("assets/");
+		//OrderTree(RootTree);
+		//SetTreeParent(RootTree, nullptr);
 	}
 
-	VUI::TreeEntry AssetsManager::BuildTree(const std::string_view& RootPath) {
+	/*VUI::TreeEntry AssetsManager::BuildTree(const std::string_view& RootPath) {
 		VUI::TreeEntry node{};
 
 		fs::path path(RootPath);
@@ -147,13 +147,13 @@ namespace VulcanEngine {
 				fileNode.EntryName = entry.path().filename().string();
 				fileNode.Payload = AssetInfo {pathStr, obj ? typeid(*obj) : typeid(void), obj ? VulcanCore::Cast<VAsset>(obj) : nullptr};
 				node.Children.push_back(std::move(fileNode));
-			*/}
+			}
 		}
 
 		return node;
 	}
-
-	void AssetsManager::OrderTree(VUI::TreeEntry& InRoot) {
+*/
+/*	void AssetsManager::OrderTree(VUI::TreeEntry& InRoot) {
 		std::sort(InRoot.Children.begin(), InRoot.Children.end(), [](const VUI::TreeEntry& a, const VUI::TreeEntry& b) {
 			if (a.IsDirectory != b.IsDirectory) {
 				return a.IsDirectory > b.IsDirectory; // Directories first
@@ -174,14 +174,14 @@ namespace VulcanEngine {
 			}
 		}
 	}
-
-	void AssetsManager::SetTreeParent(VUI::TreeEntry& n, VUI::TreeEntry* parent) {
+*/
+	/*void AssetsManager::SetTreeParent(VUI::TreeEntry& n, VUI::TreeEntry* parent) {
 		n.Parent = parent;
 		for (auto& c : n.Children) {
 			SetTreeParent(c, &n);
 		}
 	}
-
+*/
 	void AssetsManager::EnumerateAssets(const fs::path& Path) {
 		for (const auto& entry : fs::directory_iterator(Path)) {
 			std::string pathStr = entry.path().string();

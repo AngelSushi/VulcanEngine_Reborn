@@ -30,10 +30,17 @@
 
 #include <CoreAPI/VRenderer.h>
 
-DEFINE_LOG_CATEGORY(EditorUI);
+#include "EditorUI/Core/UINodeResolver.h"
+#include "EditorUI/Core/Components/Navbar.h"
+#include "EditorUI/Core/Components/NavButton.h"
+#include "EditorUI/Core/Components/Text.h"
+#include "EditorUI/Screens/MainWindowNavbarScreen.h"
 
 
 namespace VulcanEngine {
+
+    DEFINE_LOG_CATEGORY(EditorUI);
+    
     VulcanEngine::EditorUIGlobals VulcanEngine::EditorSystem::Globals{};
     
     EditorSystem::EditorSystem() {
@@ -42,11 +49,13 @@ namespace VulcanEngine {
     }
 
     void EditorSystem::InitSystem() {
-        RegisterSystemWidgets();
         Globals.Builder.emplace(Globals.Registry);
 
         auto& Renderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine");
         Globals.ClayBackend = new ClayBackend(Renderer.GetRenderer());
+
+        RegisterSystemWidgets();
+        RegisterSystemScreens();
     }
     
     void EditorSystem::RegisterSystemWidgets() {
@@ -69,6 +78,37 @@ namespace VulcanEngine {
                 return std::make_unique<Button>();
             }
         });
+
+        Registry.AddEntry("NavButton", UIRegisteredType{
+            .Schemas = {
+                // Define any schemas for NavButton properties here
+            },
+            .Create = []() -> std::unique_ptr<UIWidget> {
+                return std::make_unique<NavButton>();
+            }
+        });
+
+        Registry.AddEntry("Navbar", UIRegisteredType{
+            .Schemas = {
+                // Define any schemas for Navbar properties here
+            },
+            .Create = []() -> std::unique_ptr<UIWidget> {
+                return std::make_unique<Navbar>();
+            }
+        });
+
+        Registry.AddEntry("Text", UIRegisteredType{
+            .Schemas = {
+                // Define any schemas for Text properties here
+            },
+            .Create = []() -> std::unique_ptr<UIWidget> {
+                return std::make_unique<Text>();
+            }
+        });
+    }
+
+    void EditorSystem::RegisterSystemScreens() {
+        AddWidget(std::make_unique<MainWindowNavbarScreen>()->Build());
     }
 
     void EditorSystem::StartSystem() {
@@ -81,24 +121,44 @@ namespace VulcanEngine {
 
         World::GetWorld().LoadScene(std::string("SampleLevel.vscene"));
 
-        std::vector<std::string> EditorAssetsContent = VulcanCore::FileManager::ReadAllAssets(".vui");
-        std::vector<UINode> NodeAssets;
-        JsonSerializer::LoadAll<UINode>(EditorAssetsContent,NodeAssets);
-  
+        if (!Globals.Builder.has_value())
+        {
+            // Cant build UI widgets without a builder, log error
+            return;
+        }
+
+        std::vector<std::string> NodesAssetsPath = VulcanCore::FileManager::Get().LoadExtension("assets/",".vui");
+
        // RedirectLogSystem();
 
-        for (auto& Node : NodeAssets) {
-           if (Globals.Builder.has_value()) {
-               std::unique_ptr<UIWidget> Widget = Globals.Builder->Build(Node,&Globals.PrevCache,&Globals.NextCache);
-                if (Widget) {
-                     EditorAssets.push_back(std::move(Widget));
-                }
-                else {
-                    VLOG_ERROR(EditorUI,"Failed to build UI widget from node with ID: {}", Node.Id);
-                }
-           }
+        for (auto& NodePath : NodesAssetsPath) {
+            std::vector<uint8_t> Content = VulcanCore::FileManager::Get().Read(NodePath);
+            
+            auto [Node,Success] = JsonSerializer::Load<UINode>(std::string(Content.begin(),Content.end()));
+
+            if (!Success)
+            {
+                // Message error
+                continue;
+            }
+            
+           UINodeResolver Resolver(fs::path(NodePath).parent_path().string());
+           Node = Resolver.Resolve(Node);
+           AddWidget(Node);
         }
-        
+
+        Globals.WApplication = WidgetApplication();
+        Globals.WApplication.InitApp(Window,Renderer,EditorAssets);
+    }
+
+    void EditorSystem::AddWidget(const UINode& Node) {
+        std::unique_ptr<UIWidget> Widget = Globals.Builder->Build(Node,&Globals.PrevCache,&Globals.NextCache);
+        if (Widget) {
+            EditorAssets.push_back(std::move(Widget));
+        }
+        else {
+            VLOG_ERROR(EditorUI,"Failed to build UI widget from node with ID: {}", Node.Id);
+        }
     }
 
     UIRenderContext EditorSystem::MakeRenderContext() {
@@ -114,13 +174,9 @@ namespace VulcanEngine {
 
     void EditorSystem::Iterate(float DeltaTime) {
         VSystem::Iterate(DeltaTime);
-
-        WidgetApplication WApplication;
-        
-        WApplication.InitApp(Window,Renderer,EditorAssets);
         
         // Maybe useless DeltaTime here 
-        WApplication.Tick(DeltaTime);
+        Globals.WApplication.Tick(DeltaTime);
     }
     
     void EditorSystem::OnPostFrame() {

@@ -5,7 +5,6 @@
 #include <nlohmann/json.hpp>
 
 #include "LogSystem.h"
-#include "Systems/EditorSystem.h"
 #include <Entity.h>
 
 
@@ -25,7 +24,7 @@ namespace VulcanEngine {
 					comp.LoadComponent(json);
 				}
 				else {
-					VLOG_WARN(EditorUI, "You are trying to add a component that already exists on the entity.");
+					//VLOG_WARN(EditorUI, "You are trying to add a component that already exists on the entity.");
 				}
 			};
 

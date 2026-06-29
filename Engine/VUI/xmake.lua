@@ -1,10 +1,12 @@
 target("VUI")
-    set_kind("static")
+    set_kind("shared")
+	add_defines("VUI_BUILD")
     add_headerfiles("include/**.h")
     add_files("src/**.cpp")
 	add_packages("fmt")
-	add_packages("nlohmann_json","fmt","entt") -- absolument pas opti d'ajouter entt mais va savoir pq j'ai un crash avec
+	add_packages("nlohmann_json","fmt","entt","libsdl2_ttf") -- absolument pas opti d'ajouter entt mais va savoir pq j'ai un crash avec
 	add_deps("VMath","VCore")
+	add_deps("VulcanEngine")
 	add_includedirs("include", { public = true })
-	add_files("$(projectdir)/Intermediate/Generated/VUI/**.gen.cpp")
-	add_includedirs("$(projectdir)/Intermediate/Generated/VUI", { public = true })
+	--add_files("$(projectdir)/Intermediate/Generated/VUI/**.gen.cpp")
+	add_includedirs("Intermediate/Generated", { public = true })

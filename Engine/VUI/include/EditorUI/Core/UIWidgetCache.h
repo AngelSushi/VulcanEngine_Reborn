@@ -9,7 +9,6 @@ public:
 
     void Put(std::unique_ptr<UIWidget> InWidget);
 
-    // Maybe need to return a ref ? 
     std::unique_ptr<UIWidget> Take(const std::string& InKey);
 
     bool Has(const std::string& InKey) const;
@@ -17,5 +16,5 @@ public:
 
 private:
     std::unordered_map<std::string,std::unique_ptr<UIWidget>> Cache;
-    
+
 };

@@ -1,7 +1,7 @@
 #include <SDL.h>
 #include <VTime.h>
 
-namespace VulcanEngine {
+namespace VulcanCore {
 	std::tm VTime::GetActualTime() {
 		using namespace std::chrono;
 

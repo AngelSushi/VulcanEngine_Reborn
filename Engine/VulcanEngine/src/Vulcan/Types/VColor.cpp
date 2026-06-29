@@ -5,46 +5,54 @@ namespace VulcanEngine {
 
 	VColor::VColor() : VColor(1.0f,1.0f,1.0f,1.0f) {}
 
-	VColor::VColor(float Red, float Green, float Blue, float Alpha /* = 1.0f */) : _R(Red),_G(Green),_B(Blue),_A(Alpha) {
+	VColor::VColor(float Red, float Green, float Blue, float Alpha /* = 1.0f */) : RValue(Red),GValue(Green),BValue(Blue),AValue(Alpha) {
 	}
 
 	VColor::VColor(std::string_view InHex) {
-		if (!InHex.empty() && InHex.front()=='#') {
-			InHex.remove_prefix(1);
-		}
-
-		unsigned v = std::stoul(std::string(InHex), nullptr, 16);
-		
-		if (InHex.size() == 6) { // RRGGBB
-			_R = float((v >> 16) & 0xFF) / 255.f;
-			_G = float((v >> 8) & 0xFF) / 255.f;
-			_B = float(v & 0xFF) / 255.f;
-			_A = 1.f;
-		}
-		else if (InHex.size() == 8) {// RRGGBBAA
-			_R = float((v >> 24) & 0xFF) / 255.f;
-			_G = float((v >> 16) & 0xFF) / 255.f;
-			_B = float((v >> 8) & 0xFF) / 255.f;
-			_A = float(v & 0xFF) / 255.f;
+		if (InHex.empty()) {
+			RValue = 1.f;
+			GValue = 1.f;
+			BValue = 1.f;
+			AValue = 1.f;
 		}
 		else {
-			_R = 1.f;
-			_G = 1.f;
-			_B = 1.f;
-			_A = 1.f;
+			if (InHex.front()=='#') {
+				InHex.remove_prefix(1);
+			}
+
+			unsigned v = std::stoul(std::string(InHex), nullptr, 16);
+		
+			if (InHex.size() == 6) { // RRGGBB
+				RValue = float((v >> 16) & 0xFF) / 255.f;
+				GValue = float((v >> 8) & 0xFF) / 255.f;
+				BValue = float(v & 0xFF) / 255.f;
+				AValue = 1.f;
+			}
+			else if (InHex.size() == 8) {// RRGGBBAA
+				RValue = float((v >> 24) & 0xFF) / 255.f;
+				GValue = float((v >> 16) & 0xFF) / 255.f;
+				BValue = float((v >> 8) & 0xFF) / 255.f;
+				AValue = float(v & 0xFF) / 255.f;
+			}
+			else {
+				RValue = 1.f;
+				GValue = 1.f;
+				BValue = 1.f;
+				AValue = 1.f;
+			}
 		}
 	}
 
 	VColor VColor::Lighten(float Amount) const {
-		return VColor(std::min(_R + Amount, 1.f),std::min(_G + Amount, 1.f),std::min(_B + Amount, 1.f),_A);
+		return VColor(std::min(RValue + Amount, 1.f),std::min(GValue + Amount, 1.f),std::min(BValue + Amount, 1.f),AValue);
 	}
 
 	VColor VColor::Darken(float Amount) const {
-		return VColor(std::max(_R - Amount, 0.f),std::max(_G - Amount, 0.f),std::max(_B - Amount, 0.f),_A);
+		return VColor(std::max(RValue - Amount, 0.f),std::max(GValue - Amount, 0.f),std::max(BValue - Amount, 0.f),AValue);
 	}
 	
 	void VColor::ToRGBA8(std::uint8_t& R, std::uint8_t& G, std::uint8_t& B, std::uint8_t A /* = 1.0f */) const {
-		R = static_cast<std::uint8_t>(_R * 255.f);
+		R = static_cast<std::uint8_t>(RValue * 255.f);
 		G = static_cast<std::uint8_t>(G * 255.f);
 		B = static_cast<std::uint8_t>(B * 255.f);
 		A = static_cast<std::uint8_t>(A * 255.f);

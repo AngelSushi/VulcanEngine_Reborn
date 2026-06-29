@@ -2,11 +2,11 @@
 
 #include <CoreAPI/IRegistry.h>
 
-namespace VulcanEngine {
+namespace VulcanCore {
 
     DEFINE_LOG_CATEGORY(Other);
-    
-    IRegistry<LogCategory> LogCategoryRegistry;
+
+    VulcanEngine::IRegistry<LogCategory> LogCategoryRegistry;
 }
 
 

@@ -118,6 +118,16 @@ namespace Utils {
         return Content.substr(startPos + 1, endPos - startPos - 1);
     }
 
+    std::string FindBaseModuleRoot(const std::string& Path) {
+        if (Path.find("include") != std::string::npos) {
+            return Path.substr(0,Path.find("include"));
+        }
+        if (Path.find("src") != std::string::npos) {
+            return Path.substr(0,Path.find("src"));
+        }
+        return "";
+    }
+
     void Trim(std::string& Str) {
         Str.erase(Str.begin(), std::find_if(Str.begin(), Str.end(), [](unsigned char c) {
             return !std::isspace(c);

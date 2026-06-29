@@ -16,6 +16,7 @@ public:
     Clay_RenderCommandArray EndFrame();
 
     UIClayRendererBase* GetClayRenderer() const;
+    static Clay_Dimensions MeasureText(Clay_StringSlice Text,Clay_TextElementConfig* TextConfig, void* OutMetrics);
 
 
 private:

@@ -7,6 +7,8 @@
 #include <Parser/Parser.h>
 #include <Scanner/Scanner.h>
 
+#include "Parser/Utils.h"
+
 
 int main(int argc, char** argv) {
 	std::string ProjectRoot = argv[1];
@@ -26,9 +28,9 @@ int main(int argc, char** argv) {
 	for (auto& c : parseResult.Classes) {
 		std::string namespaceRoot = "";
 
-		for (auto& ns : c.Namespaces) {
+		/*for (auto& ns : c.Namespaces) {
 			namespaceRoot += ns + "/";
-		}
+		}*/
 
 		std::vector<EnumInfo> EnumInClassFile;
 		for (auto& e : parseResult.Enums) {
@@ -48,17 +50,26 @@ int main(int argc, char** argv) {
 				//c.Functions.insert(c.Functions.begin(),parent->Functions.begin(),parent->Functions.end());
 			}
 		}
+
+		std::string ModuleRoot = Utils::FindBaseModuleRoot(c.RootPath);
+		if (ModuleRoot.empty()) {
+			std::cout << "[VHT] Warning: Could not find module root for class " << c.Name << " in file " << c.RootPath << std::endl;
+			continue;
+		}
 		
-		CodeGenHeader::GenerateClass(c,EnumInClassFile,root + namespaceRoot);
-		CodeGenCpp::GenerateClass(c,EnumInClassFile,root + namespaceRoot);
+		std::string ModuleGeneratedRoot = ModuleRoot + root;
+		
+		CodeGenHeader::GenerateClass(c,EnumInClassFile,ModuleGeneratedRoot + namespaceRoot);
+		CodeGenCpp::GenerateClass(c,EnumInClassFile,ModuleGeneratedRoot + namespaceRoot);
 	}
 
 	for (auto& s : parseResult.Structs) {
 		std::string namespaceRoot = "";
 		
-		for (auto& ns : s.Namespaces) {
+		/*for (auto& ns : s.Namespaces) {
 			namespaceRoot += ns + "/";
-		}
+		}*/
+		
 
 		std::vector<EnumInfo> EnumInClassFile;
 		for (auto& e : parseResult.Enums) {
@@ -78,8 +89,16 @@ int main(int argc, char** argv) {
 			}
 		}
 		
-		CodeGenHeader::GenerateStruct(s,EnumInClassFile,root + namespaceRoot);
-		CodeGenCpp::GenerateStruct(s,EnumInClassFile,root + namespaceRoot);
+		std::string ModuleRoot = Utils::FindBaseModuleRoot(s.RootPath);
+		if (ModuleRoot.empty()) {
+			std::cout << "[VHT] Warning: Could not find module root for class " << s.Name << " in file " << s.RootPath << std::endl;
+			continue;
+		}
+		
+		std::string ModuleGeneratedRoot = ModuleRoot + root;
+		
+		CodeGenHeader::GenerateStruct(s,EnumInClassFile,ModuleGeneratedRoot + namespaceRoot);
+		CodeGenCpp::GenerateStruct(s,EnumInClassFile,ModuleGeneratedRoot + namespaceRoot);
 	}
 	
 	return 0;

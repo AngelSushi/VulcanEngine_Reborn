@@ -1,9 +1,10 @@
 #pragma once
-#include <chrono>
-#include <cstdint>
+#include <CoreAPI/precomp.h>
 
-namespace VulcanEngine {
-	class VTime {
+
+namespace VulcanCore {
+	
+	class VCORE_API VTime {
 
 		public:
 		

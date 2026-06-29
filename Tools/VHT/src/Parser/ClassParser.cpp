@@ -54,7 +54,7 @@ namespace ClassParser {
         out.dll = parts.size() == 7 ? parts[1] : "";
         out.ParentName = parts[parts.size() - 2];
         
-        out.Namespaces = Utils::DetectNamespaces(content,lineEnd + classPos);
+        //out.Namespaces = Utils::DetectNamespaces(content,lineEnd + classPos);
 
         return true;
     }

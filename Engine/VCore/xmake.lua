@@ -1,9 +1,10 @@
 target("VCore")
-    set_kind("static")
+    set_kind("shared")
+	add_defines("VCORE_BUILD")
     add_headerfiles("include/**.h")
     add_files("src/**.cpp")
 	add_includedirs("include", { public = true }) 
-	add_includedirs("$(projectdir)/Intermediate/Generated/VulcanEngine", { public = true })
+	add_includedirs("Intermediate/Generated", { public = true })
 	add_packages("fmt","nlohmann_json","libsdl2","libsdl2_image", { public = true})
 	add_deps("VMath","VHT")
 	

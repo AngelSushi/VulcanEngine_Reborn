@@ -1,23 +1,29 @@
- #include "providers/IAssetIconProvider.h"
+ //#include "providers/IAssetIconProvider.h"
 #include <Game.h>
 #include <iostream>
 #include <IRegistry.h>
 #include <Actions/AssetsAction.h>
 #include <Actions/FolderAction.h>
-#include <Systems/EditorSystem.h>
+//#include <Systems/EditorSystem.h>
 #include <Systems/RenderSystem.h>
 #include <Types/Assets/AssetsManager.h>
 
-namespace VGame {
+#include "Systems/EditorSystem.h"
+#include "Systems/FontSystem.h"
+
+
+ //#include "Systems/FontSystem.h"
+
+ namespace VGame {
 	class Game : public VulcanEngine::Game {
 		
 		void LoadRegistries() override {
-			VulcanEngine::ThemeRegistry.Load([]() {
+			/*VulcanEngine::ThemeRegistry.Load([]() {
 				return VulcanEngine::AssetsManager::Instance().LoadAll<VUI::ThemeAsset>(".vtheme");
 			});
 			
 			VulcanEngine::TreeIconProviderRegistry.Register(std::make_unique<VUI::IAssetIconProvider>());
-			
+			*/
 			VulcanEngine::EngineActionRegistry.Register(VulcanEngine::IEngineAction::Create<VulcanEngine::AssetsAction>());
 			VulcanEngine::EngineActionRegistry.Register(VulcanEngine::IEngineAction::Create<VulcanEngine::FolderAction>());
 		}
@@ -32,6 +38,7 @@ namespace VGame {
 			});
 			
 			AddSystem<VulcanEngine::RenderSystem>();
+			AddSystem<FontSystem>();
 			AddSystem<VulcanEngine::EditorSystem>();
 		}
 	};

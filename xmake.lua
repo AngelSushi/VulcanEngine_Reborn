@@ -2,7 +2,7 @@ add_rules("mode.debug", "mode.release")
 add_rules("plugin.vsxmake.autoupdate")
 
 
-add_requires("fmt","libsdl2","libsdl2_image","entt","nlohmann_json")
+add_requires("fmt","libsdl2","libsdl2_image","libsdl2_ttf","entt","nlohmann_json")
 add_requireconfs("libsdl2", "**.libsdl2", { configs = { sdlmain = not is_mode("debug") }})
 
 set_languages("cxx20")

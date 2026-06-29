@@ -8,9 +8,11 @@
 
 #include "Reflection/ObjectManager.h"
 
-DEFINE_LOG_CATEGORY(UI);
 
 namespace VulcanEngine {
+    
+    DEFINE_LOG_CATEGORY(UI);
+    
     void UIAsset::ConstructJson(const std::string_view& InPath)
     {
      //   VAsset::ConstructJson(InPath);

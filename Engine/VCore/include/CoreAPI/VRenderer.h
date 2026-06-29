@@ -51,9 +51,8 @@ namespace VulcanEngine::Graphics {
 
 			VRenderer& operator=(const VRenderer&) = delete;
 
-		private:
 			SDL_Renderer* GetRenderer() const { return _Renderer; }
-
+	private:
 			SDL_Renderer* _Renderer;
 	};
 }

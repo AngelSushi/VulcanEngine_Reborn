@@ -2,7 +2,7 @@
 #include <nlohmann/json.hpp>
 #include <Export.h>
 
-#include <Entries/TreeEntry.h>
+//#include <Entries/TreeEntry.h>
 #include "Reflection/VObject.h"
 #include "Systems/VSystem.h"
 #include "Types/Assets/Scene.h"
@@ -50,7 +50,7 @@ namespace VulcanEngine {
 			CurrentScene = Scene;
 		}
 
-		VUI::TreeEntry& GetEntities();
+		//VUI::TreeEntry& GetEntities();
 		TVector<std::string>& GetAvailableComponentsFor(Entity* Ent) const;
 		
 	private:
@@ -61,7 +61,7 @@ namespace VulcanEngine {
 		
 		std::vector<std::unique_ptr<VSystem>> WorldSystems;
 		Scene* CurrentScene; // Unique_ptr should be enough
-		VUI::TreeEntry RootTree;
+		//VUI::TreeEntry RootTree;
 	};
 }
 

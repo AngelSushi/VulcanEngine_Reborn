@@ -53,7 +53,7 @@ namespace StructParser {
         Out.Name = parts[1];// Warning if DLL exported struct
         Out.ParentName = parts.size() > 3 ? parts[parts.size() - 2] : "";
 
-        Out.Namespaces = Utils::DetectNamespaces(Content,lineEnd + classPos);
+        //Out.Namespaces = Utils::DetectNamespaces(Content,lineEnd + classPos);
 
         return true;
     }

@@ -10,7 +10,7 @@
 
 #include <filesystem>
 
-#include <Entries/TreeEntry.h>
+//#include <Entries/TreeEntry.h>
 #include <fmt/color.h>
 
 #include "VCast.h"
@@ -47,10 +47,10 @@ namespace VulcanEngine {
 
 		void ConstructAssetTree();
 
-		VUI::TreeEntry& GetAssetsTree() {
+	/*	VUI::TreeEntry& GetAssetsTree() {
 			return RootTree;
 		}
-
+*/
 		void SetTreeDirty(bool InDirty) {
 			TreeDirty = InDirty;
 		}
@@ -136,16 +136,17 @@ namespace VulcanEngine {
 		void OnStart();
 		void OnQuit();
 		void OnFrameBegin();
-		VUI::TreeEntry BuildTree(const std::string_view& RootPath);
+		/*VUI::TreeEntry BuildTree(const std::string_view& RootPath);
 		void OrderTree(VUI::TreeEntry& InRoot);
 		void SetTreeParent(VUI::TreeEntry& n,VUI::TreeEntry* parent);
-
+*/
+		
 		void EnumerateAssets(const fs::path& Path);
 		std::string ReplaceExtension(const fs::path& InPath, const std::string& InNewExtension);
 
 		bool TreeDirty{};
 		
-		VUI::TreeEntry RootTree{};
+	//	VUI::TreeEntry RootTree{};
 		std::unordered_map<std::type_index, std::unique_ptr<IAssetHandler>> Handlers{};
 		std::unordered_map<fs::path,std::string> UnloadedAssets{};
 	};

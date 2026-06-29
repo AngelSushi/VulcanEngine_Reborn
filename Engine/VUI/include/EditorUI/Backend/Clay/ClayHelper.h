@@ -32,6 +32,9 @@ struct ClayAxisSize {
     EClaySizeType Type;
     float Value = 0.f;
 
+    ClayAxisSize() : Type(EClaySizeType::GROW) {}
+    ClayAxisSize(EClaySizeType InType,float InValue) : Type(InType), Value(InValue) {}
+
     Clay_SizingAxis ToClayAxis() const {
         switch (Type) {
             default:
@@ -60,7 +63,7 @@ inline void to_json(nlohmann::json& j, const ClayAxisSize& AxisSize) {
 
 class ClaySize {
 public:
-    ClaySize() = default;
+    //ClaySize(ClayAxisSize InX,ClayAxisSize InY) : X(InX), Y(InY) {}
     
     Clay_Sizing ToClaySize() const {
         return { X.ToClayAxis(), Y.ToClayAxis() };

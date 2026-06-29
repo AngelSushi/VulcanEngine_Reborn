@@ -1,5 +1,7 @@
 #pragma once
 
+#include <CoreAPI/precomp.h>
+
 #include <cstdint>
 #include <optional>
 #include <CoreAPI/VRenderer.h>
@@ -19,8 +21,14 @@ namespace VulcanEngine {
 		VMath::Vector2i Size{};
 		std::uint32_t Flags = 0;
 	};
+
+/*
+ *TODO:
+ *MULTIPLY VWINDOW : We can writer VulcanCore::VWindow and VulcanEngine::VWindow thats should not be possible
+ *
+ */
 	
-	class VWindow {
+	class VCORE_API VWindow {
 		friend class VRenderer;
 
 	public:
@@ -29,7 +37,7 @@ namespace VulcanEngine {
 		}
 		
 		VWindow(const WindowConfig& Config);
-		VWindow(const VWindow&) = delete;
+//		VWindow(const VWindow&) = delete; To verify if its ok to copy window or not
 		virtual ~VWindow();
 
 		virtual void Start();

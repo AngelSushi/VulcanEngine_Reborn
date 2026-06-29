@@ -30,7 +30,6 @@ struct FunctionInfo {
 
 struct TypeInfoBase {
     std::string Name;
-    std::vector<std::string> Namespaces;
     std::string ParentName;
     std::string dll; // For DLL import/export macros, not sure if struct can have dll but just in case
     std::string RootPath;
@@ -43,7 +42,7 @@ struct TypeInfoBase {
     }
     
     std::string GetFullName() const {
-        if (Namespaces.empty()) {
+       /* if (Namespaces.empty()) {
             return Name;
         }
 
@@ -53,8 +52,8 @@ struct TypeInfoBase {
             fullname += ns + "::";
         }
 
-        fullname += Name;
-        return fullname;
+        fullname += Name;*/
+        return "";
     }
 };
 
@@ -69,7 +68,6 @@ struct StructInfo : TypeInfoBase {
 
 struct EnumInfo {
     std::string Name;
-    std::vector<std::string> Namespaces;
     std::vector<std::string> Values;
     std::string ParentName;
     std::string RootPath;
@@ -82,17 +80,6 @@ struct EnumInfo {
     }
 
     std::string GetFullName() const {
-        if (Namespaces.empty()) {
-            return Name;
-        }
-
-        std::string fullname;
-
-        for (auto& ns : Namespaces) {
-            fullname += ns + "::";
-        }
-
-        fullname += Name;
-        return fullname;
+        return "";
     }
 };

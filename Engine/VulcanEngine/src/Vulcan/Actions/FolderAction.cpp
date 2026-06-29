@@ -6,10 +6,11 @@ namespace fs = std::filesystem;
 
 namespace VulcanEngine {
 	void FolderAction::RegisterBindings() {
-		using namespace VUI;
+		/*using namespace VUI;
 		
 		BindingRegistry.Register(Binding::Register("Folder::ListFolders",this,&FolderAction::ListFolders));
 		BindingRegistry.Register(Binding::Register("Folder::ShowInFolder",this,&FolderAction::ShowInFolder));
+*/
 	}
 
 	TVector<std::string>& FolderAction::ListFolders() {

@@ -32,7 +32,9 @@ namespace VulcanCore {
 			VulcanEngine::VWindow& CreateWindow(const VulcanEngine::WindowConfig& config);
 			VulcanEngine::Graphics::VRenderer& CreateRenderer(const VulcanEngine::Graphics::RendererConfig& config);
 
+		// Dangerous to access without const ? 
 			VulcanEngine::VWindow& GetWindow(const std::string_view& InWindowName);
+			VulcanEngine::VWindow& GetWindowByIndex(int InIndex);
 			VulcanEngine::Graphics::VRenderer& GetRenderer(const std::string_view& InWindowName);
 
 			const std::unordered_map<std::string, std::shared_ptr<VulcanEngine::Graphics::VRenderer>>& GetAllRenderers() const {

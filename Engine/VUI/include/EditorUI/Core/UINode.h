@@ -2,16 +2,16 @@
 #include <CoreAPI/precomp.h>
 #include <EditorUI/Core/UIValue.h>
 
-#include <IO/JSON/JsonSerializer.h>
-
 #include "JsonHelper.h"
 
 
 // Represents data read in the .json file for a UI node.
 struct UINode {
-
+    std::string Redirect;
+    
     std::string Type;
     std::string Id;
+    int WindowIndex = 0;
 
     std::vector<UINode> Children;
 
@@ -23,15 +23,44 @@ struct UINode {
     //std::variant<std::string,std::unordered_map<std::string,std::string>> Style;
     std::string Style;
 
-    UIValue TryProp(const std::string& Key) {
-        return Properties.contains(Key) ? Properties[Key] : UIValue();
+    UIValue TryPropValue(const std::string& Key) {
+        if (Properties.contains(Key)) {
+            return Properties[Key];
+        }
+
+        return UIValue();
+    }
+    
+    std::tuple<UIValue,bool> TryProp(const std::string& Key) {
+        if (Properties.contains(Key)) {
+            return std::make_tuple(Properties[Key], true);
+        }
+
+        return std::make_tuple(UIValue(), false);
+    }
+
+    static void Merge(UINode& Base, UINode& Override) {
+        for (auto& [Key,Value] : Base.Properties) {
+            Override.Properties[Key] = Value;
+        }
+
+        if (Override.Children.size() > 0) {
+            // Never clear the children of the override, we just append the children of the base to the override - maybe we can change this behavior in the future if we want to clear the base children
+            //Base.Children.clear();
+            for (auto& LocalChild : Override.Children) {
+                Base.Children.push_back(LocalChild);
+            }
+        }
     }
 };
 
+// Maybe useless cause we never change the structure of the UINode, but we can keep it for future changes
 inline void to_json(nlohmann::json& Object, const UINode& Node) {
     Object = nlohmann::json {
+        {"Redirect", Node.Redirect},
         {"Type", Node.Type},
         {"Id", Node.Id},
+           {"WindowIndex", Node.WindowIndex},
         {"Children", Node.Children},
         {"Bindings", Node.Bindings},
         {"Events", Node.Events},
@@ -61,12 +90,40 @@ inline void to_json(nlohmann::json& Object, const UINode& Node) {
 
 inline void from_json(const nlohmann::json& Object, UINode& Node)
 {
-    Node.Type = Object.at("Type");
-    Node.Id = Object.at("Id");
-    Node.Children = Object.at("Children");
-    Node.Bindings = Object.at("Bindings");
-    Node.Events = Object.at("Events");
-    Node.Style = Object.at("Style");
+    if (Object.contains("Redirect") && Object["Redirect"].is_string()) {
+        Node.Redirect = Object["Redirect"].get<std::string>();
+    }
+
+    if (Object.contains("Type") && Object["Type"].is_string()) {
+        Node.Type = Object.at("Type");
+    }
+
+    if (Object.contains("Id") && Object["Id"].is_string()) {
+        Node.Id = Object.at("Id");
+    }
+
+    if (Object.contains("WindowIndex") && Object["WindowIndex"].is_number_integer()) {
+        Node.WindowIndex = Object.at("WindowIndex");
+    }
+    else {
+        Node.WindowIndex = 0; // Default value if not present
+    }
+    
+    if (Object.contains("Children") && Object["Children"].is_array()) {
+        Node.Children = Object.at("Children");
+    }
+
+    if (Object.contains("Bindings") && Object["Bindings"].is_object()) {
+        Node.Bindings = Object.at("Bindings");
+    }
+
+    if (Object.contains("Events") && Object["Events"].is_object()) {
+        Node.Events = Object.at("Events");
+    }
+
+    if (Object.contains("Style") && Object["Style"].is_string()) {
+        Node.Style = Object.at("Style");
+    }
 
     const auto& Properties = Object.at("Properties");
     for (auto it = Properties.begin(); it != Properties.end(); ++it) {

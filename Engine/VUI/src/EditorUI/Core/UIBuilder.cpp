@@ -1,5 +1,7 @@
 #include <EditorUI/Core/UIBuilder.h>
 
+#include "EditorUI/Runtime/WidgetApplication.h"
+
 UIBuilder::UIBuilder(UIRegistry& InRegistry) : Registry(InRegistry) {
 }
 
@@ -8,26 +10,25 @@ UIBuilder& UIBuilder::operator=(const UIBuilder& Builder) {
     return *this;
 }
 
-
 std::unique_ptr<UIWidget> UIBuilder::Build(const UINode& Root, UIWidgetCache* PrevCache,UIWidgetCache* NextCache) {
+    // Cache-system doesn't work as intended. The condition appear to be always true 
     if (NextCache)
         NextCache->Clear();
-    
+
     return Build_Internal(Root, PrevCache, NextCache);
 }
 
 std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidgetCache* PrevCache,UIWidgetCache* NextCache) {
     UIRegisteredType RegisteredType = Registry.Find(Root.Type);
-    
-    if (RegisteredType.IsNull()) 
+
+    if (RegisteredType.IsNull())
         return nullptr;
 
     std::unique_ptr<UIWidget> Widget;
-    
-    if (PrevCache->Has(Root.Id)) {
-        Widget  = PrevCache->Take(Root.Id);
 
-        // If we have a widget with the same ID in memory but the type is different, we need to discard it and create a new one.
+    if (PrevCache->Has(Root.Id)) {
+        Widget = PrevCache->Take(Root.Id);
+
         if (Widget->GetType() != Root.Type) {
             Widget.reset();
         }
@@ -42,7 +43,6 @@ std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidget
     Widget->Link(Local);
     Widget->ApplyProps();
 
-    // Build Childrens
     for (const UINode& Child : Local.Children) {
         std::unique_ptr<UIWidget> ChildWidget = Build_Internal(Child, PrevCache, NextCache);
         if (ChildWidget) {
@@ -50,15 +50,13 @@ std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidget
         }
     }
 
-
+    Widget->Layout();
+    Widget->Initialized(WidgetApplication::Get());
     
-    if (NextCache) { // ???????????? what are we doing here
+    if (NextCache) {
         NextCache->Put(std::move(Widget));
         return NextCache->Take(Local.Id);
-        
     }
 
     return Widget;
-    
 }
-    
