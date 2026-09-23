@@ -1,0 +1,23 @@
+{
+  "Type": "HorizontalBox",
+  "Id": "navbar",
+  "WindowIndex": 0,
+  "Children": [
+    {
+      "Redirect": "file.element",
+      "Properties": {}
+    }
+  ],
+  "Properties": {
+    "backgroundColor": "#ff0000",
+    "hoverColor": "#1E1E1E",
+    "focusable": false, 
+    "padding": [0, 0, 0, 0],
+    "anchorMin": [0, 0],
+    "anchorMax": [1, 0],
+    "size": [0,20]
+  },
+  "Bindings": {},
+  "Events": {},
+  "Style": ""
+}

@@ -1,23 +1,25 @@
 ﻿#pragma once
-#include "VMath.h"
 
+#include "Vector2.h"
 
 namespace VMath {
 
-	struct Rect
-	{
-		Vector2i Center;
-		Vector2i Size;
-		Vector2i Min;
-		Vector2i Max;
+	struct Rect {
+		Vector2f Center;
+		Vector2f Size;
+		Vector2f Min;
+		Vector2f Max;
 
-		Rect() = delete;
+		Rect() {
+			Center = Vector2f(0, 0);
+			Size = Vector2f(0, 0);
+		}
 		
 		/*
 		 * @param InCenter The center of the bounding box.
 		 * @param InSize The full size of the bounding box.
 		 */
-		explicit Rect(const Vector2i& InCenter, const Vector2i& InSize) {
+		explicit Rect(Vector2f InCenter,Vector2f InSize) {
 			Center = InCenter;
 			Size = InSize;
 
@@ -25,7 +27,7 @@ namespace VMath {
 			Max = Center + Size / 2;
 		}
 
-		bool Contains(const Vector2i& InPos) const {
+		bool Contains(const Vector2f& InPos) const {
 			return Min.x <= InPos.x && InPos.x <= Max.x && Min.y <= InPos.y && InPos.y <= Max.y;
 		}
 		

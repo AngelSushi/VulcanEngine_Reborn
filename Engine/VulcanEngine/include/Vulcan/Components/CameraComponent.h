@@ -7,8 +7,6 @@
 #include <CameraComponent.vht.h>
 
 
-namespace VulcanEngine {
-
 	enum VULCAN_ENGINE_API CameraMode {
 		ORTHOGRAPHIC,
 		PERSPECTIVE,
@@ -55,5 +53,5 @@ namespace VulcanEngine {
 
 
 	
-}
+
 

@@ -7,10 +7,10 @@
 void NavButton::ApplyProps() {
     Button::ApplyProps();
 
-    Action = Node->TryPropValue("action").Get<std::string>();
-    auto SubmenuJson = Node->TryPropValue("submenu").Get<std::string>();
+    Action = Node.TryPropValue("action").Get<std::string>();
+    auto SubmenuJson = Node.TryPropValue("submenu").Get<std::string>();
 
-    auto [Node,Success] = VulcanEngine::JsonSerializer::Load<UINode>(SubmenuJson);
+    auto [Node,Success] = JsonSerializer::Load<UINode>(SubmenuJson);
 
     if (!Success)
     {
@@ -29,5 +29,5 @@ void NavButton::Initialized(WidgetApplication& WidgetApplication) {
 }
 
 void NavButton::OnHoverFunc() {
-    VulcanEngine::EditorSystem::Instance().AddWidget(SubMenuNode);
+    EditorSystem::Instance().AddWidget(SubMenuNode);
 }

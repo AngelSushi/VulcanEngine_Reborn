@@ -11,15 +11,16 @@
 namespace VulcanCore {
 
     template<typename C>
-    class VBoolProperty : public VPropertyBase {
+    class VCORE_API VBoolProperty : public VProperty {
     public:
         using PropMember = bool C::*;
         PropMember Member;
 
-        VBoolProperty(const std::string& name,PropMember member,const std::vector<std::string>& attrs, const MetaMap& datas)
-            : VPropertyBase(std::move(name), typeid(bool), std::move(attrs), std::move(datas)),Member(member) {
+       /* VBoolProperty(const std::string& name,PropMember member,const std::vector<std::string>& attrs, const MetaMap& datas)
+            : VProperty(std::move(name), typeid(bool), std::move(attrs), std::move(datas)),Member(member) {
         }
-
+*/
+        
         void Draw() const override {
             
         }

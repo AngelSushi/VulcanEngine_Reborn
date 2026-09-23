@@ -1,5 +1,6 @@
 #include <EditorUI/Core/UIBuilder.h>
 
+#include "EditorUI/Core/Panels/UIPanelWidget.h"
 #include "EditorUI/Runtime/WidgetApplication.h"
 
 UIBuilder::UIBuilder(UIRegistry& InRegistry) : Registry(InRegistry) {
@@ -43,16 +44,30 @@ std::unique_ptr<UIWidget> UIBuilder::Build_Internal(const UINode& Root, UIWidget
     Widget->Link(Local);
     Widget->ApplyProps();
 
-    for (const UINode& Child : Local.Children) {
-        std::unique_ptr<UIWidget> ChildWidget = Build_Internal(Child, PrevCache, NextCache);
-        if (ChildWidget) {
-            Widget->AddChild(std::move(ChildWidget));
+    // Changee for future cast system
+    if (UIPanelWidget* Panel = dynamic_cast<UIPanelWidget*>(Widget.get())) {
+
+        if (!Panel->CanHaveMultipleChildren() && Local.Children.size() > 1) {
+            // Log error, we can't add more than one child to this panel
+
+            // is goto a good practice ? 
+            goto Assignation;
+        }
+        
+        for (const UINode& ChildNode : Local.Children) {
+            if (!Panel->CanAddMoreChildren()) {
+                break;
+            }
+            
+            std::unique_ptr<UIWidget> ChildWidget = Build_Internal(ChildNode, PrevCache, NextCache);
+            if (ChildWidget) {
+                Panel->AddChild(std::move(ChildWidget));
+            }
         }
     }
 
-    Widget->Layout();
-    Widget->Initialized(WidgetApplication::Get());
-    
+
+    Assignation:
     if (NextCache) {
         NextCache->Put(std::move(Widget));
         return NextCache->Take(Local.Id);

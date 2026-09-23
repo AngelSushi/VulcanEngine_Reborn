@@ -46,7 +46,7 @@ namespace StructParser {
             return false;
         }
 
-        auto parts = Utils::SplitWords(Content,lineEnd + classPos, [](char c){
+        auto parts = Utils::SplitWords(Content,lineEnd + classPos + 1, [](char c){
             return std::isspace(c);
         });
 

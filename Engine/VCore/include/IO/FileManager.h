@@ -9,19 +9,17 @@
 namespace fs = std::filesystem;
 
 namespace VulcanCore {
-	class FileManager {
+	class VCORE_API FileManager {
 	public:
-		static FileManager& Get() {
-			static FileManager instance;
-			return instance;
-		}
+		static FileManager& Get();
 
 		// Modify Path in function of module 
 		std::vector<std::string> LoadExtension(const std::string& Path,const std::string& Extension);
 
 		// Not Really Correct Name, more like IsValid or Has ? 
-		bool Load(std::string AbsolutePath);
+		bool Exists(std::string AbsolutePath);
 		std::vector<uint8_t> Read(std::string AbsolutePath);
+		bool Write(std::string AbsolutePath, const std::vector<uint8_t>& Data);
 
 		// Maybe Useless Function above ? 
 		std::vector<std::string> ReadAllAssets(const std::string& Extension);

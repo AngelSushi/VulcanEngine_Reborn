@@ -35,11 +35,11 @@ struct VC_CompiledInDefer_Transform {
 
 static VC_CompiledInDefer_Transform VC_CompiledInDefer_Transform_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& Transform::StaticClass() { 
     return *VC_Construct_VClass_Transform(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& Transform::GetClass() const { 
     return Transform::StaticClass(); 
 }; 
 

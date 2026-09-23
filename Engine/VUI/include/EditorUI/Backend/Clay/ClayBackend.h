@@ -7,7 +7,7 @@
 class ClayBackend {
 
 public:
-    ClayBackend(SDL_Renderer* Renderer);
+    ClayBackend(const VRenderer* Renderer);
     
     void Initialize(float Width,float Height);
     void Shutdown();
@@ -22,5 +22,5 @@ public:
 private:
     std::vector<uint8> Arena;
 
-    UIClaySDLRenderer* SDLClayRenderer;
+    UIClaySDLRenderer* SDLClayRenderer = nullptr;
 };

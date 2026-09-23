@@ -5,13 +5,13 @@
 
 namespace VUI {
 
-    class ThemeHandler : public VulcanEngine::IAssetHandler {
+    class ThemeHandler : public IAssetHandler {
 
     public:
         // IAssetHandler interface
-        VulcanEngine::VAsset* Load(const std::string& path);
-        VulcanEngine::TVector<VulcanEngine::VAsset*> LoadAll(const std::string& extension);
-        void Save(const std::string& path, const VulcanEngine::VAsset& asset);
+        VAsset* Load(const std::string& path);
+        TVector<VAsset*> LoadAll(const std::string& extension);
+        void Save(const std::string& path, const VAsset& asset);
         void CreateDefaultMetadata(const std::string& MetaPath,const std::string& ObjPath) override;
     };
 }

@@ -29,7 +29,7 @@ namespace VulcanCore {
     
 
     private:
-        VulcanEngine::TVector<VObject*> Objects;
+        TVector<VObject*> Objects;
     };
 
     template<typename T,typename... Args>

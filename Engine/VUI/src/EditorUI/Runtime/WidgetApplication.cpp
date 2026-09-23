@@ -2,19 +2,38 @@
 
 #include "Systems/EditorSystem.h"
 
-void WidgetApplication::InitApp(const VulcanEngine::VWindow* InAppWindow,const VulcanEngine::Graphics::VRenderer* InAppRenderer,std::vector<std::unique_ptr<UIWidget>>& InAppWidgets) {
+void WidgetApplication::InitApp(const VWindow* InAppWindow,const VRenderer* InAppRenderer,std::vector<std::unique_ptr<UIWidget>>& InAppWidgets) {
     AppWindow = InAppWindow;
     AppRenderer = InAppRenderer;
     AppWidgets = &InAppWidgets;
-    AppBackend = VulcanEngine::EditorSystem::GetGlobals().ClayBackend;
+    AppBackend = EditorSystem::GetGlobals().ClayBackend;
+
+    for (const auto& Widget : *AppWidgets) {
+        Widget->Initialized(*this);
+    }
 }
 
 void WidgetApplication::Tick(float DeltaTime) {
     BeginFrame();
     BuildUI();
     EndFrame();
+
+    // Maybe we can make a dirty flag or event to avoid resolving layout every frame, but for now we can resolve layout every frame for simplicity.
+    for (const auto& Widget : *AppWidgets) {
+        Widget->ResolveLayout();
+    }
+    
     ResolveInteraction();
     Draw();
+}
+
+VMath::Rect WidgetApplication::GetCurrentWindowGeometry() const {
+    if (AppWindow) {
+        const auto [Width,Height] = AppWindow->GetSize();
+        return VMath::Rect(VMath::Vector2f(Width / 2.0f, Height / 2.0f), VMath::Vector2f(Width, Height));
+    }
+
+    return VMath::Rect(VMath::Vector2f::Zero(),VMath::Vector2f::Zero());
 }
 
 void WidgetApplication::BeginFrame() {
@@ -44,13 +63,13 @@ void WidgetApplication::ResolveInteraction() {
 
     for (auto& Widget : *AppWidgets) {
         bool bHasChildFocused = false;
-        for (const auto& Child : Widget->GetChildren())
+      /*  for (const auto& Child : Widget->GetChildren())
         {
             if (PerformInteraction(Child,MousePos)) {
                 bHasChildFocused = true;
             }
         }
-
+*/
         if (!bHasChildFocused) {
             PerformInteraction(Widget,MousePos);
         }
@@ -63,14 +82,14 @@ bool WidgetApplication::PerformInteraction(const std::unique_ptr<UIWidget>& Widg
         return false;
     }
         
-    if (Widget->GetBounds().Contains(MousePos)) {
+    /*if (Widget->GetBounds().Contains(MousePos)) {
         if (FocusedWidget != Widget.get()) {
             return TryFocus(Widget.get());
         }
 
         return true;
-    }
-    else if (FocusedWidget == Widget.get()) {
+    }*/
+    if (FocusedWidget == Widget.get()) {
         FocusedWidget->NativeOnFocusLost();
         FocusedWidget = nullptr;
         return false;
@@ -80,12 +99,12 @@ bool WidgetApplication::PerformInteraction(const std::unique_ptr<UIWidget>& Widg
 }
 
 void WidgetApplication::Draw() {
-    SDL_SetRenderDrawColor(AppRenderer->GetRenderer(), 0, 0, 0, 255);
-    SDL_RenderClear(AppRenderer->GetRenderer());
-
+    AppRenderer->SetDrawColor(0,0,0,255);
+    AppRenderer->Clear();
+    
     AppBackend->GetClayRenderer()->Render(Commands);
 
-    SDL_SetRenderDrawColor(AppRenderer->GetRenderer(), 0, 0, 0, 255);
+    AppRenderer->SetDrawColor(0,0,0,255);
 }
 
 bool WidgetApplication::TryFocus(UIWidget* InFocusWidget) {

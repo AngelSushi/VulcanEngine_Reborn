@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_VAsset {
 
 static VC_CompiledInDefer_VAsset VC_CompiledInDefer_VAsset_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& VAsset::StaticClass() { 
     return *VC_Construct_VClass_VAsset(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& VAsset::GetClass() const { 
     return VAsset::StaticClass(); 
 }; 
 

@@ -13,7 +13,7 @@ namespace Utils {
             bool isEmpty = true;
 
             for (char c : line) {
-                if (std::isspace(c)) {
+                if (!std::isspace(c)) {
                     isEmpty = false;
                     break;
                 }

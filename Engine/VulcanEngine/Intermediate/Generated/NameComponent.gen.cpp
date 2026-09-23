@@ -35,11 +35,11 @@ struct VC_CompiledInDefer_NameComponent {
 
 static VC_CompiledInDefer_NameComponent VC_CompiledInDefer_NameComponent_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& NameComponent::StaticClass() { 
     return *VC_Construct_VClass_NameComponent(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& NameComponent::GetClass() const { 
     return NameComponent::StaticClass(); 
 }; 
 

@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_AnimationComponent {
 
 static VC_CompiledInDefer_AnimationComponent VC_CompiledInDefer_AnimationComponent_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& AnimationComponent::StaticClass() { 
     return *VC_Construct_VClass_AnimationComponent(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& AnimationComponent::GetClass() const { 
     return AnimationComponent::StaticClass(); 
 }; 
 

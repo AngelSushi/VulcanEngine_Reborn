@@ -5,61 +5,58 @@
 
 #include "TVector.h"
 
-
-namespace VulcanEngine {
+template<typename T>
+class ObjectRegistry { // No-owning registry of objects of type T
+public:
+	ObjectRegistry() = default;
+	virtual ~ObjectRegistry() = default;
 	
-	template<typename T>
-	class ObjectRegistry { // No-owning registry of objects of type T
-	public:
-		ObjectRegistry() = default;
-		virtual ~ObjectRegistry() = default;
-		
 
-		virtual void Load(std::function<TVector<T*>()> Loader) {
-			Registry = Loader();
-		}
-		
+	virtual void Load(std::function<TVector<T*>()> Loader) {
+		Registry = Loader();
+	}
+	
 
-		virtual T& Register(T* Object) {
-			Registry.push_back(Object);
-			return *Object;
-		}
+	virtual T& Register(T* Object) {
+		Registry.push_back(Object);
+		return *Object;
+	}
 
-		T* Get(size_t Index) {
-			return Registry[Index];
-		}
-		
+	T* Get(size_t Index) {
+		return Registry[Index];
+	}
+	
 
-		template<typename Pred>
-		T* FindIf(Pred&& InPred) const {
-			for (auto& p : Registry) {
-				if (InPred(*p)) {
-					return p;
-				}
+	template<typename Pred>
+	T* FindIf(Pred&& InPred) const {
+		for (auto& p : Registry) {
+			if (InPred(*p)) {
+				return p;
 			}
-
-			return nullptr;
 		}
 
-		size_t Size() const {
-			return Registry.size();
-		}
+		return nullptr;
+	}
 
-		TVector<T*>& GetAll() {
-			return Registry;
-		}
-		
+	size_t Size() const {
+		return Registry.size();
+	}
 
-		auto begin() { return Registry.begin(); }
-		auto end() { return Registry.end(); }
-		auto begin() const { return Registry.begin(); }
-		auto end() const { return Registry.end(); }
-		auto cbegin() const { return Registry.cbegin(); }
-		auto cend() const { return Registry.cend(); }
-		
+	TVector<T*>& GetAll() {
+		return Registry;
+	}
+	
 
-	protected:
-		TVector<T*> Registry;
-	};
-}
+	auto begin() { return Registry.begin(); }
+	auto end() { return Registry.end(); }
+	auto begin() const { return Registry.begin(); }
+	auto end() const { return Registry.end(); }
+	auto cbegin() const { return Registry.cbegin(); }
+	auto cend() const { return Registry.cend(); }
+	
+
+protected:
+	TVector<T*> Registry;
+};
+
 

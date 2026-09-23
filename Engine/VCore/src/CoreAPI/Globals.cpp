@@ -5,14 +5,14 @@
 namespace VCG {
 
     template<typename Type,typename ParamsType>
-    Type* NewProperty(VulcanCore::VField* Out, const PropertyBaseParams& Params) {
+    Type* NewProperty(VField* Out, const PropertyBaseParams& Params) {
         const ParamsType& Prop = (const ParamsType&)Params;
         Type* NewProp = new Type(Out,Prop);
 
         return NewProp;
     }
     
-    void ConstructProperty(VulcanCore::VField* Out,const PropertyBaseParams* Params) {
+    void ConstructProperty(VField* Out,const PropertyBaseParams* Params) {
         using namespace VulcanCore;
         
         VProperty* NewProp = nullptr;
@@ -65,7 +65,7 @@ namespace VCG {
         NewProp->SetElementCount(Params->ElementCount);
     }
     
-    void ConstructProperties(VulcanCore::VField* Out,const PropertyBaseParams* const*  PropertiesArray, int32 PropertiesSize) {
+    void ConstructProperties(VField* Out,const PropertyBaseParams* const*  PropertiesArray, int32 PropertiesSize) {
         for (size_t index = 0; index < PropertiesSize;index++) {
             ConstructProperty(Out,PropertiesArray[index]);
         }    

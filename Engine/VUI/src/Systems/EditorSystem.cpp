@@ -2,7 +2,6 @@
 #include <Systems/EditorSystem.h>
 
 #include "ThemeAsset.h"
-#include "Requests/UIRequests.h"
 #include <Game.h>
 #include <IRegistry.h>
 #include <LogRedirectBuffer.h>
@@ -21,171 +20,178 @@
 
 #include <clay/clay.h>  
 
-#include <EditorUI/Core/Components/WWidget.h>
 
 #include <EditorUI/Backend/Clay/ClayBackend.h>
 
 #include "EditorUI/Core/Components/Button.h"
 #include "EditorUI/Runtime/WidgetApplication.h"
-
-#include <CoreAPI/VRenderer.h>
-
 #include "EditorUI/Core/UINodeResolver.h"
-#include "EditorUI/Core/Components/Navbar.h"
 #include "EditorUI/Core/Components/NavButton.h"
 #include "EditorUI/Core/Components/Text.h"
-#include "EditorUI/Screens/MainWindowNavbarScreen.h"
+#include "EditorUI/Core/Panels/CanvasPanel.h"
+#include "EditorUI/Core/Panels/HorizontalBox.h"
 
+DEFINE_LOG_CATEGORY(EditorUI);
 
-namespace VulcanEngine {
+EditorUIGlobals EditorSystem::Globals{};
 
-    DEFINE_LOG_CATEGORY(EditorUI);
+EditorSystem::EditorSystem() {
+    Game::GetFrameBeginEvent().Register(this,&EditorSystem::OnPreFrame,MEDIUM);
+    Game::GetFrameEndEvent().Register(this,&EditorSystem::OnPostFrame,MEDIUM);
+
+    /*
+     * Have to change to StartupModule VUI, but for now as we have no module system, we can initialize the json's schema here
+     */
+
+    JsonManager::Get().GenerateAll("Intermediate/Schemas");
+}
+
+void EditorSystem::InitSystem() {
+    Globals.Builder.emplace(Globals.Registry);
     
-    VulcanEngine::EditorUIGlobals VulcanEngine::EditorSystem::Globals{};
+    RegisterSystemWidgets();
+    RegisterSystemScreens();
+}
+
+void EditorSystem::RegisterSystemWidgets() {
+    auto& Registry = Globals.Registry;
+
+    // WWidget is a base class for all widgets, so we don't need to register it directly. 
+    /*Registry.AddEntry("WWidget", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for WWidget properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<WWidget>();
+        }
+    });*/
+
+    Registry.AddEntry("CanvasPanel", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for CanvasPanel properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<CanvasPanel>();
+        }
+    });
+
+    Registry.AddEntry("Button", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for WWidget properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<Button>();
+        }
+    });
+
+    Registry.AddEntry("NavButton", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for NavButton properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<NavButton>();
+        }
+    });
+
+    Registry.AddEntry("HorizontalBox", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for Navbar properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<HorizontalBox>();
+        }
+    });
+
+    Registry.AddEntry("Text", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for Text properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<Text>();
+        }
+    });
+}
+
+void EditorSystem::RegisterSystemScreens() {
+    //AddWidget(std::make_unique<MainWindowNavbarScreen>()->Build());
+}
+
+void EditorSystem::StartSystem() {
+    VSystem::StartSystem();
     
-    EditorSystem::EditorSystem() {
-        Game::GetFrameBeginEvent().Register(this,&EditorSystem::OnPreFrame,MEDIUM);
-        Game::GetFrameEndEvent().Register(this,&EditorSystem::OnPostFrame,MEDIUM);
-    }
-
-    void EditorSystem::InitSystem() {
-        Globals.Builder.emplace(Globals.Registry);
-
-        auto& Renderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine");
-        Globals.ClayBackend = new ClayBackend(Renderer.GetRenderer());
-
-        RegisterSystemWidgets();
-        RegisterSystemScreens();
-    }
+    Window = &VCore::GetInstance().GetWindow("VulcanEngine");
+    Renderer = &VCore::GetInstance().GetRenderer("VulcanEngine");
     
-    void EditorSystem::RegisterSystemWidgets() {
-        auto& Registry = Globals.Registry;
+    Globals.ClayBackend = new ClayBackend(Renderer);
+    Globals.ClayBackend->Initialize(Window->GetSize().first,Window->GetSize().second);
 
-        Registry.AddEntry("WWidget", UIRegisteredType{
-            .Schemas = {
-                // Define any schemas for WWidget properties here
-            },
-            .Create = []() -> std::unique_ptr<UIWidget> {
-                return std::make_unique<WWidget>();
-            }
-        });
+    World::GetWorld().LoadScene(std::string("SampleLevel.vscene"));
 
-        Registry.AddEntry("Button", UIRegisteredType{
-            .Schemas = {
-                // Define any schemas for WWidget properties here
-            },
-            .Create = []() -> std::unique_ptr<UIWidget> {
-                return std::make_unique<Button>();
-            }
-        });
-
-        Registry.AddEntry("NavButton", UIRegisteredType{
-            .Schemas = {
-                // Define any schemas for NavButton properties here
-            },
-            .Create = []() -> std::unique_ptr<UIWidget> {
-                return std::make_unique<NavButton>();
-            }
-        });
-
-        Registry.AddEntry("Navbar", UIRegisteredType{
-            .Schemas = {
-                // Define any schemas for Navbar properties here
-            },
-            .Create = []() -> std::unique_ptr<UIWidget> {
-                return std::make_unique<Navbar>();
-            }
-        });
-
-        Registry.AddEntry("Text", UIRegisteredType{
-            .Schemas = {
-                // Define any schemas for Text properties here
-            },
-            .Create = []() -> std::unique_ptr<UIWidget> {
-                return std::make_unique<Text>();
-            }
-        });
+    if (!Globals.Builder.has_value())
+    {
+        // Cant build UI widgets without a builder, log error
+        return;
     }
 
-    void EditorSystem::RegisterSystemScreens() {
-        AddWidget(std::make_unique<MainWindowNavbarScreen>()->Build());
-    }
+    std::vector<std::string> NodesAssetsPath = VulcanCore::FileManager::Get().LoadExtension("assets/",".vui");
 
-    void EditorSystem::StartSystem() {
-        VSystem::StartSystem();
+   // RedirectLogSystem();
+
+    for (auto& NodePath : NodesAssetsPath) {
+        std::vector<uint8_t> Content = VulcanCore::FileManager::Get().Read(NodePath);
         
-        Window = &VulcanCore::VCore::GetInstance().GetWindow("VulcanEngine");
-        Renderer = &VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine");
-        
-        Globals.ClayBackend->Initialize(Window->GetSize().first,Window->GetSize().second);
+        auto [Node,Success] = JsonSerializer::Load<UINode>(std::string(Content.begin(),Content.end()));
 
-        World::GetWorld().LoadScene(std::string("SampleLevel.vscene"));
-
-        if (!Globals.Builder.has_value())
+        if (!Success)
         {
-            // Cant build UI widgets without a builder, log error
-            return;
+            // Message error
+            continue;
         }
-
-        std::vector<std::string> NodesAssetsPath = VulcanCore::FileManager::Get().LoadExtension("assets/",".vui");
-
-       // RedirectLogSystem();
-
-        for (auto& NodePath : NodesAssetsPath) {
-            std::vector<uint8_t> Content = VulcanCore::FileManager::Get().Read(NodePath);
-            
-            auto [Node,Success] = JsonSerializer::Load<UINode>(std::string(Content.begin(),Content.end()));
-
-            if (!Success)
-            {
-                // Message error
-                continue;
-            }
-            
-           UINodeResolver Resolver(fs::path(NodePath).parent_path().string());
-           Node = Resolver.Resolve(Node);
-           AddWidget(Node);
-        }
-
-        Globals.WApplication = WidgetApplication();
-        Globals.WApplication.InitApp(Window,Renderer,EditorAssets);
+        
+       UINodeResolver Resolver(fs::path(NodePath).parent_path().string());
+       Node = Resolver.Resolve(Node);
+       AddWidget(Node);
     }
 
-    void EditorSystem::AddWidget(const UINode& Node) {
-        std::unique_ptr<UIWidget> Widget = Globals.Builder->Build(Node,&Globals.PrevCache,&Globals.NextCache);
-        if (Widget) {
-            EditorAssets.push_back(std::move(Widget));
-        }
-        else {
-            VLOG_ERROR(EditorUI,"Failed to build UI widget from node with ID: {}", Node.Id);
-        }
-    }
-
-    UIRenderContext EditorSystem::MakeRenderContext() {
-        UIRenderContext Ctx;
-        Ctx.GlobalVM = Globals.GlobalVM;
-        Ctx.LocalVM = {};
-        return Ctx;
-    }
     
-    void EditorSystem::OnPreFrame() {
-        
-    }
+    WidgetApplication::Get().InitApp(Window,Renderer,EditorAssets);
+} 
 
-    void EditorSystem::Iterate(float DeltaTime) {
-        VSystem::Iterate(DeltaTime);
-        
-        // Maybe useless DeltaTime here 
-        Globals.WApplication.Tick(DeltaTime);
+void EditorSystem::AddWidget(const UINode& Node) {
+    std::unique_ptr<UIWidget> Widget = Globals.Builder->Build(Node,&Globals.PrevCache,&Globals.NextCache);
+    if (Widget) {
+        EditorAssets.push_back(std::move(Widget));
     }
-    
-    void EditorSystem::OnPostFrame() {
-        
+    else {
+        VLOG_ERROR(EditorUI,"Failed to build UI widget from node with ID: {}", Node.Id);
     }
+}
 
-    void EditorSystem::Shutdown() {
-        Globals.ClayBackend->Shutdown();
-    }
+UIRenderContext EditorSystem::MakeRenderContext() {
+    UIRenderContext Ctx;
+    Ctx.GlobalVM = Globals.GlobalVM;
+    Ctx.LocalVM = {};
+    return Ctx;
+}
 
+void EditorSystem::OnPreFrame() {
     
 }
+
+void EditorSystem::Iterate(float DeltaTime) {
+    VSystem::Iterate(DeltaTime);
+    
+    // Maybe useless DeltaTime here 
+    WidgetApplication::Get().Tick(DeltaTime);
+}
+
+void EditorSystem::OnPostFrame() {
+    
+}
+
+void EditorSystem::Shutdown() {
+    Globals.ClayBackend->Shutdown();
+}
+
+    
+

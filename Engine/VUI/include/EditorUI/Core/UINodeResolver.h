@@ -15,7 +15,7 @@ public:
 private:
     UINode LoadAndParse(const std::string& Path);
 
-    bool HasRedirects(const UINode& Node);
+    bool HasRedirects(const UINode& Node,bool& bOutIsSelf);
     
     std::string BasePath;
 };

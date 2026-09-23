@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_SpriteAsset {
 
 static VC_CompiledInDefer_SpriteAsset VC_CompiledInDefer_SpriteAsset_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& SpriteAsset::StaticClass() { 
     return *VC_Construct_VClass_SpriteAsset(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& SpriteAsset::GetClass() const { 
     return SpriteAsset::StaticClass(); 
 }; 
 

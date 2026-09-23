@@ -1,5 +1,6 @@
 #pragma once
-#include <CoreAPI/precomp.h>
+
+#include <Export.h>
 
 namespace VulcanCore {
     class VClass;

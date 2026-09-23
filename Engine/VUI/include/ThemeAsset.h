@@ -7,35 +7,35 @@
 
 #include <ThemeAsset.vht.h>
 
-namespace VUI {
 
-    VCLASS()
-    class ThemeAsset : public VulcanEngine::VAsset {
 
-        VCLASS_BODY()
+VCLASS()
+class VUI_API ThemeAsset : public VAsset {
 
-    public:
-        // Maybe need move semantics 
-        ThemeAsset() = default;
-        ThemeAsset(const ThemeAsset&) = default; 
-        ThemeAsset& operator=(const ThemeAsset&) = default;
+    VCLASS_BODY()
 
-        
-        void ConstructJson(const std::string_view& InAssetName) override;
+public:
+    // Maybe need move semantics 
+    ThemeAsset() = default;
+    ThemeAsset(const ThemeAsset&) = default; 
+    ThemeAsset& operator=(const ThemeAsset&) = default;
 
-        static ThemeAsset* FromJson(const std::string& InJson);
-        std::string ToJson() const override;
+    
+    void ConstructJson(const std::string_view& InAssetName) override;
 
-        void Init();
-        void Render();
-        void PostRender();
+    static ThemeAsset* FromJson(const std::string& InJson);
+    std::string ToJson() const override;
 
-        
-    private:
+    void Init();
+    void Render();
+    void PostRender();
 
-        VulcanEngine::VFont TitleFont{};
-        VulcanEngine::VFont BodyFont{};
+    
+private:
 
-        nlohmann::json DefaultFlags;
-    };
-}
+    VFont TitleFont{};
+    VFont BodyFont{};
+
+    nlohmann::json DefaultFlags;
+};
+

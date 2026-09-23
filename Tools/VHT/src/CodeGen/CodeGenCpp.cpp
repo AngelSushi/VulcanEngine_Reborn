@@ -96,11 +96,11 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
                             // 5. StaticClass / GetClass
     // ================================================================
 
-    buffer << class_info.dll << " VClass& " << class_info.GetFullName() << "::StaticClass() { \n";
+    buffer << class_info.dll << " VClass& " << class_info.Name << "::StaticClass() { \n";
     buffer << "    return *VC_Construct_VClass_" << class_info.Name << "(); \n";
     buffer << "}; \n\n";
 
-    buffer << class_info.dll << " VClass& " << class_info.GetFullName() << "::GetClass() const { \n";
+    buffer << class_info.dll << " VClass& " << class_info.Name << "::GetClass() const { \n";
     buffer << "    return " << class_info.Name << "::StaticClass(); \n";
     buffer << "}; \n\n";
 
@@ -157,7 +157,7 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
             std::string methodSignature;
 
             if (!func.isStatic) {
-                methodSignature += class_info.GetFullName() + ",";
+                methodSignature += class_info.Name + ",";
             }
             methodSignature += func.ReturnType;
 
@@ -166,10 +166,10 @@ void CodeGenCpp::GenerateClass(const ClassInfo& class_info, std::vector<EnumInfo
             }
             
             if (func.isStatic) {
-                buffer << "   c.AddFunction(std::make_unique<VStaticFunction<" << methodSignature << ">>(\"" << func.Name << "\", &" << class_info.GetFullName() << "::" << func.Name << ")); \n";
+               // buffer << "   c.AddFunction(std::make_unique<VStaticFunction<" << methodSignature << ">>(\"" << func.Name << "\", &" << class_info.Name << "::" << func.Name << ")); \n";
             }
             else {
-                buffer << "   c.AddFunction(std::make_unique<VFunction<" << methodSignature << ">>(\"" << func.Name << "\", &" << class_info.GetFullName() << "::" << func.Name << ")); \n";
+               // buffer << "   c.AddFunction(std::make_unique<VFunction<" << methodSignature << ">>(\"" << func.Name << "\", &" << class_info.Name << "::" << func.Name << ")); \n";
             }
         }
     

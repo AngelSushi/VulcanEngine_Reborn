@@ -15,7 +15,9 @@
  //#include "Systems/FontSystem.h"
 
  namespace VGame {
-	class Game : public VulcanEngine::Game {
+
+ 	// Maybe destroy this class, game seems nothing in the current architecture of the engine
+	class VGame : public Game {
 		
 		void LoadRegistries() override {
 			/*VulcanEngine::ThemeRegistry.Load([]() {
@@ -24,30 +26,30 @@
 			
 			VulcanEngine::TreeIconProviderRegistry.Register(std::make_unique<VUI::IAssetIconProvider>());
 			*/
-			VulcanEngine::EngineActionRegistry.Register(VulcanEngine::IEngineAction::Create<VulcanEngine::AssetsAction>());
-			VulcanEngine::EngineActionRegistry.Register(VulcanEngine::IEngineAction::Create<VulcanEngine::FolderAction>());
+			EngineActionRegistry.Register(IEngineAction::Create<AssetsAction>());
+			EngineActionRegistry.Register(IEngineAction::Create<FolderAction>());
 		}
 		
 		void SetupSystems() override {
 			
-			VulcanEngine::RenderSystem::SetConfig({
+			RenderSystem::SetConfig({
 				.Title = "VulcanEngine",
 				//.Size = { 2560, 1325}
 				.Size = { 1920, 1080},
 				.Flags = SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED
 			});
 			
-			AddSystem<VulcanEngine::RenderSystem>();
+			AddSystem<RenderSystem>();
 			AddSystem<FontSystem>();
-			AddSystem<VulcanEngine::EditorSystem>();
+			AddSystem<EditorSystem>();
 		}
 	};
 }
 
 int main(int argc, char** argv) {
-	VGame::Game game;
+	VGame::VGame game;
 
 	auto runResult = game.Run();
 
-	return runResult == VulcanEngine::Game::RunResult::Success ? 0 : 1;
+	return runResult == Game::RunResult::Success ? 0 : 1;
 }

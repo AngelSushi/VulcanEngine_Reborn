@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_VComponent {
 
 static VC_CompiledInDefer_VComponent VC_CompiledInDefer_VComponent_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& VComponent::StaticClass() { 
     return *VC_Construct_VClass_VComponent(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& VComponent::GetClass() const { 
     return VComponent::StaticClass(); 
 }; 
 

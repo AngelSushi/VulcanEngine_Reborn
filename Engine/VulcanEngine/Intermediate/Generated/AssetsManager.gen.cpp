@@ -35,15 +35,14 @@ struct VC_CompiledInDefer_AssetsManager {
 
 static VC_CompiledInDefer_AssetsManager VC_CompiledInDefer_AssetsManager_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& AssetsManager::StaticClass() { 
     return *VC_Construct_VClass_AssetsManager(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& AssetsManager::GetClass() const { 
     return AssetsManager::StaticClass(); 
 }; 
 
 void VC_Construct_VClass_AssetsManager_Statics::RegisterFunctions(VClass& c) { 
-   c.AddFunction(std::make_unique<VStaticFunction<VulcanEngine::AssetsManager&>>("Instance", &::Instance)); 
 }; 
 

@@ -2,26 +2,25 @@
 #include <CoreAPI/precomp.h>
 
 
-namespace VulcanCore {
+// MAybe useless to put in VCore cause we only need for LogSystem in VCore Module, see for changes after. 
+class VCORE_API VTime {
+
+	public:
 	
-	class VCORE_API VTime {
+		VTime();
+	
+		static std::tm GetActualTime();
+	
+		static std::string ToString(const std::tm& InTimeInfo);
 
-		public:
-		
-			VTime();
-		
-			static std::tm GetActualTime();
-		
-			static std::string ToString(const std::tm& InTimeInfo);
+		float GetElapsedTime() const;
+		float Restart();
 
-			float GetElapsedTime() const;
-			float Restart();
+	private:
+		static float GetElapsedTime(std::uint64_t Now, std::uint64_t LastTime);
 
-		private:
-			static float GetElapsedTime(std::uint64_t Now, std::uint64_t LastTime);
-
-			std::uint64_t _LastTime;
-	};
+		std::uint64_t _LastTime;
+};
 
 
-}
+

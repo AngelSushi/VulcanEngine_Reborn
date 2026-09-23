@@ -4,6 +4,7 @@
 namespace VulcanCore  {
     class ReflectionBase;
 
+    // Re-rajouter la dll VCORE_API si on définit dans un .cpp peut etre  ? 
     template<typename R,typename... Args>
     class VStaticFunction : public VFunctionBase {
     public:

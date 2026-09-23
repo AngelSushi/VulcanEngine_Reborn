@@ -1,5 +1,9 @@
 #pragma once
 
+#include <Reflection/Macros/FieldMacros.h>
+#include <Reflection/Macros/JsonMacros.h>
+#include <Reflection/Macros/ReflectionTags.h>
+
 #ifndef VULCAN_LOG_ERROR
 #define VULCAN_LOG_ERROR(...)\
 fmt::print(fmt::fg(fmt::color::red), __VA_ARGS__);
@@ -31,10 +35,16 @@ fmt::print(fmt::fg(fmt::color::red), __VA_ARGS__);
 #define REGISTER_COMPONENT(T) \
 static struct T##_AutoRegister { \
 T##_AutoRegister() { \
-::VulcanEngine::ComponentRegistry::Instance().RegisterType<T>(#T); \
+ComponentRegistry::Instance().RegisterType<T>(#T); \
 } \
 } T##_AutoRegister_Instance;
 
+
+// Have to define BuildJsonSchema in .gen.cpp in future
+// We register JsonSchemaRegistered to force RegisterSchema to be execute without creating new struct with new instance etc, true has no real meaning, just to make the expression valid
+#define REGISTER_JSON_SCHEMA(TClass,TModuleDir) \
+private:\
+inline static const bool JsonSchemaRegistered = (JsonManager::Get().RegisterSchema(#TClass,TModuleDir, &TClass::BuildJsonSchema),true);
 
 // For now , we put windowss macro here cause we don't support other platforms yet
 

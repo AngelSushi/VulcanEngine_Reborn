@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_Scene {
 
 static VC_CompiledInDefer_Scene VC_CompiledInDefer_Scene_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& Scene::StaticClass() { 
     return *VC_Construct_VClass_Scene(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& Scene::GetClass() const { 
     return Scene::StaticClass(); 
 }; 
 

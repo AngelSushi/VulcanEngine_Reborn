@@ -10,7 +10,7 @@ namespace VulcanCore {
 
     // Base of all reflected structures (e.g. class, struct, functions, ...)
     // Its only just a block of memory to store datas
-    class VStruct : public VField {
+    class VCORE_API VStruct : public VField {
 
     public:
 

@@ -5,7 +5,7 @@
 #include "EditorUI/Backend/Clay/ClayBackend.h"
 #include "EditorUI/Core/UIWidget.h"
 
-class WidgetApplication {
+class VUI_API WidgetApplication {
 
 public:
 
@@ -14,10 +14,12 @@ public:
         return instance;
     }
     
-    void InitApp(const VulcanEngine::VWindow* InAppWindow,const VulcanEngine::Graphics::VRenderer* InAppRenderer,std::vector<std::unique_ptr<UIWidget>>& InAppWidgets);
+    void InitApp(const VWindow* InAppWindow,const VRenderer* InAppRenderer,std::vector<std::unique_ptr<UIWidget>>& InAppWidgets);
     void Tick(float DeltaTime);
 
     void AddOverlay(const UINode& InNode);
+
+    VMath::Rect GetCurrentWindowGeometry() const;
 
 
 private:
@@ -29,8 +31,8 @@ private:
     void Draw();
     
     bool TryFocus(UIWidget* InFocusWidget);
-    const VulcanEngine::VWindow* AppWindow;
-    const VulcanEngine::Graphics::VRenderer* AppRenderer;
+    const VWindow* AppWindow;
+    const VRenderer* AppRenderer;
     ClayBackend* AppBackend;
 
     // EditorSystem owns the widgets; WidgetApplication only holds a non-owning pointer to the list.

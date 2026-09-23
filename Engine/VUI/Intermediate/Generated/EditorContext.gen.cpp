@@ -35,15 +35,14 @@ struct VC_CompiledInDefer_EditorContext {
 
 static VC_CompiledInDefer_EditorContext VC_CompiledInDefer_EditorContext_Obj; 
 
- VClass& ::StaticClass() { 
+VUI_API VClass& EditorContext::StaticClass() { 
     return *VC_Construct_VClass_EditorContext(); 
 }; 
 
- VClass& ::GetClass() const { 
+VUI_API VClass& EditorContext::GetClass() const { 
     return EditorContext::StaticClass(); 
 }; 
 
 void VC_Construct_VClass_EditorContext_Statics::RegisterFunctions(VClass& c) { 
-   c.AddFunction(std::make_unique<VStaticFunction<VUI::EditorContext&>>("Instance", &::Instance)); 
 }; 
 

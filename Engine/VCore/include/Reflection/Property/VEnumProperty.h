@@ -11,7 +11,7 @@
 
 namespace VulcanCore {
 
-    class VEnumProperty : public VPropertyBase {
+    class VCORE_API VEnumProperty : public VProperty {
     public:
         
         void Draw() const override {

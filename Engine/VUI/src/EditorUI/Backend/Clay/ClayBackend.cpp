@@ -5,8 +5,7 @@
 
 #include "Systems/FontSystem.h"
 
-
-ClayBackend::ClayBackend(SDL_Renderer* Renderer) {
+ClayBackend::ClayBackend(const VRenderer* Renderer) {
     #if SDL_RENDERER
         SDLClayRenderer = new UIClaySDLRenderer(Renderer);
     #endif
@@ -42,7 +41,6 @@ UIClayRendererBase* ClayBackend::GetClayRenderer() const {
     #else
         return nullptr;
     #endif
-    
 }
 
 Clay_Dimensions ClayBackend::MeasureText(Clay_StringSlice Text, Clay_TextElementConfig* TextConfig, void* UserData) {

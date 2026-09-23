@@ -35,17 +35,14 @@ struct VC_CompiledInDefer_World {
 
 static VC_CompiledInDefer_World VC_CompiledInDefer_World_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& World::StaticClass() { 
     return *VC_Construct_VClass_World(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& World::GetClass() const { 
     return World::StaticClass(); 
 }; 
 
 void VC_Construct_VClass_World_Statics::RegisterFunctions(VClass& c) { 
-   c.AddFunction(std::make_unique<VStaticFunction<VulcanEngine::World&>>("GetWorld", &::GetWorld)); 
-   c.AddFunction(std::make_unique<VStaticFunction<VulcanEngine::World&>>("Instance", &::Instance)); 
-   c.AddFunction(std::make_unique<VFunction<,void>>("BuildTree", &::BuildTree)); 
 }; 
 

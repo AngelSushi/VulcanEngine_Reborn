@@ -53,7 +53,7 @@ struct TypeInfoBase {
         }
 
         fullname += Name;*/
-        return "";
+        return Name;
     }
 };
 
@@ -80,6 +80,6 @@ struct EnumInfo {
     }
 
     std::string GetFullName() const {
-        return "";
+        return Name;
     }
 };

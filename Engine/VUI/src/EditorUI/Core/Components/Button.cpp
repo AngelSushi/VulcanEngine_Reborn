@@ -4,3 +4,7 @@
 void Button::ApplyProps() {
     UIWidget::ApplyProps();
 }
+
+void Button::Render(UIRenderContext& InContext) {
+    UIWidget::Render(InContext);
+}

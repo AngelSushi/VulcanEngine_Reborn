@@ -1,6 +1,7 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
+#include "Padding.h"
 #include "Vector2.h"
 #include "EditorUI/Backend/Clay/ClayHelper.h"
 
@@ -10,7 +11,7 @@
 
 // std::get can failed in specific sdk's (maybe sdk like console?) so we may implements our own system after. 
 
-using UIData = std::variant<std::string, float, bool,int, VMath::Vector2f,ClaySize>;
+using UIData = std::variant<std::string, float, bool,int, VMath::Vector2f,ClaySize,Padding>;
 
 struct UIValue {
     UIData Value;
@@ -24,6 +25,8 @@ public:
     UIValue(int InValue) : Value(InValue) {}
     UIValue(VMath::Vector2f InValue) : Value(InValue) {}
     UIValue(ClaySize InValue) : Value(InValue) {}
+    UIValue(Padding InValue) : Value(InValue) {}
+    
     
     template<typename T>
     bool Is() const {

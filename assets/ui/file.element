@@ -1,0 +1,32 @@
+{
+    "Type": "Button",
+    "Id": "navbar-button",
+    "WindowIndex": 0,
+    "Properties": {
+      "backgroundColor": "#00ff00",
+      "hoverColor": "#555555",
+      "focusable": true,
+      "padding": [5, 5, 5, 5],
+      "size": [900, 30],
+      "verticalAlignment": "Fill",
+      "horizontalAlignment": "Left"
+    },
+    "Children": [
+      {
+        "Type": "Text",
+        "Id": "navbar-button-text",
+        "WindowIndex": 0,
+        "Properties": {
+          "text": "Navbar Button",
+          "font": "Recta.ttf",
+          "fontSize": 14,
+          "color": "#ffffff",
+          "verticalAlignment": "Center",
+          "horizontalAlignment": "Center"
+        }
+      }
+    ],
+    "Bindings": {},
+    "Events": {},
+    "Style": ""
+}

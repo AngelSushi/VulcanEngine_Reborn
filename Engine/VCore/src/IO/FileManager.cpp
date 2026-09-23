@@ -1,5 +1,10 @@
 #include <IO/FileManager.h>
 
+VulcanCore::FileManager& VulcanCore::FileManager::Get() {
+    static FileManager instance;
+    return instance;
+}
+
 std::vector<std::string> VulcanCore::FileManager::LoadExtension(const std::string& Path,const std::string& Extension) {
 
     std::vector<std::string> Paths;
@@ -20,7 +25,7 @@ std::vector<std::string> VulcanCore::FileManager::LoadExtension(const std::strin
     return Paths;
 }
 
-bool VulcanCore::FileManager::Load(std::string AbsolutePath) {
+bool VulcanCore::FileManager::Exists(std::string AbsolutePath) {
     return fs::exists(AbsolutePath) && fs::is_regular_file(AbsolutePath);
 }
 
@@ -38,6 +43,26 @@ std::vector<uint8_t> VulcanCore::FileManager::Read(std::string AbsolutePath) {
     File.read(reinterpret_cast<char*>(Buffer.data()),FileSize);
 
     return Buffer;
+}
+
+bool VulcanCore::FileManager::Write(std::string AbsolutePath, const std::vector<uint8_t>& Data) {
+    // Create directories if they don't exist
+    fs::path FilePath(AbsolutePath);
+    std::error_code ErrorCode;
+    fs::create_directories(FilePath.parent_path(),ErrorCode);
+
+    if (ErrorCode) {
+        return false;
+    }
+
+    std::ofstream File(AbsolutePath, std::ios::binary);
+
+    if (!File.is_open()) {
+        return false;
+    }
+    
+    File.write(reinterpret_cast<const char*>(Data.data()), Data.size());
+    return File.good();
 }
 
 std::vector<std::string> VulcanCore::FileManager::ReadAllAssets(const std::string& Extension) {

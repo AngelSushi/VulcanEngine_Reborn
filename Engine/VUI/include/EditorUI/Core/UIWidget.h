@@ -4,12 +4,11 @@
 #include <EditorUI/Runtime/UIRenderContext.h>
 
 #include "EventTrigger.h"
-#include "Rect.h"
-#include "Vector2.h"
 #include "EditorUI/EWidgetVisibility.h"
+#include "Slot/UISlot.h"
 #include "Types/VColor.h"
 
-class UIWidget {
+class VUI_API UIWidget {
     friend class WidgetApplication;
 
     using WidgetEventType = std::function<void()>;
@@ -18,68 +17,68 @@ public:
     virtual ~UIWidget() = default;
 
     void Link(const UINode& InNode);
-    void AddChild(std::unique_ptr<UIWidget> InChild);
+
+    // void AddChild(std::unique_ptr<UIWidget> InChild);
 
     virtual void ApplyProps();
-    virtual void Layout();
     virtual void Initialized(WidgetApplication& WidgetApplication);
     
-    virtual void Render(UIRenderContext& InContext) const;
-    virtual Clay_LayoutConfig BuildLayout() const;
-    virtual Clay_ElementDeclaration Build() const;
+    virtual void Render(UIRenderContext& InContext);
+
+    virtual Clay_ElementDeclaration Build();
+    void ResolveLayout();
 
     bool HasParent() const;
     UIWidget* GetParent() const;
     void SetParent(UIWidget* InParent);
 
     EWidgetVisibility GetVisibility() const;
-    VMath::Rect GetBounds() const;
 
     const std::string& GetID() const { return Id; }
     const std::string& GetType() const { return Type; }
-    const std::vector<std::unique_ptr<UIWidget>>& GetChildren() const;
-    const int GetChildrenCount() const;
 
-    const VMath::Vector2f& GetPosition() const;
-    VMath::Vector2f GetSize() const;
 
-    // Maybe change the SetPoition for future, UIWidget should represent a node in the UI tree, and its position should be determined by its parent and layout, not set directly.
-    void SetPosition(const VMath::Vector2f& InPosition);
+    void SetSlot(std::unique_ptr<UISlot> InSlot);
+    UISlot* GetSlot() const;
 
+
+    VMath::Rect GetGeometry() const;
+    
 protected:
     virtual bool SupportFocus();
     virtual bool NativeOnFocusReceived();
     virtual void NativeOnFocusLost();
 
     bool bIsFocusable = false;
-    UINode* Node = nullptr;
+    UINode Node;
     EWidgetVisibility Visibility = EWidgetVisibility::Visible;
+    Clay_String GetClayString() const;
 
 private:
-    Clay_String GetClayString() const;
-    float ResolveAxisSize(ClayAxisSize Axis,float MaxValue) const;
-
     void DispatchEvent(const std::string& EventName);
-
+    
     std::string Id;
     std::string Type;
     int WindowIndex;
 
-    std::vector<std::unique_ptr<UIWidget>> Children;
+    /*
+     *@brief The geometry of the widget, which is computed based on its position, size, and parent geometry. This is used for rendering and hit testing. The geometry is compute one frame after the widget is created, so it may not be valid immediately after creation. It is updated every frame during the ResolveLayout() call.
+     */
+    VMath::Rect InternalGeometry;
+
     UIWidget* Parent = nullptr;
 
-    VulcanEngine::VColor BackgroundColor;
-    VulcanEngine::VColor OriginColor;
-    VulcanEngine::VColor HoverColor;
-    VulcanEngine::VColor ClickedColor;
+    VColor BackgroundColor;
+    VColor OriginColor;
+    VColor HoverColor;
+    VColor ClickedColor;
 
-    VMath::Vector2f Position;
-    ClaySize Size;
+    std::unique_ptr<UISlot> Slot;
 
 public:
-    VulcanEngine::EventTrigger<WidgetEventType> OnFocus;
-    VulcanEngine::EventTrigger<WidgetEventType> OnFocusLost;
-    VulcanEngine::EventTrigger<WidgetEventType> OnHover;
-    VulcanEngine::EventTrigger<WidgetEventType> OnClicked;
+    EventTrigger<WidgetEventType> OnFocus;
+    EventTrigger<WidgetEventType> OnFocusLost;
+    EventTrigger<WidgetEventType> OnHover;
+    EventTrigger<WidgetEventType> OnClicked;
     
 };

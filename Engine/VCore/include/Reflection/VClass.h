@@ -4,16 +4,17 @@
 #include <Reflection/Function/VFunction.h>
 
 namespace VulcanCore {
-    class VClass : public VStruct { // For all class that are "lifeable" objects
+    class VCORE_API VClass : public VStruct { // For all class that are "lifeable" objects
     
     public:
        // VClass(const std::string& ClassName,const std::string& full_name, size_t ClassSize) : VScruct(std::move(ClassName),std::move(full_name), ClassSize) {}
-        
-        void AddFunction(std::unique_ptr<VFunctionBase> Fn) {
+
+        // We loose after Fn, is that the right way to do it ?
+      /*  void AddFunction(std::unique_ptr<VFunctionBase>& Fn) {
             Functions.push_back(std::move(Fn));
         }
-
-        const std::vector<std::unique_ptr<VFunctionBase>>& GetFunctions() const { return Functions; }
+*/
+        //const std::vector<std::unique_ptr<VFunctionBase>>& GetFunctions() const { return Functions; }
         
         /*template<typename T>
         bool IsA() const {
@@ -42,6 +43,6 @@ namespace VulcanCore {
         
         VClass* Parent = nullptr; // Dangerous
     private:
-        std::vector<std::unique_ptr<VFunctionBase>> Functions;
+        //std::vector<std::unique_ptr<VFunctionBase>> Functions;
     };
 }

@@ -11,13 +11,13 @@
 namespace VulcanCore {
 
     template<typename C>
-    class VDoubleProperty : public VPropertyBase {
+    class VCORE_API VDoubleProperty : public VProperty {
     public:
         using PropMember = double C::*;
         PropMember Member;
         
-        VDoubleProperty(const std::string& name,PropMember prop,onst std::vector<std::string>& attrs, const MetaMap& datas)
-            : VPropertyBase(std::move(name), typeid(double), std::move(attrs), std::move(datas)), Member(prop) {}
+        //VDoubleProperty(const std::string& name,PropMember prop,onst std::vector<std::string>& attrs, const MetaMap& datas)
+         //   : VPropertyBase(std::move(name), typeid(double), std::move(attrs), std::move(datas)), Member(prop) {}
         
 
         void Draw() const override {

@@ -6,33 +6,44 @@ UINodeResolver::UINodeResolver(std::string InBasePath) : BasePath(InBasePath) {
 }
 
 UINode UINodeResolver::Resolve(UINode& Node) {
-    if (!HasRedirects(Node))
-    {
+    bool bIsSelf = false;
+    
+    if (!HasRedirects(Node,bIsSelf)) {
         return Node;
     }
 
-    std::vector<std::string> Redirects;
+    if (bIsSelf) {
+        UINode SelfNode = LoadAndParse(fs::path(BasePath + "/" +  Node.Redirect).string());
+        UINode::Merge(SelfNode, Node);
+
+        Node = SelfNode;
+    }
+
+    // Maybe LocalResolver should take the path of RedirectNode
     for (UINode& Child : Node.Children) {
-        UINode RedirectNode = LoadAndParse(fs::path(BasePath + "/" +  Child.Redirect).string());
-        UINode::Merge(RedirectNode, Child);
+        bool bIsChildSelf = false;
 
-        for (UINode& RedirectChild : RedirectNode.Children) {
-            UINodeResolver LocalResolver(fs::path(BasePath + "/" +  Child.Redirect).parent_path().string());
-            RedirectChild = Resolve(RedirectChild);
+        if (HasRedirects(Child,bIsChildSelf)) {
+            UINode RedirectNode = LoadAndParse(fs::path(BasePath + "/" +  Child.Redirect).string());
+            UINode::Merge(RedirectNode, Child);
+            Child = RedirectNode;
         }
-
-        Child = RedirectNode;
+        
+        for (UINode& RedirectChild : Child.Children) {
+            UINodeResolver LocalResolver(fs::path(BasePath + "/" +  Child.Redirect).parent_path().string());
+            RedirectChild = LocalResolver.Resolve(RedirectChild);
+        }
     }
 
     return Node;
 }
 
 UINode UINodeResolver::LoadAndParse(const std::string& Path) {
-    if (VulcanCore::FileManager::Get().Load(Path)) {
+    if (VulcanCore::FileManager::Get().Exists(Path)) {
         std::vector<uint8_t> Content = VulcanCore::FileManager::Get().Read(Path);
         if (Content.size() > 0) {
             std::string JsonContent(Content.begin(), Content.end());
-            auto [Node,Success] = VulcanEngine::JsonSerializer::Load<UINode>(JsonContent);
+            auto [Node,Success] = JsonSerializer::Load<UINode>(JsonContent);
 
             if (Success) {
                 return Node;
@@ -43,12 +54,13 @@ UINode UINodeResolver::LoadAndParse(const std::string& Path) {
     return UINode();
 }
 
-bool UINodeResolver::HasRedirects(const UINode& Node) {
+bool UINodeResolver::HasRedirects(const UINode& Node,bool& bOutIsSelf) {
     for (const UINode& Child : Node.Children) {
         if (!Child.Redirect.empty()) {
             return true;
         }
     }
 
-    return false;
+    bOutIsSelf = !Node.Redirect.empty();
+    return bOutIsSelf;
 }

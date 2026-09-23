@@ -18,8 +18,8 @@ public:
             ClayAxisSize(EClaySizeType::FIXED,20.f)
         )))
         .Prop("focusable",true)
-        .Children(MakeButton("button1","Button 1","#ff0000"))
-        .Children(MakeButton("button2","Button 2","#00ff00"))
+        .Children(MakeButton("file","File","#ff0000"))
+        //.Children(MakeButton("button2","Button 2","#00ff00"))
         .Build();
     }
 
@@ -30,7 +30,7 @@ private:
             .Prop("backgroundColor", UIValue(BackgroundColor))
             .Prop("focusable",true)
             .Prop("size", UIValue(ClaySize(
-                ClayAxisSize(EClaySizeType::FIXED, 100.f),
+                ClayAxisSize(EClaySizeType::FIXED, 60.f),
                 ClayAxisSize(EClaySizeType::GROW, 0.f)
             )))
             .Children(MakeText("text_" + Id, Text, "#ffffff"));
@@ -40,7 +40,7 @@ private:
         return UINodeBuilder("Text", Id)
             .Prop("text", UIValue(Text))
             .Prop("color", UIValue(Color))
-            .Prop("font", UIValue(std::string("gil.TTF")))
+            .Prop("font", UIValue(std::string("Roboto-Regular.ttf")))
             .Prop("fontSize", UIValue(16));
     }
 };

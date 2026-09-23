@@ -14,116 +14,115 @@
 #include <Types/VColor.h>
 #include <CoreAPI/IRegistry.h>
 
+#include <LogCategory.vht.h>
 
-namespace VulcanCore {
+VENUM()
+enum class LogLevel {
+	Info,
+	Debug,
+	Warning,
+	Error
+};
 
-	VENUM()
-	enum class LogLevel {
-		Info,
-		Debug,
-		Warning,
-		Error
-	};
+VCLASS()
+class VCORE_API LogCategory : public VulcanCore::ReflectionBase {
 
-	VCLASS()
-	class VCORE_API LogCategory : public VulcanCore::ReflectionBase {
-
-		VCLASS_BODY()
-		
-	public:
-		LogCategory(const std::string& InName) : Name(InName), Enabled(true) {}
-
-		const std::string& GetName() const { return Name; }
-		bool& IsEnabled() { return Enabled; }
-		void SetEnabled(bool inEnabled) { Enabled = inEnabled; }
-
-	private:
-		VPROPERTY()
-		std::string Name;
-
-		VPROPERTY(UI_Combo)
-		bool Enabled;
-	};
+	VCLASS_BODY()
 	
-	struct LogMessage {
-		
-		LogMessage(const std::string& InMessage,LogLevel InLevel,const std::string& InTimestamp,LogCategory& InCategory,const std::string& InFile,int InLine) : Message(InMessage),Level(InLevel),Timestamp(InTimestamp),Category(InCategory),File(InFile),Line(InLine) {}
-		
-		std::string Message;
-		LogLevel Level;
-		std::string Timestamp;
-		LogCategory& Category;
-		std::string File;
-		int Line;
+public:
+	LogCategory(const std::string& InName) : Name(InName), Enabled(true) {}
 
-		VMath::Vector3f GetColorForLevel() {
-			switch (Level) {
-				default:
-				case LogLevel::Debug:
-				case LogLevel::Info:
-					return VMath::Vector3f(0.04f,0.69f,0.69f);
+	const std::string& GetName() const { return Name; }
+	bool& IsEnabled() { return Enabled; }
+	void SetEnabled(bool inEnabled) { Enabled = inEnabled; }
 
-				case LogLevel::Warning:
-					return VMath::Vector3f(0.75f,0.75f,0.02f);
+private:
+	VPROPERTY()
+	std::string Name;
 
-				case LogLevel::Error:
-					return VMath::Vector3f(0.85f,0.12f,0.12f);
-			}
-		}
-	};
+	VPROPERTY(UI_Combo)
+	bool Enabled;
+};
+
+struct LogMessage {
 	
+	LogMessage(const std::string& InMessage,LogLevel InLevel,const std::string& InTimestamp,LogCategory& InCategory,const std::string& InFile,int InLine) : Message(InMessage),Level(InLevel),Timestamp(InTimestamp),Category(InCategory),File(InFile),Line(InLine) {}
 	
-	class VCORE_API LogSystem {
+	std::string Message;
+	LogLevel Level;
+	std::string Timestamp;
+	LogCategory& Category;
+	std::string File;
+	int Line;
 
-	public:
-		static LogSystem& Instance() {
-			static LogSystem instance;
-			return instance;
+	VMath::Vector3f GetColorForLevel() {
+		switch (Level) {
+			default:
+			case LogLevel::Debug:
+			case LogLevel::Info:
+				return VMath::Vector3f(0.04f,0.69f,0.69f);
+
+			case LogLevel::Warning:
+				return VMath::Vector3f(0.75f,0.75f,0.02f);
+
+			case LogLevel::Error:
+				return VMath::Vector3f(0.85f,0.12f,0.12f);
 		}
+	}
+};
 
-		void Log(const std::string& message, LogLevel level,LogCategory& InCategory, const std::string& InFile, int InLine) {
-			std::lock_guard<std::mutex> lock(Mutex);
-			
-			std::filesystem::path filePath(InFile);
+
+class VCORE_API LogSystem {
+
+public:
+	static LogSystem& Instance() {
+		static LogSystem instance;
+		return instance;
+	}
+
+	void Log(const std::string& message, LogLevel level,LogCategory& InCategory, const std::string& InFile, int InLine) {
+		std::lock_guard<std::mutex> lock(Mutex);
 		
-			Messages.push_back(LogMessage(message, level, VTime::ToString(VTime::GetActualTime()), InCategory,filePath.filename().string(),InLine));
-		}
-
-		std::vector<LogMessage> GetMessages() const {
-			return Messages;
-		}
-
-		void Clear() {
-			Messages.clear();
-		}
-
-	private:
-		std::vector<LogMessage> Messages;
-		std::mutex Mutex;
-	};
-
+		std::filesystem::path filePath(InFile);
 	
-	//VULCAN_ENGINE_API IRegistry<LogCategory> LogCategoryRegistry;
-	extern VulcanEngine::IRegistry<LogCategory> LogCategoryRegistry;
+		Messages.push_back(LogMessage(message, level, VTime::ToString(VTime::GetActualTime()), InCategory,filePath.filename().string(),InLine));
+	}
+
+	std::vector<LogMessage> GetMessages() const {
+		return Messages;
+	}
+
+	void Clear() {
+		Messages.clear();
+	}
+
+private:
+	std::vector<LogMessage> Messages;
+	std::mutex Mutex;
+};
+
+
+//VULCAN_ENGINE_API IRegistry<LogCategory> LogCategoryRegistry;
+extern VCORE_API IRegistry<LogCategory> LogCategoryRegistry;
+
+
+#define VLOG_BASE(cat, lvl, msg, ...) \
+LogSystem::Instance().Log( \
+fmt::format(msg, ##__VA_ARGS__), lvl, cat, __FILE__, __LINE__)
+
+#define VLOG_INFO(cat, msg, ...)  VLOG_BASE(cat,LogLevel::Info, msg, ##__VA_ARGS__)
+#define VLOG_WARN(cat, msg, ...)  VLOG_BASE(cat,LogLevel::Warning, msg, ##__VA_ARGS__)
+#define VLOG_ERROR(cat, msg, ...) VLOG_BASE(cat,LogLevel::Error, msg, ##__VA_ARGS__)
+#define VLOG_DEBUG(cat, msg, ...) VLOG_BASE(cat,LogLevel::Debug, msg, ##__VA_ARGS__)
+
+#define DECLARE_LOG_CATEGORY(name) \
+extern LogCategory& name
+
+#define DEFINE_LOG_CATEGORY(name) \
+LogCategory& name = \
+LogCategoryRegistry.Register( \
+std::make_unique<LogCategory>(#name))
 	
+DECLARE_LOG_CATEGORY(Other);
 
-	#define VLOG_BASE(cat, lvl, msg, ...) \
-	VulcanCore::LogSystem::Instance().Log( \
-	fmt::format(msg, ##__VA_ARGS__), lvl, cat, __FILE__, __LINE__)
-
-	#define VLOG_INFO(cat, msg, ...)  VLOG_BASE(cat,VulcanCore::LogLevel::Info, msg, ##__VA_ARGS__)
-	#define VLOG_WARN(cat, msg, ...)  VLOG_BASE(cat,VulcanCore::LogLevel::Warning, msg, ##__VA_ARGS__)
-	#define VLOG_ERROR(cat, msg, ...) VLOG_BASE(cat,VulcanCore::LogLevel::Error, msg, ##__VA_ARGS__)
-	#define VLOG_DEBUG(cat, msg, ...) VLOG_BASE(cat,VulcanCore::LogLevel::Debug, msg, ##__VA_ARGS__)
-
-	#define DECLARE_LOG_CATEGORY(name) \
-	extern VulcanCore::LogCategory& name
-
-	#define DEFINE_LOG_CATEGORY(name) \
-	VulcanCore::LogCategory& name = \
-	VulcanCore::LogCategoryRegistry.Register( \
-	std::make_unique<VulcanCore::LogCategory>(#name))
-		
-	DECLARE_LOG_CATEGORY(Other);
-}
 

@@ -1,3 +1,4 @@
+
 #pragma once
 #include <CoreAPI/precomp.h>
 
@@ -7,4 +8,6 @@ class Button : public UIWidget {
 
 public:
     void ApplyProps() override;
+
+    void Render(UIRenderContext& InContext) override;
 };

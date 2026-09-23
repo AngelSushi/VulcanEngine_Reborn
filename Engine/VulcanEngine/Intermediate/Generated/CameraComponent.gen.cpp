@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_CameraComponent {
 
 static VC_CompiledInDefer_CameraComponent VC_CompiledInDefer_CameraComponent_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& CameraComponent::StaticClass() { 
     return *VC_Construct_VClass_CameraComponent(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& CameraComponent::GetClass() const { 
     return CameraComponent::StaticClass(); 
 }; 
 

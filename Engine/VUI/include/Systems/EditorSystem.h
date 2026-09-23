@@ -21,59 +21,56 @@
 
 DECLARE_LOG_CATEGORY(EditorUI);
 
-namespace VulcanEngine {
 
-    struct EditorUIGlobals {
-        UIRegistry Registry = UIRegistry::Create();
-        std::optional<UIBuilder> Builder;
+struct EditorUIGlobals {
+    UIRegistry Registry = UIRegistry::Create();
+    std::optional<UIBuilder> Builder;
 
-        UIViewModel GlobalVM;
-        
-        UIWidgetCache PrevCache;
-        UIWidgetCache NextCache;
-
-        ClayBackend* ClayBackend;
-
-        WidgetApplication WApplication;
-    };
+    UIViewModel GlobalVM;
     
-    class VUI_API EditorSystem : public VSystem {
-    public:
-        
-        static EditorSystem& Instance() {
-            static EditorSystem instance;
-            return instance;
-        }
+    UIWidgetCache PrevCache;
+    UIWidgetCache NextCache;
 
-        EditorSystem();
+    ClayBackend* ClayBackend;
+};
 
-        virtual void RegisterSystemWidgets();
-        virtual void RegisterSystemScreens();
-        // VSystem interface
-        void InitSystem() override;
-        void StartSystem() override;
-        void Iterate(float DeltaTime) override;
-        void Shutdown() override;
+class VUI_API EditorSystem : public VSystem {
+public:
+    
+    static EditorSystem& Instance() {
+        static EditorSystem instance;
+        return instance;
+    }
 
-        void OnPreFrame() override;
-        void OnPostFrame() override;
+    EditorSystem();
 
-        static const EditorUIGlobals& GetGlobals() {
-            return Globals;
-        }
+    virtual void RegisterSystemWidgets();
+    virtual void RegisterSystemScreens();
+    // VSystem interface
+    void InitSystem() override;
+    void StartSystem() override;
+    void Iterate(float DeltaTime) override;
+    void Shutdown() override;
 
-        // Not safe to make it public, use outside of EditorSystem with EventTrigger. 
-        void AddWidget(const UINode& Node);
-        
-    private:
-        UIRenderContext MakeRenderContext();
-        
-        std::vector<std::unique_ptr<UIWidget>> EditorAssets;
-        //TVector<UIAsset*> Themes;
+    void OnPreFrame() override;
+    void OnPostFrame() override;
 
-        const VWindow* Window;
-        const Graphics::VRenderer* Renderer;
+    static const EditorUIGlobals& GetGlobals() {
+        return Globals;
+    }
 
-        static EditorUIGlobals Globals;
-    }; 
-}
+    // Not safe to make it public, use outside of EditorSystem with EventTrigger. 
+    void AddWidget(const UINode& Node);
+    
+private:
+    UIRenderContext MakeRenderContext();
+    
+    std::vector<std::unique_ptr<UIWidget>> EditorAssets;
+    //TVector<UIAsset*> Themes;
+
+    const VWindow* Window;
+    const VRenderer* Renderer;
+
+    static EditorUIGlobals Globals;
+}; 
+

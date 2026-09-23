@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "Bindings": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "Children": {
+      "items": {
+        "$ref": "#"
+      },
+      "type": "array"
+    },
+    "Events": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "Properties": {
+      "additionalProperties": true,
+      "type": "object"
+    },
+    "Redirect": {
+      "type": "string"
+    },
+    "Style": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "WindowIndex": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "Type",
+    "Id",
+    "WindowIndex"
+  ],
+  "title": "UINode",
+  "type": "object"
+}

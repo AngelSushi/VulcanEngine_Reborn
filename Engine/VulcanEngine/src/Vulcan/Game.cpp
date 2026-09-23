@@ -10,54 +10,53 @@
 
 #include <World.h>
 
-namespace VulcanEngine {
-    class UIAsset;
+class UIAsset;
 
-    Game::RunResult Game::Run() {
-        std::unique_ptr<VulcanCore::VCore> Core = std::make_unique<VulcanCore::VCore>(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER);
+Game::RunResult Game::Run() {
+    std::unique_ptr<VCore> Core = std::make_unique<VCore>(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMECONTROLLER);
 
-        LoadRegistries();
-        SetupSystems();
+    LoadRegistries();
+    SetupSystems();
+    
+    auto& window = Core->GetWindow("VulcanEngine");
+
+    
+    auto lastTime = SDL_GetPerformanceCounter();
+
+    for (const auto& system : systems) {
+        system->InitSystem();
+    }
+
+    for (unsigned int frame = 0; !window.IsClosed(); frame++) {
+        window.PollEvents();
         
-        auto& window = Core->GetWindow("VulcanEngine");
-
-        
-        auto lastTime = SDL_GetPerformanceCounter();
-
-        for (const auto& system : systems) {
-            system->InitSystem();
-        }
-
-        for (unsigned int frame = 0; !window.IsClosed(); frame++) {
-            window.PollEvents();
-            
-            if (frame == 0) {
-                StartEngineEvent.Trigger();
-
-                for (const auto& system : systems) {
-                    system->StartSystem();
-                }
-            }
-            
-            auto now = SDL_GetPerformanceCounter();
-            auto delta = (float)(now - lastTime) / SDL_GetPerformanceFrequency();
-
-            lastTime = now;
-
-            FrameBeginEvent.Trigger();
+        if (frame == 0) {
+            StartEngineEvent.Trigger();
 
             for (const auto& system : systems) {
-                system->Iterate(delta);
+                system->StartSystem();
             }
-
-            FrameEndEvent.TriggerReverse();
         }
+        
+        auto now = SDL_GetPerformanceCounter();
+        auto delta = (float)(now - lastTime) / SDL_GetPerformanceFrequency();
+
+        lastTime = now;
+
+        FrameBeginEvent.Trigger();
+
+        for (const auto& system : systems) {
+            system->Iterate(delta);
+        }
+
+        FrameEndEvent.TriggerReverse();
+    }
 
 /*        for (auto& system : systems) {
-            system->Shutdown();
-        }
-*/        
-    
-        return RunResult::Success;
+        system->Shutdown();
     }
+*/        
+
+    return RunResult::Success;
 }
+

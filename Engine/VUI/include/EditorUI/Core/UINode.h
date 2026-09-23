@@ -3,10 +3,38 @@
 #include <EditorUI/Core/UIValue.h>
 
 #include "JsonHelper.h"
+#include <IO/JSON/JsonManager.h>
 
 
 // Represents data read in the .json file for a UI node.
 struct UINode {
+
+    /*static nlohmann::json BuildJsonSchema() {
+        return nlohmann::json{
+            {"$schema", JsonSchema::SCHEMA_VERSION},
+            {"title", "UINode"},
+            {"type", "object"},
+            {"properties", {
+                {"Redirect", {{"type", "string"}}},
+                {"Type", {{"type", "string"}}},
+                {"Id", {{"type", "string"}}},
+                {"WindowIndex", {{"type", "integer"}}},
+                {"Children", {{"type", "array"}, {"items", {{"$ref", "#"}}}}},
+                {"Properties", {{"type", "object"}, {"additionalProperties", true}}},
+                {"Bindings", {{"type", "object"}, {"additionalProperties", {{"type", "string"}}}}},
+                {"Events", {{"type", "object"}, {"additionalProperties", {{"type", "string"}}}}},
+                {"Style", {{"type", "string"}}}
+            }},
+            {"required", {"Type","Id","WindowIndex"}},
+            {"additionalProperties", false}
+        };
+    }
+*/
+    
+    // Have to change here the module system, we should not put the path to the module here, but for now as we have no module system we can initialize the json's schema here
+    //REGISTER_JSON_SCHEMA(UINode,"Engine/VUI")
+
+public:
     std::string Redirect;
     
     std::string Type;

@@ -4,8 +4,7 @@
 #include "UIPropSchema.h"
 #include "UIWidget.h"
 
-struct UIRegisteredType
-{
+struct UIRegisteredType {
     std::vector<UIPropSchema> Schemas;
     std::function<std::unique_ptr<UIWidget>()> Create;
     

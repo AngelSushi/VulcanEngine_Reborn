@@ -35,15 +35,14 @@ struct VC_CompiledInDefer_ResourceManager {
 
 static VC_CompiledInDefer_ResourceManager VC_CompiledInDefer_ResourceManager_Obj; 
 
-VULCAN_ENGINE_API VClass& ::StaticClass() { 
+VULCAN_ENGINE_API VClass& ResourceManager::StaticClass() { 
     return *VC_Construct_VClass_ResourceManager(); 
 }; 
 
-VULCAN_ENGINE_API VClass& ::GetClass() const { 
+VULCAN_ENGINE_API VClass& ResourceManager::GetClass() const { 
     return ResourceManager::StaticClass(); 
 }; 
 
 void VC_Construct_VClass_ResourceManager_Statics::RegisterFunctions(VClass& c) { 
-   c.AddFunction(std::make_unique<VStaticFunction<VulcanEngine::Resources::ResourceManager&>>("Instance", &::Instance)); 
 }; 
 

@@ -1,6 +1,8 @@
 
 #include <EditorUI/Renderers/UIClaySDLRenderer.h>
 
+#include "CoreAPI/VSurface.h"
+#include "CoreAPI/VTexture.h"
 #include "Systems/FontSystem.h"
 // Need maybe the #if SDL_RENDERER guard here as well, but for now we can assume this file is only compiled when SDL_RENDERER is defined.
 
@@ -11,8 +13,12 @@ void UIClaySDLRenderer::DrawCommand(const Clay_RenderCommand& Command) {
         default:
             break;
         case CLAY_RENDER_COMMAND_TYPE_RECTANGLE:
-            SetColor(Renderer,Command.renderData.rectangle.backgroundColor);
-            SDL_RenderFillRectF(Renderer, &Rect);
+            Renderer->SetDrawColor(static_cast<uint8_t>(Command.renderData.rectangle.backgroundColor.r),
+                static_cast<uint8_t>(Command.renderData.rectangle.backgroundColor.g),
+                static_cast<uint8_t>(Command.renderData.rectangle.backgroundColor.b),
+                static_cast<uint8_t>(Command.renderData.rectangle.backgroundColor.a));
+
+            Renderer->Catch(Renderer->RenderFillRectF(Rect));
             break;
 
         case CLAY_RENDER_COMMAND_TYPE_TEXT:
@@ -24,16 +30,21 @@ void UIClaySDLRenderer::DrawCommand(const Clay_RenderCommand& Command) {
                 // Log Error
                 return;
             }
+        
+            SDL_Color TextColor = SDL_Color( static_cast<Uint8>(Command.renderData.text.textColor.r),
+                static_cast<Uint8>(Command.renderData.text.textColor.g),
+                static_cast<Uint8>(Command.renderData.text.textColor.b),
+                static_cast<Uint8>(Command.renderData.text.textColor.a));
 
-            SDL_Color TextColor = SDL_Color( Command.renderData.text.textColor.r, Command.renderData.text.textColor.g, Command.renderData.text.textColor.b, Command.renderData.text.textColor.a);
-            SDL_Surface* TextSurface = TTF_RenderUTF8_Blended(Font,Command.renderData.text.stringContents.chars,TextColor);
-            SDL_Texture* TextTexture = SDL_CreateTextureFromSurface(Renderer,TextSurface);
+            std::string Text(Command.renderData.text.stringContents.chars, Command.renderData.text.stringContents.length);
 
-            SDL_RenderCopyF(Renderer, TextTexture, NULL, &Rect);
+            // GetFont et tout ce qui en suite ne devrait pas etre directement gérer par font System ??
+            // Maybe on peut passer FontSystem par un Context, ou quelque chose du genre pour rendre la structure plus propre et claire ?  
+            TestSurface = FontSystem::Instance().CreateUTF8BlendedSurface(Font, Text,TextColor);
+            TestTexture = VTexture::CreateFromSurface(*Renderer,*TestSurface.get(),"");
 
-            // Maybe not , cache it ? 
-            SDL_FreeSurface(TextSurface);
-            SDL_DestroyTexture(TextTexture);
+
+            Renderer->Catch(Renderer->RenderCopyF(*TestTexture.get(),Rect));
             
             break;
     }

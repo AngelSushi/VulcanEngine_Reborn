@@ -10,3 +10,8 @@ target("VUI")
 	add_includedirs("include", { public = true })
 	--add_files("$(projectdir)/Intermediate/Generated/VUI/**.gen.cpp")
 	add_includedirs("Intermediate/Generated", { public = true })
+	add_files("Intermediate/Generated/**.cpp")
+	add_extrafiles("$(projectdir)/assets/**.vui");
+
+-- Ask if its worth to add special extension for ui element only ?
+	add_extrafiles("$(projectdir)/assets/**.element");

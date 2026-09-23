@@ -7,12 +7,19 @@ class Text : public UIWidget {
 
 public:
     void ApplyProps() override;
-    void Render(UIRenderContext& InContext) const override;
+    void Render(UIRenderContext& InContext) override;
 
 private:
+    void BuildConfig();
+    void BuildString();
+    
     std::string TextContent;
 
     // Maybe replace with VFont or something like that after
-    int FontId;
-    VulcanEngine::VColor TextColor;
+    uint16_t FontId = -1;
+    uint16_t FontSize = -1;
+    VColor TextColor;
+
+    Clay_String String = {};
+    Clay_TextElementConfig Config = {};
 };

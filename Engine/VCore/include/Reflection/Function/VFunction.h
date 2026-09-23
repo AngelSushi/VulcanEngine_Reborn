@@ -9,6 +9,7 @@
 
 namespace VulcanCore  {
 
+    // Re-rajouter la dll VCORE_API si on définit dans un .cpp peut etre  ? 
     template<typename C,typename R,typename... Args>
     class VFunction : public VFunctionBase {
     public:
