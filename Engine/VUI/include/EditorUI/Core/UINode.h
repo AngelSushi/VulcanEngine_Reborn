@@ -3,7 +3,6 @@
 #include <EditorUI/Core/UIValue.h>
 
 #include "JsonHelper.h"
-#include <IO/JSON/JsonManager.h>
 
 
 // Represents data read in the .json file for a UI node.

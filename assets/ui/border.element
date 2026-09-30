@@ -1,0 +1,18 @@
+{
+  "Type": "HorizontalBox",
+  "Id": "border",
+  "WindowIndex": 0,
+  "Children": [
+  ],
+  "Properties": {
+    "backgroundColor": "#1F1F24",
+    "focusable": false, 
+    "padding": [26, 0, 0, 0],
+    "anchorMin": [0, 0],
+    "anchorMax": [1, 0],
+    "size": [0,1]
+  },
+  "Bindings": {},
+  "Events": {},
+  "Style": ""
+}
