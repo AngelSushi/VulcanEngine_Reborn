@@ -3,7 +3,9 @@ add_rules("plugin.vsxmake.autoupdate")
 
 
 add_requires("fmt","libsdl2","libsdl2_image","libsdl2_ttf","entt","nlohmann_json")
+add_requires("gtest", { configs = { main = true, gmock = false}})
 add_requireconfs("libsdl2", "**.libsdl2", { configs = { sdlmain = not is_mode("debug") }})
+
 
 set_languages("cxx20")
 
@@ -27,11 +29,14 @@ add_cxflags("/wd4251")
 	
 
 includes("Tools/VHT/")
-includes("Engine/VCore/")	
+includes("Engine/VCore/")
+includes("Engine/VIO/")	
 includes("Engine/VMath/")
 includes("Engine/VUI/")
 includes("Engine/VulcanEngine/")
 includes("Game/")
+
+includes("Tests/")
 
 target("GEN_ALL_BUILD")
 	set_kind("phony")

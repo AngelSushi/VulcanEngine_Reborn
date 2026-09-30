@@ -1,8 +1,6 @@
 #pragma once
 #include <CoreAPI/precomp.h>
 
-#include <VPath.h>
-
 
 class VIO_API PlatformFileIO {
 
@@ -19,7 +17,7 @@ public:
 	virtual bool FileExists(const VPath& Path) = 0;
 	virtual bool DirectoryExists(const VPath& Path) = 0;
 	virtual bool MakeDirectory(const std::string& Path) = 0;
-	virtual bool DeleteDirectory(const std::string& Path) = 0;
+	virtual bool DeleteDirectory(const VPath& Path) = 0;
 	
 };
 

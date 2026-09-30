@@ -1,6 +1,6 @@
 target("VulcanEngine")
     set_kind("shared")
-	add_deps("VMath","VCore")
+	add_deps("VMath","VCore","VIO")
 	--add_deps("VUI")
     add_files("src/Vulcan/**.cpp")
     add_headerfiles("include/**.h")
