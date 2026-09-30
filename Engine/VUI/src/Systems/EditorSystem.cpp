@@ -16,13 +16,13 @@
 #include <EditorUI/Core/UINode.h>
 
 #include <EditorUI/Core/UIWidget.h>
-#include "IO/FileManager.h"
 
 #include <clay/clay.h>  
 
 
 #include <EditorUI/Backend/Clay/ClayBackend.h>
 
+#include "FileManager.h"
 #include "EditorUI/Core/Components/Button.h"
 #include "EditorUI/Runtime/WidgetApplication.h"
 #include "EditorUI/Core/UINodeResolver.h"
@@ -43,7 +43,6 @@ EditorSystem::EditorSystem() {
      * Have to change to StartupModule VUI, but for now as we have no module system, we can initialize the json's schema here
      */
 
-    JsonManager::Get().GenerateAll("Intermediate/Schemas");
 }
 
 void EditorSystem::InitSystem() {
@@ -133,12 +132,13 @@ void EditorSystem::StartSystem() {
         return;
     }
 
-    std::vector<std::string> NodesAssetsPath = VulcanCore::FileManager::Get().LoadExtension("assets/",".vui");
+    std::vector<std::string> NodesAssetsPath = std::vector<std::string>(); //= FileManager::Get().LoadExtension("assets/",".vui");
 
    // RedirectLogSystem();
 
     for (auto& NodePath : NodesAssetsPath) {
-        std::vector<uint8_t> Content = VulcanCore::FileManager::Get().Read(NodePath);
+        std::vector<uint8_t> Content;
+        FileManager::Get().Read(*VPath::FromPath(NodePath).get(),Content);
         
         auto [Node,Success] = JsonSerializer::Load<UINode>(std::string(Content.begin(),Content.end()));
 

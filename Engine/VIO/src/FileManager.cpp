@@ -146,7 +146,7 @@ bool FileManager::DeleteDirectory(const VPath& DirectoryPath) {
     }
 
     return WithResolvedPath(DirectoryPath,[&](const VPath& ResolvedPath) {
-        return Platform->DeleteDirectory(ResolvedPath);
+        return Platform->DeleteDirectory(ResolvedPath.String());
     });
 }
 
