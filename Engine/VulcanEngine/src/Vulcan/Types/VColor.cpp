@@ -142,3 +142,32 @@ namespace VulcanEngine {
 
 }
 
+VColor VColor::Lighten(float Amount) const {
+	return VColor(std::min(RValue + Amount, 1.f),std::min(GValue + Amount, 1.f),std::min(BValue + Amount, 1.f),AValue);
+}
+
+VColor VColor::Darken(float Amount) const {
+	return VColor(std::max(RValue - Amount, 0.f),std::max(GValue - Amount, 0.f),std::max(BValue - Amount, 0.f),AValue);
+}
+
+void VColor::ToRGBA8(std::uint8_t& R, std::uint8_t& G, std::uint8_t& B, std::uint8_t A /* = 1.0f */) const {
+	R = static_cast<std::uint8_t>(RValue * 255.f);
+	G = static_cast<std::uint8_t>(G * 255.f);
+	B = static_cast<std::uint8_t>(B * 255.f);
+	A = static_cast<std::uint8_t>(A * 255.f);
+}
+
+VColor VColor::FromRGBA8(std::uint8_t R, std::uint8_t G, std::uint8_t B, std::uint8_t A /* = 1.0f */) {
+	float invColor = 1.f / 255.f;
+	return { R * invColor, G * invColor, B * invColor, A * invColor };
+}
+
+Clay_Color VColor::ToClay() const {
+	return Clay_Color{ RValue * 255.f, GValue * 255.f, BValue * 255.f, AValue * 255.f };
+}
+
+VULCAN_ENGINE_API std::ostream& operator<<(std::ostream& Stream, const VColor& Color) {
+	return Stream << "Color (" << Color.R() << ", " << Color.G() << ", " << Color.B() << ", " << Color.A() << ")";
+}
+
+

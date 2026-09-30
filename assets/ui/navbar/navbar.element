@@ -1,0 +1,50 @@
+{
+  "Type": "HorizontalBox",
+  "Id": "navbar",
+  "WindowIndex": 0,
+  "Children": [
+    {
+      "Redirect": "buttons/file.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/build.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/window.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/actors.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/resources.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/settings.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/layout.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "buttons/help.element",
+      "Properties": {}
+    }
+  ],
+  "Properties": {
+    "backgroundColor": "#121212",
+    "focusable": false, 
+    "padding": [0, 0, 0, 0],
+    "anchorMin": [0, 0],
+    "anchorMax": [1, 0],
+    "size": [0,25]
+  },
+  "Bindings": {},
+  "Events": {},
+  "Style": ""
+}

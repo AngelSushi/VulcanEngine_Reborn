@@ -1,0 +1,34 @@
+{
+    "Type": "Button",
+    "Id": "layout-button",
+    "WindowIndex": 0,
+    "Properties": {
+      "backgroundColor": "#121212",
+      "hoverColor": "#555555",
+      "focusable": true,
+      "padding": [0, 0, 0, 0],
+      "size": [900, 30],
+      "verticalAlignment": "Fill",
+      "horizontalAlignment": "Left"
+    },
+    "Children": [
+      {
+        "Type": "Text",
+        "Id": "layout-button-text",
+        "WindowIndex": 0,
+        "Properties": {
+          "text": "Layout",
+          "font": "Ruda-SemiBold.ttf",
+          "fontSize": 14,
+          "padding": [0,15,0,15],
+          "color": "#ffffff",
+          "backgroundColor": "#00000000",
+          "verticalAlignment": "Center",
+          "horizontalAlignment": "Center"
+        }
+      }
+    ],
+    "Bindings": {},
+    "Events": {},
+    "Style": ""
+}

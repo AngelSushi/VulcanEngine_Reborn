@@ -24,6 +24,7 @@ namespace VulcanEngine::Resources {
         
     public:
 
+<<<<<<< Updated upstream
         VFUNCTION()
         static VulcanEngine::Resources::ResourceManager& Instance() {
             static ResourceManager instance;
@@ -32,6 +33,16 @@ namespace VulcanEngine::Resources {
         
         ResourceManager();
         ~ResourceManager() = default;
+=======
+    VFUNCTION()
+    static ResourceManager& Get() {
+        static ResourceManager instance;
+        return instance;
+    }
+    
+    ResourceManager();
+    ~ResourceManager() = default;
+>>>>>>> Stashed changes
 
         std::shared_ptr<Graphics::VSurface> LoadImage(const std::string& InPath);
         std::shared_ptr<Graphics::VTexture> GetTexture(const std::string& InPath,Graphics::VRenderer& InRenderer = VulcanCore::VCore::GetInstance().GetRenderer("VulcanEngine"));

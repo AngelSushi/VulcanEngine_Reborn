@@ -1,0 +1,32 @@
+{
+  "Type": "CanvasPanel",
+  "Id": "main-panel",
+  "WindowIndex": 0,
+  "Children": [
+    {
+      "Redirect": "navbar/navbar.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "border.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "toolbar/toolbar.element",
+      "Properties": {}
+    }
+  ],
+  "Properties": {
+    "backgroundColor": "#17171a",
+    "hoverColor": "#1E1E1E",
+    "focusable": false,
+    "position": [0, 0],
+    "size": {
+      "x": { "type": "GROW", "value": 0 },
+      "y": { "type": "GROW", "value": 0 }
+    }
+  },
+  "Bindings": {},
+  "Events": {},
+  "Style": ""
+}
