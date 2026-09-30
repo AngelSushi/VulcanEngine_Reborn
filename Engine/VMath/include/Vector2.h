@@ -1,8 +1,6 @@
 ﻿#pragma once
 #include <complex>
-#include <imgui.h>
 
-#include "VMath.h"
 #include <nlohmann/json.hpp>
 
 
@@ -100,13 +98,15 @@ namespace VMath {
             return *this;   
         }
 
-        Vector2<T> operator /(const float& val) const {
-            return { x / val, y / val };
+        template<typename U>
+        Vector2 operator /(const U& val) const {
+            return { static_cast<T>(x / val), static_cast<T>(y / val) };
         }
 
-        Vector2<T> operator /=(const float& val) {
-            x /= val;
-            y /= val;
+        template<typename U>
+        Vector2 operator /=(const U& val) {
+            x = static_cast<T>(x / val);
+            y = static_cast<T>(y / val);
 
             return *this;
         }
@@ -130,12 +130,7 @@ namespace VMath {
         bool operator ==(const Vector2& vec) const {
             return x == vec.x && y == vec.y;
         }
-
-        operator ImVec2() const { 
-            return ImVec2{static_cast<float>(x),static_cast<float>(y) };
-        }
         
-
        /* T operator *(T a, T b) {
             return { a.x * b.x, a.y * b.y };
         }
@@ -144,13 +139,13 @@ namespace VMath {
         // Rajoutez les différents operator float , vecteur
 
         static Vector2<T> Rotate(const Vector2& vec, float degrees) {
-            float radRotation = Deg2Rad *degrees;
+            /*float radRotation = Deg2Rad *degrees;
             float s = std::sin(radRotation);
             float c = std::cos(radRotation);
-
+*/
             Vector2 rotatedVec;
-            rotatedVec.x = vec.x * c - vec.y * s;
-            rotatedVec.y = vec.x * s + vec.y * c;
+  //          rotatedVec.x = vec.x * c - vec.y * s;
+  //          rotatedVec.y = vec.x * s + vec.y * c;
 
             return rotatedVec;
         }

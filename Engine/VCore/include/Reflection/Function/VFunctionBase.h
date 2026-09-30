@@ -6,7 +6,7 @@
 namespace VulcanCore  {
     class ReflectionBase;
 
-    class VFunctionBase : public VField {
+    class VCORE_API VFunctionBase : public VField {
 
     public:
         VFunctionBase(const VField* InOwner,const char* FuncName) : VField(InOwner,std::move(FuncName)) {}

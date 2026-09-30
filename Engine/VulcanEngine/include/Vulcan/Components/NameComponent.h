@@ -10,46 +10,45 @@
 #include <NameComponent.vht.h>
 
 
-namespace VulcanEngine {
-	class NameComponent;
+class NameComponent;
+
+REGISTER_COMPONENT(NameComponent)
+
+VCLASS()
+class VULCAN_ENGINE_API NameComponent : public VComponent {
+	friend class Entity;
 	
-	REGISTER_COMPONENT(NameComponent)
+	VCLASS_BODY()
+	
+public:
+	
+	// Constructors
+	NameComponent(std::string InName = "New Entity");
+	NameComponent(const NameComponent& Component);
+	NameComponent(NameComponent&& Component) noexcept;
 
-	VCLASS()
-	class VULCAN_ENGINE_API NameComponent : public VComponent {
-		friend class Entity;
-		
-		VCLASS_BODY()
-		
-	public:
-		
-		// Constructors
-		NameComponent(std::string InName = "New Entity");
-		NameComponent(const NameComponent& Component);
-		NameComponent(NameComponent&& Component) noexcept;
+	// Operators
+	NameComponent& operator=(const NameComponent& Component) = delete;
+	NameComponent& operator=(NameComponent&& Component) noexcept;
 
-		// Operators
-		NameComponent& operator=(const NameComponent& Component) = delete;
-		NameComponent& operator=(NameComponent&& Component) noexcept;
+	// Getters
+	const std::string& GetName() { return Name; }
+	
+	// VComponent's Functions
+	std::string GetComponentName() override {
+		return "NameComponent";
+	} 
 
-		// Getters
-		const std::string& GetName() { return Name; }
-		
-		// VComponent's Functions
-		std::string GetComponentName() override {
-			return "NameComponent";
-		} 
+	void LoadComponent(const nlohmann::json& json) override;
+	void SaveComponent(std::vector<std::uint8_t>& ByteArray) override;
 
-		void LoadComponent(const nlohmann::json& json) override;
-		void SaveComponent(std::vector<std::uint8_t>& ByteArray) override;
+	// Destructors
+	~NameComponent() = default;
 
-		// Destructors
-		~NameComponent() = default;
+private:
+	VPROPERTY(InputText,meta=[onchange_func=World::BuildTree])
+	std::string Name;
+	
+};
 
-	private:
-		VPROPERTY(InputText,meta=[onchange_func=World::BuildTree])
-		std::string Name;
-		
-	};
-}
 

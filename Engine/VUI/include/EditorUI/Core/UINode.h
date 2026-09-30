@@ -3,7 +3,6 @@
 #include <EditorUI/Core/UIValue.h>
 
 #include "JsonHelper.h"
-#include <IO/JSON/JsonManager.h>
 
 
 // Represents data read in the .json file for a UI node.
@@ -108,9 +107,6 @@ inline void to_json(nlohmann::json& Object, const UINode& Node) {
         } else if (Value.Is<VMath::Vector2f>()) {
             Properties[Key] = Value.Get<VMath::Vector2f>();
         }
-        else if (Value.Is<Padding>()) {
-            Properties[Key] = Value.Get<Padding>();
-        }
         /*else if (Value.Is<ClaySize>()) {
             Properties[Key] = Value.Get<ClaySize>();
         }*/
@@ -173,9 +169,6 @@ inline void from_json(const nlohmann::json& Object, UINode& Node)
             // Modify after for a most generic system
             if (JsonProperty.size() == 2 && JsonProperty[0].is_number() && JsonProperty[1].is_number()) {
                 Node.Properties[Key] = JsonProperty.get<VMath::Vector2f>();
-            }
-            else if (JsonProperty.size() == 4 && JsonProperty[0].is_number() && JsonProperty[1].is_number() && JsonProperty[2].is_number() && JsonProperty[3].is_number()) {
-                Node.Properties[Key] = JsonProperty.get<Padding>();
             }
         } else if (JsonProperty.is_object()) { 
             for (auto& Parser : Parsers) {

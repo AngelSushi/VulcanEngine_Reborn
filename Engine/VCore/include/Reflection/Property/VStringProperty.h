@@ -11,7 +11,7 @@
 namespace VulcanCore {
 
     template<typename C>
-    class VStringProperty : public VPropertyBase {
+    class VCORE_API VStringProperty : public VProperty {
         
     public:
         using PropMember = std::string C::*;

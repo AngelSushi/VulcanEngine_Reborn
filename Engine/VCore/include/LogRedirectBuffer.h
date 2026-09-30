@@ -1,12 +1,10 @@
 #pragma once
 #include <iostream>
-#include <mutex>
 #include <streambuf>
 #include <string>
 
-#include "LogSystem.h"
 
-namespace VulcanEngine {
+namespace VulcanCore {
 	
 	class LogRedirectBuffer : public std::streambuf {
 	public:

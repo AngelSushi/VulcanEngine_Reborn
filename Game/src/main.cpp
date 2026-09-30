@@ -1,44 +1,55 @@
- #include "providers/IAssetIconProvider.h"
+ //#include "providers/IAssetIconProvider.h"
 #include <Game.h>
 #include <iostream>
 #include <IRegistry.h>
 #include <Actions/AssetsAction.h>
 #include <Actions/FolderAction.h>
-#include <Systems/EditorSystem.h>
+//#include <Systems/EditorSystem.h>
 #include <Systems/RenderSystem.h>
 #include <Types/Assets/AssetsManager.h>
 
-namespace VGame {
-	class Game : public VulcanEngine::Game {
+#include "Systems/EditorSystem.h"
+#include "Systems/FontSystem.h"
+
+
+ //#include "Systems/FontSystem.h"
+
+ namespace VGame {
+
+ 	// Maybe destroy this class, game seems nothing in the current architecture of the engine
+	class VGame : public Game {
 		
 		void LoadRegistries() override {
-			VulcanEngine::ThemeRegistry.Load([]() {
+			/*VulcanEngine::ThemeRegistry.Load([]() {
 				return VulcanEngine::AssetsManager::Instance().LoadAll<VUI::ThemeAsset>(".vtheme");
 			});
 			
 			VulcanEngine::TreeIconProviderRegistry.Register(std::make_unique<VUI::IAssetIconProvider>());
-			
-			VulcanEngine::EngineActionRegistry.Register(VulcanEngine::IEngineAction::Create<VulcanEngine::AssetsAction>());
-			VulcanEngine::EngineActionRegistry.Register(VulcanEngine::IEngineAction::Create<VulcanEngine::FolderAction>());
+			*/
+			EngineActionRegistry.Register(IEngineAction::Create<AssetsAction>());
+			EngineActionRegistry.Register(IEngineAction::Create<FolderAction>());
 		}
 		
 		void SetupSystems() override {
-			VulcanEngine::RenderSystem::SetConfig({
+			
+			RenderSystem::SetConfig({
 				.Title = "VulcanEngine",
 				//.Size = { 2560, 1325}
-				.Size = { 1920, 1080}
+				.Size = { 1920, 1080},
+				.Flags = SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_MAXIMIZED
 			});
 			
-			AddSystem<VulcanEngine::RenderSystem>();
-			AddSystem<VulcanEngine::EditorSystem>();
+			AddSystem<RenderSystem>();
+			AddSystem<FontSystem>();
+			AddSystem<EditorSystem>();
 		}
 	};
 }
 
 int main(int argc, char** argv) {
-	VGame::Game game;
+	VGame::VGame game;
 
 	auto runResult = game.Run();
 
-	return runResult == VulcanEngine::Game::RunResult::Success ? 0 : 1;
+	return runResult == Game::RunResult::Success ? 0 : 1;
 }

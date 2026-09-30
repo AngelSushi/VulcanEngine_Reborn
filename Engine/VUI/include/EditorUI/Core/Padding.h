@@ -8,8 +8,8 @@ struct Padding {
     float Bottom;
     float Left;
 
-    Padding() : Top(0), Right(0), Bottom(0), Left(0) {}
-    Padding(float InTop, float InRight, float InBottom, float InLeft): Top(InTop), Bottom(InBottom), Left(InLeft), Right(InRight) {}
+    Padding() : Top(0), Bottom(0), Left(0), Right(0) {}
+    Padding(float InTop, float InBottom, float InLeft, float InRight): Top(InTop), Bottom(InBottom), Left(InLeft), Right(InRight) {}
     
 };
 

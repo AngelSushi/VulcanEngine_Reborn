@@ -46,14 +46,14 @@ namespace StructParser {
             return false;
         }
 
-        auto parts = Utils::SplitWords(Content,lineEnd + classPos, [](char c){
+        auto parts = Utils::SplitWords(Content,lineEnd + classPos + 1, [](char c){
             return std::isspace(c);
         });
 
         Out.Name = parts[1];// Warning if DLL exported struct
         Out.ParentName = parts.size() > 3 ? parts[parts.size() - 2] : "";
 
-        Out.Namespaces = Utils::DetectNamespaces(Content,lineEnd + classPos);
+        //Out.Namespaces = Utils::DetectNamespaces(Content,lineEnd + classPos);
 
         return true;
     }

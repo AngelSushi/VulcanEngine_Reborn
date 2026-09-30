@@ -1,45 +1,41 @@
 ﻿#pragma once
+#include <CoreAPI/precomp.h>
 #include <nlohmann/json.hpp>
 
-#include <VUIWindow.h>
 
 #include <LogSystem.h>
 #include <Types/Assets/VAsset.h>
 
-#include <Renderables/VUIRenderable.h>
+//#include <EditorUI/Core/UIWidget.h>
 
-#include <EditorUI/UIWidget.h>
-#include <EditorUI/UIBuilder.h>
-
-#include <EditorUI/UIWidgetCache.h>
-
+//#include <EditorUI/Core/UIWidgetCache.h>
 
 DECLARE_LOG_CATEGORY(UI);
-namespace VulcanEngine {
+
+class UIAsset : public VAsset {
     
-    class UIAsset : public VAsset {
-        
-    public:
-        UIAsset();
-        
-        static UIAsset* FromJson(const std::string& InJson);
-        std::string ToJson() const override;
+public:
+    UIAsset();
+    
+    static UIAsset* FromJson(const std::string& InJson);
+    std::string ToJson() const override;
 
-        void ConstructJson(const std::string_view& InPath) override;
-        void Show();
-        void Hide();
+    void ConstructJson(const std::string_view& InPath) override;
+    void Show();
+    void Hide();
 
 
-        const UIWidget* Root() const { return OutRoot.get(); }
+//      const UIWidget* Root() const { return OutRoot.get(); }
 
-       // void Build(const UIRegistry& InRegistry,const UIBuilder& InBuilder);
-    private:
+   // void Build(const UIRegistry& InRegistry,const UIBuilder& InBuilder);
+private:
 
-        void BuildFromNode(const UINode& RootNode);
-        std::unique_ptr<UIWidget> OutRoot;
-        UINode OutNode;
+/*    void BuildFromNode(const UINode& RootNode);
+    std::unique_ptr<UIWidget> OutRoot;
+    UINode OutNode;
 
-        UIWidgetCache PrevCache;
-        UIWidgetCache Cache;
-    };
-}
+    UIWidgetCache PrevCache;
+    UIWidgetCache Cache;
+*/
+};
+

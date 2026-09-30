@@ -6,43 +6,40 @@
 #include <entt/entity/fwd.hpp>
 #include <VComponent.vht.h>
 
+class Entity;
 
-namespace VulcanEngine {
+struct ComponentType {
+    std::string Name;
+    std::type_index Type;
+    std::function<void(Entity*, const nlohmann::json&)> Creator;
+    
+    ComponentType(std::string InName, std::type_index InType, std::function<void(Entity*, const nlohmann::json&)> InCreator)
+        : Name(std::move(InName)), Type(InType), Creator(InCreator) {}
+};
 
-    class Entity;
+VCLASS()
+class VULCAN_ENGINE_API VComponent : public VulcanCore::ReflectionBase {
+    
+    VCLASS_BODY()
+    
+public:
+    VComponent() = default;
+    VComponent(const VComponent& Component);
+    VComponent(VComponent&& Component) noexcept;
 
-    struct ComponentType {
-        std::string Name;
-        std::type_index Type;
-        std::function<void(Entity*, const nlohmann::json&)> Creator;
-        
-        ComponentType(std::string InName, std::type_index InType, std::function<void(Entity*, const nlohmann::json&)> InCreator)
-            : Name(std::move(InName)), Type(InType), Creator(InCreator) {}
-    };
+    VComponent& operator=(const VComponent& Component) = delete;
+    VComponent& operator=(VComponent&& Component) noexcept;
 
-    VCLASS()
-    class VULCAN_ENGINE_API VComponent : public VulcanCore::ReflectionBase {
-        
-        VCLASS_BODY()
-        
-    public:
-        VComponent() = default;
-        VComponent(const VComponent& Component);
-        VComponent(VComponent&& Component) noexcept;
+    virtual std::string GetComponentName() { return "##"; }
 
-        VComponent& operator=(const VComponent& Component) = delete;
-        VComponent& operator=(VComponent&& Component) noexcept;
+    virtual void Init() {}
+    virtual void LoadComponent(const nlohmann::json& json) = 0;
+    virtual void SaveComponent(std::vector<std::uint8_t>& ByteArray) = 0;
 
-        virtual std::string GetComponentName() { return "##"; }
+    virtual ~VComponent() = default;
 
-        virtual void Init() {}
-        virtual void LoadComponent(const nlohmann::json& json) = 0;
-        virtual void SaveComponent(std::vector<std::uint8_t>& ByteArray) = 0;
+protected:
+    bool NodeOpen{};
+};
 
-        virtual ~VComponent() = default;
 
-    protected:
-        bool NodeOpen{};
-    };
-
-}

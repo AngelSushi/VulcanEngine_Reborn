@@ -37,7 +37,3 @@ VMath::Rect CanvasSlot::ComputeGeometry(const VMath::Rect& ParentGeometry) const
 
     return VMath::Rect(TopLeft + FinalSize / 2, FinalSize);
 }
-
-Clay_ChildAlignment CanvasSlot::ComputeChildAlignment() const {
-    return { CLAY_ALIGN_X_LEFT, CLAY_ALIGN_Y_TOP };
-}

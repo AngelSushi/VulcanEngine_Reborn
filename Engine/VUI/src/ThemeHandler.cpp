@@ -6,7 +6,7 @@
 
 namespace fs = std::filesystem;
 namespace VUI {
-    VulcanEngine::VAsset* ThemeHandler::Load(const std::string& InPath) {
+    VAsset* ThemeHandler::Load(const std::string& InPath) {
         std::ifstream file(InPath);
         std::string json((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
 
@@ -16,8 +16,8 @@ namespace VUI {
         return asset;
     }
 
-    VulcanEngine::TVector<VulcanEngine::VAsset*> ThemeHandler::LoadAll(const std::string& InExtension) {
-        VulcanEngine::TVector<VulcanEngine::VAsset*> assets{};
+    TVector<VAsset*> ThemeHandler::LoadAll(const std::string& InExtension) {
+        TVector<VAsset*> assets{};
         
         for (const auto& entry : fs::directory_iterator("assets/theme")) { // No read inside directories for now
             if (entry.is_regular_file() && entry.path().extension() == InExtension) {
@@ -31,7 +31,7 @@ namespace VUI {
         return assets;
     }
 
-    void ThemeHandler::Save(const std::string& InPath, const VulcanEngine::VAsset& InAsset) {
+    void ThemeHandler::Save(const std::string& InPath, const VAsset& InAsset) {
         std::ofstream file(InPath);
         file << InAsset.ToJson();
     }

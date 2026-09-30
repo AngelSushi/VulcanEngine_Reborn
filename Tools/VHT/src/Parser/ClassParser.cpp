@@ -46,15 +46,15 @@ namespace ClassParser {
             return false;
         }
 
-        auto parts = Utils::SplitWords(content,lineEnd + classPos, [](char c){
+        auto parts = Utils::SplitWords(content,lineEnd + classPos + 1, [](char c){
             return std::isspace(c);
         });
 
         out.Name = parts.size() == 6 ? parts[1] : parts[2];
-        out.dll = parts.size() == 7 ? parts[1] : "";
+        out.dll  = parts.size() == 7 ? parts[1] : "";
         out.ParentName = parts[parts.size() - 2];
         
-        out.Namespaces = Utils::DetectNamespaces(content,lineEnd + classPos);
+        //out.Namespaces = Utils::DetectNamespaces(content,lineEnd + classPos);
 
         return true;
     }

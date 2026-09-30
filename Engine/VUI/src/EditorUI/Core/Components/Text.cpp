@@ -14,19 +14,7 @@ void Text::ApplyProps() {
     TextContent = Node.TryPropValue("text").Get<std::string>();
     TextColor = VColor(Node.TryPropValue("color").Get<std::string>());
 
-    // Maybe have to do it in UIWidget class in future
-    bDrawBorder = Node.TryPropValue("border").Get<bool>();
-    BorderColor = VColor(Node.TryPropValue("borderColor").Get<std::string>());
-
     // Horizontal Alignment
-}
-
-Clay_ElementDeclaration Text::Build() {
-    Clay_ElementDeclaration Declaration = UIWidget::Build(); 
-    Declaration.border.color = BorderColor.ToClay();
-    Declaration.border.width = CLAY_BORDER_OUTSIDE(1);
-    
-    return Declaration;
 }
 
 void Text::BuildConfig() {
@@ -42,8 +30,6 @@ void Text::BuildString() {
 }
 
 void Text::Render(UIRenderContext& InContext) {
-    const Clay_ElementDeclaration Declaration = Build();
-    
     if (Visibility == EWidgetVisibility::Collasped || Visibility == EWidgetVisibility::Hidden) {
         return;
     }
@@ -51,13 +37,5 @@ void Text::Render(UIRenderContext& InContext) {
     BuildString();
     BuildConfig();
 
-    // Maybe have to change it with clay debug mode, but as its not implemented yet, we can use this for now to test the text rendering
-    if (bDrawBorder) {
-        CLAY(Clay_GetElementId(GetClayString()), Declaration) {
-            CLAY_TEXT(String, &Config);
-        }
-    }
-    else {
-        CLAY_TEXT(String, &Config);
-    }
+    CLAY_TEXT(String,&Config);
 }

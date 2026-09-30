@@ -34,11 +34,11 @@ struct VC_CompiledInDefer_ThemeAsset {
 
 static VC_CompiledInDefer_ThemeAsset VC_CompiledInDefer_ThemeAsset_Obj; 
 
- VClass& ThemeAsset::StaticClass() { 
+VUI_API VClass& ThemeAsset::StaticClass() { 
     return *VC_Construct_VClass_ThemeAsset(); 
 }; 
 
- VClass& ThemeAsset::GetClass() const { 
+VUI_API VClass& ThemeAsset::GetClass() const { 
     return ThemeAsset::StaticClass(); 
 }; 
 

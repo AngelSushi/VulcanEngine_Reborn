@@ -23,10 +23,10 @@
 #include <EditorUI/Backend/Clay/ClayBackend.h>
 
 #include "FileManager.h"
-#include "VPath.h"
 #include "EditorUI/Core/Components/Button.h"
 #include "EditorUI/Runtime/WidgetApplication.h"
 #include "EditorUI/Core/UINodeResolver.h"
+#include "EditorUI/Core/Components/NavButton.h"
 #include "EditorUI/Core/Components/Text.h"
 #include "EditorUI/Core/Panels/CanvasPanel.h"
 #include "EditorUI/Core/Panels/HorizontalBox.h"
@@ -43,7 +43,6 @@ EditorSystem::EditorSystem() {
      * Have to change to StartupModule VUI, but for now as we have no module system, we can initialize the json's schema here
      */
 
-    JsonManager::Get().GenerateAll("Intermediate/Schemas");
 }
 
 void EditorSystem::InitSystem() {
@@ -81,6 +80,15 @@ void EditorSystem::RegisterSystemWidgets() {
         },
         .Create = []() -> std::unique_ptr<UIWidget> {
             return std::make_unique<Button>();
+        }
+    });
+
+    Registry.AddEntry("NavButton", UIRegisteredType{
+        .Schemas = {
+            // Define any schemas for NavButton properties here
+        },
+        .Create = []() -> std::unique_ptr<UIWidget> {
+            return std::make_unique<NavButton>();
         }
     });
 
@@ -124,12 +132,13 @@ void EditorSystem::StartSystem() {
         return;
     }
 
-    std::vector<std::string> NodesAssetsPath = FileManager::Get().LoadExtension("assets/",".vui");
+    std::vector<std::string> NodesAssetsPath = std::vector<std::string>(); //= FileManager::Get().LoadExtension("assets/",".vui");
 
    // RedirectLogSystem();
 
     for (auto& NodePath : NodesAssetsPath) {
-        std::vector<uint8_t> Content = FileManager::Get().Read(NodePath);
+        std::vector<uint8_t> Content;
+        FileManager::Get().Read(*VPath::FromPath(NodePath).get(),Content);
         
         auto [Node,Success] = JsonSerializer::Load<UINode>(std::string(Content.begin(),Content.end()));
 

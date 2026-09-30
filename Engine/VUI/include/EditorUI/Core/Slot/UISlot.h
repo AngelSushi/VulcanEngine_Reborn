@@ -20,12 +20,4 @@ public:
      * @brief Computes the sizing of the widget based on the slot properties.
      */
     virtual Clay_Sizing ComputeSizing() const;
-
-    /*
-     * @brief Computes the alignment of the widget based on the slot properties.
-     */
-    virtual Clay_TextAlignment ComputeAlignment() const; // Maybe useless ?
-
-
-    virtual Clay_ChildAlignment ComputeChildAlignment() const = 0;
 };

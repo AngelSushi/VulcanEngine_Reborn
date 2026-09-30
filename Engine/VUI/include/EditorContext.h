@@ -5,8 +5,6 @@
 #include <set>
 
 #include <Reflection/ReflectionBase.h>
-#include <Entries/TreeEntry.h>
-#include <Entries/HeaderEntry.h>
 
 #include "Entity.h"
 #include "Reflection/VMacros.h"
@@ -16,42 +14,36 @@
 
 
 
-namespace VUI {
+VCLASS()
+class VUI_API EditorContext : public VulcanCore::ReflectionBase {
 
-    VCLASS()
-    class EditorContext : public VulcanCore::ReflectionBase {
+    VCLASS_BODY()
 
-        VCLASS_BODY()
+public:
 
-    public:
+    VFUNCTION()
+    static EditorContext& Instance() {
+        static EditorContext instance;
+        return instance;
+    }
 
-        VFUNCTION()
-        static VUI::EditorContext& Instance() {
-            static EditorContext instance;
-            return instance;
-        }
+    bool HasEntitySelected() {
+        return !SelectedEntities.empty();
+    }
 
-        bool HasEntitySelected() {
-            return !SelectedEntities.empty();
-        }
+    TVector<std::unique_ptr<ReflectionBase>>&  GetAvailableComponents();
 
-        void AddSelectedEntity(TreeEntry* Node);
-        void RemoveSelectedEntity(TreeEntry* Node);
+    void MarkComponentAdd(std::any Value);
+    void AddComponent();
+private:
+    EditorContext();
 
-        VulcanEngine::TVector<std::unique_ptr<ReflectionBase>>&  GetAvailableComponents();
+    void OnPreFrame();
+    void BuildTree();
 
-        void MarkComponentAdd(std::any Value);
-        void AddComponent();
-    private:
-        EditorContext();
+    bool TreeDirty{};
+    
+    TVector<Entity*> SelectedEntities;
+    ComponentType* MarkAdd;
+};
 
-        void OnPreFrame();
-        void BuildTree();
-
-        bool TreeDirty{};
-        
-        VulcanEngine::TVector<VulcanEngine::Entity*> SelectedEntities;
-        VulcanEngine::TVector<HeaderEntry> HeadersEntry;
-        VulcanEngine::ComponentType* MarkAdd;
-    };
-}

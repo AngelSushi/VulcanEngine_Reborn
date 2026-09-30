@@ -1,16 +1,12 @@
 #pragma once
 #include <CoreAPI/precomp.h>
+#include "EditorUI/Core/UIWidget.h"
+#include "EditorUI/Core/Slot/UISlot.h"
 
-#include "UIPanelWidget.h"
 
-
-class VUI_API UIContentWidget : public UIPanelWidget {
+class VUI_API UIContentWidget : public UIWidget {
 
 public:
 
-    bool CanHaveMultipleChildren() const override;
-    UIWidget* GetContent() const;
-    
-    
 protected:
 };

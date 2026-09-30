@@ -8,8 +8,6 @@
 #include "Slot/UISlot.h"
 #include "Types/VColor.h"
 
-class UIPanelWidget;
-
 class VUI_API UIWidget {
     friend class WidgetApplication;
 
@@ -31,8 +29,8 @@ public:
     void ResolveLayout();
 
     bool HasParent() const;
-    UIPanelWidget* GetParent() const;
-    void SetParent(UIPanelWidget* InParent);
+    UIWidget* GetParent() const;
+    void SetParent(UIWidget* InParent);
 
     EWidgetVisibility GetVisibility() const;
 
@@ -56,7 +54,7 @@ protected:
     EWidgetVisibility Visibility = EWidgetVisibility::Visible;
     Clay_String GetClayString() const;
 
-protected:
+private:
     void DispatchEvent(const std::string& EventName);
     
     std::string Id;
@@ -68,7 +66,7 @@ protected:
      */
     VMath::Rect InternalGeometry;
 
-    UIPanelWidget* Parent = nullptr;
+    UIWidget* Parent = nullptr;
 
     VColor BackgroundColor;
     VColor OriginColor;

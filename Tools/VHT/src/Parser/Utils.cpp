@@ -13,7 +13,7 @@ namespace Utils {
             bool isEmpty = true;
 
             for (char c : line) {
-                if (std::isspace(c)) {
+                if (!std::isspace(c)) {
                     isEmpty = false;
                     break;
                 }
@@ -120,6 +120,16 @@ namespace Utils {
         }
 
         return Content.substr(startPos + 1, endPos - startPos - 1);
+    }
+
+    std::string FindBaseModuleRoot(const std::string& Path) {
+        if (Path.find("include") != std::string::npos) {
+            return Path.substr(0,Path.find("include"));
+        }
+        if (Path.find("src") != std::string::npos) {
+            return Path.substr(0,Path.find("src"));
+        }
+        return "";
     }
 
     void Trim(std::string& Str) {

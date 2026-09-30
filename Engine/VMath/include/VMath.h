@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-
 namespace VMath {
 
 	constexpr float Pi = 3.1415926535897932384626433832795f;
@@ -28,7 +27,4 @@ namespace VMath {
 	static bool IsBetween(U Value, T Min, T Max) {
 		return Min <= Value && Value <= Max;
 	}
-
-
-
 }

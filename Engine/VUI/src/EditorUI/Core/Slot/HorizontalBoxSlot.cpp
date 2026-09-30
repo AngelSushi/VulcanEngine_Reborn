@@ -11,17 +11,8 @@
  }
 
  Clay_Sizing HorizontalBoxSlot::ComputeSizing() const {
-     Clay_SizingAxis Width = HorizontalAlignment == EHorizontalAlignment::Fill ? CLAY_SIZING_GROW() : CLAY_SIZING_FIT();
+     Clay_SizingAxis Width = HorizontalAlignment == EHorizontalAlignment::Fill ? CLAY_SIZING_GROW() : CLAY_SIZING_FIT(100.0f,100.0f);
      Clay_SizingAxis Height = VerticalAlignment == EVerticalAlignment::Fill ? CLAY_SIZING_GROW() : CLAY_SIZING_FIT();
      
      return Clay_Sizing { Width,Height };
- }
-
-// Done it mainly for button, need to check if its fit with every container 
- Clay_ChildAlignment HorizontalBoxSlot::ComputeChildAlignment() const {
-     return { 
-         CLAY_ALIGN_X_LEFT,
-         CLAY_ALIGN_Y_TOP
-     };
-
  }

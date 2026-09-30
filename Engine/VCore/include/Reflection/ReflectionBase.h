@@ -1,8 +1,11 @@
 #pragma once
+
+#include <Export.h>
+
 namespace VulcanCore {
     class VClass;
     
-    class ReflectionBase {
+    class VCORE_API ReflectionBase {
         
     public:
         

@@ -35,11 +35,11 @@ struct VC_CompiledInDefer_EditorContext {
 
 static VC_CompiledInDefer_EditorContext VC_CompiledInDefer_EditorContext_Obj; 
 
- VClass& EditorContext::StaticClass() { 
+VUI_API VClass& EditorContext::StaticClass() { 
     return *VC_Construct_VClass_EditorContext(); 
 }; 
 
- VClass& EditorContext::GetClass() const { 
+VUI_API VClass& EditorContext::GetClass() const { 
     return EditorContext::StaticClass(); 
 }; 
 

@@ -10,7 +10,7 @@
 
 namespace VulcanCore {
 
-    class VStructProperty : public VPropertyBase {
+    class VCORE_API VStructProperty : public VProperty {
 
         
     };

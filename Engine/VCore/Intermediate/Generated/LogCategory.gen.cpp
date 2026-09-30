@@ -35,11 +35,11 @@ struct VC_CompiledInDefer_LogCategory {
 
 static VC_CompiledInDefer_LogCategory VC_CompiledInDefer_LogCategory_Obj; 
 
- VClass& LogCategory::StaticClass() { 
+VCORE_API VClass& LogCategory::StaticClass() { 
     return *VC_Construct_VClass_LogCategory(); 
 }; 
 
- VClass& LogCategory::GetClass() const { 
+VCORE_API VClass& LogCategory::GetClass() const { 
     return LogCategory::StaticClass(); 
 }; 
 

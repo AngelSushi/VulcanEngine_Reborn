@@ -1,5 +1,7 @@
 #pragma once
 
+#include <CoreAPI/precomp.h>
+
 #include <cstdint>
 #include <optional>
 #include <CoreAPI/VRenderer.h>
@@ -7,55 +9,63 @@
 
 struct SDL_Window;
 
-namespace VulcanEngine {
+
+class ImGuiRenderer;
+class VRenderer;
+
+
+struct WindowConfig {
+	std::string Title;
+	std::optional<VMath::Vector2i> Position{};
+	VMath::Vector2i Size{};
+	std::uint32_t Flags = 0;
+};
+
+/*
+*TODO:
+*MULTIPLY VWINDOW : We can writer VulcanCore::VWindow and VulcanEngine::VWindow thats should not be possible
+*
+*/
+
+class VCORE_API VWindow {
+	friend class VRenderer;
+
+public:
+	static std::shared_ptr<VWindow> Create(const WindowConfig& Config) {
+		return std::make_shared<VWindow>(Config);
+	}
 	
-	class ImGuiRenderer;
-	class VRenderer;
+	VWindow(const WindowConfig& Config);
+//		VWindow(const VWindow&) = delete; To verify if its ok to copy window or not
+	virtual ~VWindow();
 
-
-	struct WindowConfig {
-		std::string Title;
-		std::optional<VMath::Vector2i> Position{};
-		VMath::Vector2i Size{};
-		std::uint32_t Flags = 0;
-	};
+	virtual void Start();
+	virtual void Update(float DeltaTime);
+	void PollEvents();
 	
-	class VWindow {
-		friend class VRenderer;
+	std::string GetTitle() const;
 
-	public:
-		static std::shared_ptr<VWindow> Create(const WindowConfig& Config) {
-			return std::make_shared<VWindow>(Config);
-		}
-		
-		VWindow(const WindowConfig& Config);
-		VWindow(const VWindow&) = delete;
-		virtual ~VWindow();
+	SDL_Window* GetWindow() { return Window; }
 
-		virtual void Start();
-		virtual void Update(float DeltaTime);
-		void PollEvents(ImGuiRenderer* GUIRenderer = nullptr);
-		
-		std::string GetTitle() const;
+	// Find alternative to std::pair
+	std::pair<float,float> GetSize() const;
 
-		SDL_Window* GetWindow() { return Window; }
+	VWindow& operator=(const VWindow&) = delete;
 
-		VWindow& operator=(const VWindow&) = delete;
+	bool IsClosed() const { return Close; }
+	void CloseWindow() { Close = true; }
+	
+protected:
+	VRenderer* _Renderer;
+	ImGuiRenderer* _ImRenderer;
 
-		bool IsClosed() const { return Close; }
-		void CloseWindow() { Close = true; }
-		
-	protected:
-		VRenderer* _Renderer;
-		ImGuiRenderer* _ImRenderer;
+	bool _FirstFrame = true;
 
-		bool _FirstFrame = true;
-
-	private:
-		SDL_Window* Window;
-		
-		bool Close{};
-	};
+private:
+	SDL_Window* Window;
+	
+	bool Close{};
+};
 
 
-}
+

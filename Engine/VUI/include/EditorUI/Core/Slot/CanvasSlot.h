@@ -12,7 +12,6 @@ public:
     bool UseFloatingLayout() const override;
     
     VMath::Rect ComputeGeometry(const VMath::Rect& ParentGeometry) const override;
-    Clay_ChildAlignment ComputeChildAlignment() const override;
     
 private:
     VMath::Vector2f AnchorMin;

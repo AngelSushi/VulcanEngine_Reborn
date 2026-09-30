@@ -1,9 +1,7 @@
 #include <Components/RenderComponent.h>
-#include <imgui.h>
 #include <fmt/core.h>
 #include <CoreAPI/VCore.h>
 
-namespace VulcanEngine {
 	/*RenderComponent::RenderComponent(std::unique_ptr<Sprite>&& RenderSprite)
 		: _Sprite(std::move(RenderSprite)),_SpriteButton("Open Sprite Editor") {
 		
@@ -56,4 +54,3 @@ namespace VulcanEngine {
 	}
 */
 
-}

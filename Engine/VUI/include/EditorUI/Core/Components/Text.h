@@ -7,7 +7,6 @@ class Text : public UIWidget {
 
 public:
     void ApplyProps() override;
-    Clay_ElementDeclaration Build() override;
     void Render(UIRenderContext& InContext) override;
 
 private:
@@ -20,9 +19,6 @@ private:
     uint16_t FontId = -1;
     uint16_t FontSize = -1;
     VColor TextColor;
-
-    bool bDrawBorder = false;
-    VColor BorderColor;
 
     Clay_String String = {};
     Clay_TextElementConfig Config = {};

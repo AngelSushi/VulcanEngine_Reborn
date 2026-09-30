@@ -5,8 +5,6 @@
 
 #include "EditorUI/Runtime/WidgetApplication.h"
 
-#include <EditorUI/Core/Panels/UIPanelWidget.h>
-
 void UIWidget::Link(const UINode& InNode) {
     Node = InNode;
     Id = InNode.Id;
@@ -83,11 +81,11 @@ bool UIWidget::HasParent() const {
     return Parent != nullptr;
 }
 
-UIPanelWidget* UIWidget::GetParent() const {
+UIWidget* UIWidget::GetParent() const {
     return Parent;
 }
 
-void UIWidget::SetParent(UIPanelWidget* InParent) {
+void UIWidget::SetParent(UIWidget* InParent) {
     Parent = InParent;
 }
 

@@ -7,7 +7,3 @@ VMath::Rect UISlot::ComputeGeometry(const VMath::Rect& ParentGeometry) const {
 Clay_Sizing UISlot::ComputeSizing() const {
     Expects(0);
 }
-
-Clay_TextAlignment UISlot::ComputeAlignment() const {
-    Expects(0);
-}

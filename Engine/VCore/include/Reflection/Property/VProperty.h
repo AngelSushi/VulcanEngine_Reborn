@@ -12,7 +12,7 @@
 namespace VulcanCore {
     class ReflectionBase;
     
-    class VProperty : public VField {
+    class VCORE_API VProperty : public VField {
 
     public:
         DECLARE_FIELD(VProperty,VField,CastClassFlags_VProperty)

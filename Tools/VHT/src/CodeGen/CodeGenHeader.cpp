@@ -49,15 +49,16 @@ void CodeGenHeader::GenerateStruct(const StructInfo& structInfo, std::vector<Enu
     buffer << "#include <Reflection/VStruct.h>\n";
     buffer << "#include <Reflection/VEnum.h>\n\n";
 
-    buffer << "namespace ";
+   /* buffer << "namespace ";
     for (auto & ns : structInfo.Namespaces) {
         buffer << ns;
 
         if (&ns != &structInfo.Namespaces.back()) {
             buffer << "::";
         }
-    }
-    buffer << " { struct " << structInfo.Name << "; } \n\n";
+    }*/
+    
+    buffer << " struct " << structInfo.Name << "; \n\n";
 
     for (auto& e : enums) {
         //GenerateEnumPart(e,buffer);
@@ -86,15 +87,15 @@ void CodeGenHeader::GenerateEnumPart(const EnumInfo& enum_info, std::ostream& ou
     
     out << "// Begin Enum " << enum_info.Name << "\n";
     
-    out << "namespace ";
+    /*out << "namespace ";
     for (auto & ns : enum_info.Namespaces) {
         out << ns;
 
         if (&ns != &enum_info.Namespaces.back()) {
             out << "::";
         }
-    }
-    out << " { enum class " << enum_info.Name << "; } \n\n";
+    }*/
+    out << " enum class " << enum_info.Name << "; \n\n";
 
     out << "struct VC_Construct_VEnum_" << enum_info.Name << "_Statics;\n";
     out << "::VulcanCore::VEnum* VC_Construct_VEnum_" << enum_info.Name << "(); \n\n";

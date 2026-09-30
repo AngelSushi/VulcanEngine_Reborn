@@ -7,7 +7,7 @@
 
 namespace VulcanCore {
     
-    class VNumericProperty : public VProperty {
+    class VCORE_API VNumericProperty : public VProperty {
 
         DECLARE_FIELD(VNumericProperty,VProperty,CastClassFlags_VNumericProperty)
 

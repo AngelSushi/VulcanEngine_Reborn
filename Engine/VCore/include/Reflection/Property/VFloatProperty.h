@@ -11,7 +11,7 @@
 namespace VulcanCore {
 
     template<typename C>
-    class VFloatProperty : public VPropertyBase {
+    class VCORE_API VFloatProperty : public VProperty {
     public:
         using PropMember = float C::*;
         PropMember Member;

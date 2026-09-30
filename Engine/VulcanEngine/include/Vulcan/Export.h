@@ -4,8 +4,6 @@
     #define VULCAN_ENGINE_API __declspec(dllexport)
 #else
     #define VULCAN_ENGINE_API __declspec(dllimport)
-<<<<<<< Updated upstream
-=======
 #endif
 
 #ifdef VUI_BUILD
@@ -24,5 +22,4 @@
     #define VIO_API __declspec(dllexport)
 #else
     #define VIO_API __declspec(dllimport)
->>>>>>> Stashed changes
 #endif

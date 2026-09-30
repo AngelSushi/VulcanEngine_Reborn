@@ -17,11 +17,11 @@ void FontSystem::InitSystem() {
 
     // Modifier cette double boucle on fait surement trop d'itération  pour rien
     for (const std::string& AvailableExtension : VFont::GetAvailableExtensions()) {
-        for (const std::string& FontPath : FileManager::Get().LoadExtension("assets/",AvailableExtension)) {
+        /*for (const std::string& FontPath : FileManager::Get().LoadExtension("assets/",AvailableExtension)) {
             for (int FontSize : { 12, 14, 16, 18, 20, 24, 28, 32 }) {
                 LoadFontRW(FontPath, FontSize);
             }
-        }
+        }*/
     }
 }
 
@@ -74,7 +74,8 @@ TTF_Font* FontSystem::LoadFontRW(std::filesystem::path FontPath, int FontSize) {
 
     auto it = FontsData.find(Key);
     if (it == FontsData.end()) {
-        auto Bytes = FileManager::Get().Read(FontPath.string());
+        std::vector<uint8_t> Bytes;
+        FileManager::Get().Read(*VPath::FromPath(FontPath.string()).get(),Bytes);
         it = FontsData.emplace(Key,std::move(Bytes)).first;
     }
 
