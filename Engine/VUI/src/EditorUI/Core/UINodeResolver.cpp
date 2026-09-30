@@ -1,6 +1,6 @@
 #include <EditorUI/Core/UINodeResolver.h>
 
-#include "IO/FileManager.h"
+#include <FileManager.h>
 
 UINodeResolver::UINodeResolver(std::string InBasePath) : BasePath(InBasePath) {
 }
@@ -13,10 +13,10 @@ UINode UINodeResolver::Resolve(UINode& Node) {
     }
 
     if (bIsSelf) {
-        UINode SelfNode = LoadAndParse(fs::path(BasePath + "/" +  Node.Redirect).string());
-        UINode::Merge(SelfNode, Node);
+        //UINode SelfNode = LoadAndParse(fs::path(BasePath + "/" +  Node.Redirect).string());
+       // UINode::Merge(SelfNode, Node);
 
-        Node = SelfNode;
+      //  Node = SelfNode;
     }
 
     // Maybe LocalResolver should take the path of RedirectNode
@@ -24,9 +24,9 @@ UINode UINodeResolver::Resolve(UINode& Node) {
         bool bIsChildSelf = false;
 
         if (HasRedirects(Child,bIsChildSelf)) {
-            UINode RedirectNode = LoadAndParse(fs::path(BasePath + "/" +  Child.Redirect).string());
-            UINode::Merge(RedirectNode, Child);
-            Child = RedirectNode;
+           // UINode RedirectNode = LoadAndParse(fs::path(BasePath + "/" +  Child.Redirect).string());
+        //    UINode::Merge(RedirectNode, Child);
+          //  Child = RedirectNode;
         }
         
         for (UINode& RedirectChild : Child.Children) {
@@ -38,10 +38,11 @@ UINode UINodeResolver::Resolve(UINode& Node) {
     return Node;
 }
 
-UINode UINodeResolver::LoadAndParse(const std::string& Path) {
-    if (VulcanCore::FileManager::Get().Exists(Path)) {
-        std::vector<uint8_t> Content = VulcanCore::FileManager::Get().Read(Path);
-        if (Content.size() > 0) {
+UINode UINodeResolver::LoadAndParse(const VPath& Path) {
+    if (FileManager::Get().FileExists(Path)) {
+        std::vector<uint8_t> Content;
+
+        if (FileManager::Get().Read(Path,Content) && Content.size() > 0) {
             std::string JsonContent(Content.begin(), Content.end());
             auto [Node,Success] = JsonSerializer::Load<UINode>(JsonContent);
 

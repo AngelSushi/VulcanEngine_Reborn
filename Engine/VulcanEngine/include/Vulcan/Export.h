@@ -17,3 +17,9 @@
 #else
     #define VCORE_API __declspec(dllimport)
 #endif
+
+#ifdef VIO_BUILD
+    #define VIO_API __declspec(dllexport)
+#else
+    #define VIO_API __declspec(dllimport)
+#endif

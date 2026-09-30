@@ -4,7 +4,15 @@
   "WindowIndex": 0,
   "Children": [
     {
-      "Redirect": "navbar.element",
+      "Redirect": "navbar/navbar.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "border.element",
+      "Properties": {}
+    },
+    {
+      "Redirect": "toolbar/toolbar.element",
       "Properties": {}
     }
   ],
