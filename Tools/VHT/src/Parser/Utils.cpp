@@ -72,6 +72,10 @@ namespace Utils {
         return Tokenize(line,Delimiter);
     }
 
+    std::vector<std::string> SplitWords(const std::string& Content, size_t Pos, char Delimiter) {
+        return SplitWords(Content,Pos,[Delimiter](char c) { return c == Delimiter; });
+    }
+
     std::vector<std::string> DetectNamespaces(const std::string& Content,size_t EndPos) {
         std::vector<std::string> out;
         
